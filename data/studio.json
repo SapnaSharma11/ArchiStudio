@@ -3,14 +3,24 @@
   "fullName": "Architecture & Interior Design Consultancy",
   "tagline": "Designing Spaces. Creating Experiences.",
   "principal": {
-    "name": "Ananya Rao",
+    "name": "Akash Sharma",
     "title": "Principal Architect & Founder",
     "photo": "",
     "experience": "16",
-    "biography": "Ananya founded the studio after a decade of practice across residential, hospitality and workplace projects. She leads every commission from first sketch to handover, with a belief that good architecture is quiet, precise and built to age well.",
-    "education": ["B.Arch — School of Planning & Architecture, New Delhi", "M.Arch, Sustainable Design — CEPT University"],
-    "expertise": ["Residential architecture", "Climate-responsive design", "Adaptive reuse", "Interior architecture"],
-    "achievements": ["Registered with the Council of Architecture (CoA)", "IGBC Accredited Professional"]
+    "biography": "Akash founded the studio after years of practice across residential, hospitality and workplace projects, and leads every commission personally from first sketch to handover — with a belief that good architecture is quiet, precise and built to age well.",
+    "education": [
+      "B.Arch — Lovely Professional University (LPU)"
+    ],
+    "expertise": [
+      "Residential architecture",
+      "Climate-responsive design",
+      "Adaptive reuse",
+      "Interior architecture"
+    ],
+    "achievements": [
+      "Registered with the Council of Architecture (CoA)",
+      "IGBC Accredited Professional"
+    ]
   },
   "address": {
     "line1": "Studio 4, Design District",
@@ -23,19 +33,68 @@
   "whatsapp": "",
   "email": "hello@archestudio.example",
   "stats": [
-    { "value": "16", "label": "Years of practice" },
-    { "value": "140+", "label": "Projects completed" },
-    { "value": "2.1M", "label": "Sq. ft designed" },
-    { "value": "98%", "label": "Clients who return or refer" }
+    {
+      "value": "16",
+      "label": "Years of practice"
+    },
+    {
+      "value": "140+",
+      "label": "Projects completed"
+    },
+    {
+      "value": "2.1M",
+      "label": "Sq. ft designed"
+    },
+    {
+      "value": "98%",
+      "label": "Clients who return or refer"
+    }
   ],
   "hours": [
-    { "day": "Monday",    "morningOpen": "10:00", "morningClose": "13:30", "eveningOpen": "14:30", "eveningClose": "19:00" },
-    { "day": "Tuesday",   "morningOpen": "10:00", "morningClose": "13:30", "eveningOpen": "14:30", "eveningClose": "19:00" },
-    { "day": "Wednesday", "morningOpen": "10:00", "morningClose": "13:30", "eveningOpen": "14:30", "eveningClose": "19:00" },
-    { "day": "Thursday",  "morningOpen": "10:00", "morningClose": "13:30", "eveningOpen": "14:30", "eveningClose": "19:00" },
-    { "day": "Friday",    "morningOpen": "10:00", "morningClose": "13:30", "eveningOpen": "14:30", "eveningClose": "19:00" },
-    { "day": "Saturday",  "morningOpen": "10:00", "morningClose": "14:00" },
-    { "day": "Sunday",    "byAppointment": true }
+    {
+      "day": "Monday",
+      "morningOpen": "10:00",
+      "morningClose": "13:30",
+      "eveningOpen": "14:30",
+      "eveningClose": "19:00"
+    },
+    {
+      "day": "Tuesday",
+      "morningOpen": "10:00",
+      "morningClose": "13:30",
+      "eveningOpen": "14:30",
+      "eveningClose": "19:00"
+    },
+    {
+      "day": "Wednesday",
+      "morningOpen": "10:00",
+      "morningClose": "13:30",
+      "eveningOpen": "14:30",
+      "eveningClose": "19:00"
+    },
+    {
+      "day": "Thursday",
+      "morningOpen": "10:00",
+      "morningClose": "13:30",
+      "eveningOpen": "14:30",
+      "eveningClose": "19:00"
+    },
+    {
+      "day": "Friday",
+      "morningOpen": "10:00",
+      "morningClose": "13:30",
+      "eveningOpen": "14:30",
+      "eveningClose": "19:00"
+    },
+    {
+      "day": "Saturday",
+      "morningOpen": "10:00",
+      "morningClose": "14:00"
+    },
+    {
+      "day": "Sunday",
+      "byAppointment": true
+    }
   ],
   "socials": {
     "instagram": "https://instagram.com/",

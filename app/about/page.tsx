@@ -5,6 +5,7 @@ import { pageMeta, SEO } from '@/lib/seo'
 import { labelOf, TEAM_DISCIPLINES } from '@/lib/brand'
 import { getTeam } from '@/lib/team'
 import MemberPortrait from '@/components/shared/MemberPortrait'
+import Slider from '@/components/shared/Slider'
 import PageHero from '@/components/shared/PageHero'
 import SectionHeading from '@/components/shared/SectionHeading'
 import FadeIn from '@/components/shared/FadeIn'
@@ -114,20 +115,22 @@ export default async function AboutPage() {
 
       {/* Team */}
       {team.length > 0 && (
-        <section id="team" className="scroll-mt-24 py-24 sm:py-32 bg-surface">
+        <section id="team" className="scroll-mt-24 py-24 sm:py-32 bg-surface overflow-hidden">
           <div className="container-x">
             <SectionHeading index="04" label="The team" title="Architects, designers" accent="and makers." intro="A multidisciplinary team that stays with every project from concept to completion." />
-            <ul className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-              {team.map((m, i) => (
-                <FadeIn as="li" key={m.id} delay={(i % 3) * 0.08} className="group">
-                  <MemberPortrait name={m.name} role={m.role} photo={m.photo} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw" className="aspect-[4/5]" />
+          </div>
+          <div className="mt-16">
+            <Slider label="Team" slideClassName="w-[72vw] sm:w-[40vw] lg:w-[24vw] xl:w-[21rem]">
+              {team.map((m) => (
+                <div key={m.id} className="group">
+                  <MemberPortrait name={m.name} role={m.role} photo={m.photo} sizes="(min-width: 1024px) 24vw, (min-width: 640px) 40vw, 72vw" className="aspect-[4/5]" />
                   <p className="mt-5 text-[10px] font-semibold tracking-[0.22em] uppercase text-bronze-deep">{labelOf(TEAM_DISCIPLINES, m.discipline)}</p>
                   <h3 className="display text-3xl text-ink mt-2">{m.name}</h3>
                   <p className="text-sm text-muted mt-1">{m.role}</p>
                   {m.bio && <p className="text-sm text-muted mt-3 leading-relaxed">{m.bio}</p>}
-                </FadeIn>
+                </div>
               ))}
-            </ul>
+            </Slider>
           </div>
         </section>
       )}

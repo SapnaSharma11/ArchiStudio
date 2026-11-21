@@ -60,7 +60,8 @@ export default async function HomePage() {
   ])
 
   const featured = projects.filter((p) => p.featured)
-  const showcase = (featured.length >= 3 ? featured : projects).slice(0, 5)
+  // Featured first, then the rest — the horizontal gallery holds up to seven.
+  const showcase = [...featured, ...projects.filter((p) => !p.featured)].slice(0, 7)
   const picked = HOME_SERVICES.map((slug) => services.find((s) => s.slug === slug)).filter((s) => s !== undefined)
   const homeServices = picked.length >= 3 ? picked : services.slice(0, 6)
   const lead = showcase[0]

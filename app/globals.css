@@ -192,3 +192,22 @@ video:-webkit-full-screen {
     transition-duration: 0.01ms !important;
   }
 }
+
+/*
+ * Horizontal sliders: the track spans the full viewport width, but its padding
+ * (and snap padding) match the page container so the first slide lines up with
+ * the content above it and the last slide can scroll fully into view.
+ */
+.slider-pad {
+  padding-inline: 1rem;
+  scroll-padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .slider-pad { padding-inline: 2rem; scroll-padding-inline: 2rem; }
+}
+@media (min-width: 1024px) {
+  .slider-pad {
+    padding-inline: max(3.5rem, calc((100vw - 88rem) / 2 + 3.5rem));
+    scroll-padding-inline: max(3.5rem, calc((100vw - 88rem) / 2 + 3.5rem));
+  }
+}
