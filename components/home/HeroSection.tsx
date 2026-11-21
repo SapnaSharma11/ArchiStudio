@@ -67,7 +67,7 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
         >
           {studio.name} — {studio.fullName}
         </motion.p>
-        <h1 className="display mt-6 text-[3.1rem] leading-[0.98] sm:text-7xl lg:text-[7.25rem] max-w-6xl">
+        <h1 className="display mt-6 uppercase text-[2.1rem] leading-[1.08] tracking-[0.03em] sm:text-[3.2rem] lg:text-[4rem] xl:text-[4.4rem]">
           {['Spaces That Inspire.', 'Architecture That Lasts.'].map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.08em]">
               <motion.span
@@ -78,7 +78,7 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
               >
                 {i === 1 ? (
                   <>
-                    <em className="italic text-bronze-soft">Architecture</em> That Lasts.
+                    <em className="not-italic text-bronze-soft">Architecture</em> That Lasts.
                   </>
                 ) : (
                   line

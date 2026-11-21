@@ -151,49 +151,5 @@
       "q": "Can you work with my contractor?",
       "a": "Absolutely. We can prepare tender drawings for competitive pricing or coordinate with a builder you already trust, with our supervision on site."
     }
-  ],
-  "disciplines": [
-    {
-      "glyph": "Ar",
-      "name": "Architecture",
-      "label": "Buildings",
-      "text": "Homes, villas and commercial buildings — concept to construction drawings.",
-      "href": "/services/architectural-design"
-    },
-    {
-      "glyph": "In",
-      "name": "Interiors",
-      "label": "Spaces",
-      "text": "Interior architecture, joinery, lighting and material palettes.",
-      "href": "/services/interior-design"
-    },
-    {
-      "glyph": "St",
-      "name": "Structure",
-      "label": "Engineering",
-      "text": "Coordinated structural drawings with licensed engineering partners.",
-      "href": "/services/structural-drawings"
-    },
-    {
-      "glyph": "3D",
-      "name": "Visualisation",
-      "label": "2D · 3D",
-      "text": "Measured plans, photoreal renders and walkthrough films.",
-      "href": "/services/3d-visualization"
-    },
-    {
-      "glyph": "Re",
-      "name": "Renovation",
-      "label": "Remodeling",
-      "text": "Second lives for existing buildings — re-planned, re-lit, re-serviced.",
-      "href": "/services/renovation-remodeling"
-    },
-    {
-      "glyph": "Si",
-      "name": "Site",
-      "label": "Supervision",
-      "text": "Scheduled visits, quality checks and reporting through to handover.",
-      "href": "/services/project-supervision"
-    }
   ]
 }

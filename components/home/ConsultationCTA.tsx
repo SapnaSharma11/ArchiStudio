@@ -24,7 +24,7 @@ export default function ConsultationCTA({ studio }: { studio: StudioData }) {
           <FadeIn>
             <p className="eyebrow !text-bronze hidden lg:block">Start a project</p>
             <h2 className="display mt-5 text-[2.6rem] sm:text-6xl">
-              Let&rsquo;s Build Something <em className="italic text-bronze">Meaningful.</em>
+              Let&rsquo;s Build Something <em className="not-italic text-bronze">Meaningful.</em>
             </h2>
             <p className="mt-6 text-ivory/65 leading-relaxed max-w-lg">
               Tell us a little about your site and ambitions. We&rsquo;ll arrange an initial consultation — at the studio,

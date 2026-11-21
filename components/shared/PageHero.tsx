@@ -35,7 +35,7 @@ export default function PageHero({
               {accent && (
                 <>
                   {' '}
-                  <em className="italic text-bronze-deep">{accent}</em>
+                  <em className="not-italic text-bronze-deep">{accent}</em>
                 </>
               )}
             </h1>

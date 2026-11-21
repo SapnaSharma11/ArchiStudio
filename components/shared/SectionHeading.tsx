@@ -3,7 +3,7 @@ import { cn } from '@/utils/cn'
 
 /**
  * Editorial section heading: "01 — Label" eyebrow, large serif title (with an
- * optional italic accent word) and an optional intro paragraph.
+ * optional accent word, set in bronze) and an optional intro paragraph.
  */
 export default function SectionHeading({
   index,
@@ -39,7 +39,7 @@ export default function SectionHeading({
         {accent && (
           <>
             {' '}
-            <em className={cn('italic', dark ? 'text-bronze' : 'text-bronze-deep')}>{accent}</em>
+            <em className={cn('not-italic', dark ? 'text-bronze' : 'text-bronze-deep')}>{accent}</em>
           </>
         )}
       </Tag>

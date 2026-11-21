@@ -96,7 +96,7 @@ function PinnedGallery({ projects }: { projects: PortfolioProject[] }) {
           <Link href="/projects" className="group shrink-0 w-[24vw] h-[56vh] bg-ink text-ivory flex flex-col justify-between p-10">
             <span className="eyebrow !text-bronze">Portfolio</span>
             <span>
-              <span className="display block text-5xl leading-tight">View all<br /><em className="italic text-bronze">projects</em></span>
+              <span className="display block text-5xl leading-tight">View all<br /><em className="not-italic text-bronze">projects</em></span>
               <span className="mt-8 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center transition-colors group-hover:bg-ivory group-hover:text-ink">
                 <ArrowRight size={18} />
               </span>

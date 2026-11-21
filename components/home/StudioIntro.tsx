@@ -12,7 +12,7 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
           <FadeIn>
             <p className="eyebrow flex items-center gap-3">01 <span className="h-px w-8 bg-bronze-deep/50" aria-hidden /> The Studio</p>
             <h2 className="display mt-5 text-[2.5rem] sm:text-5xl lg:text-[3.6rem] text-ink">
-              Architecture shaped by <em className="italic text-bronze-deep">light, climate</em> and the way people live.
+              Architecture shaped by <em className="not-italic text-bronze-deep">light, climate</em> and the way people live.
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>

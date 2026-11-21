@@ -5,16 +5,13 @@ import { getPublishedProjects } from '@/lib/projects'
 import { getPublishedServices } from '@/lib/services'
 import { pageMeta, SEO } from '@/lib/seo'
 import { BRAND } from '@/lib/brand'
-import site from '@/data/site.json'
 import HeroSection from '@/components/home/HeroSection'
 import StudioIntro from '@/components/home/StudioIntro'
-import PrinciplesMarquee from '@/components/home/PrinciplesMarquee'
 import ServicesOverview from '@/components/home/ServicesOverview'
 import FeaturedProjects from '@/components/home/FeaturedProjects'
 import Philosophy from '@/components/home/Philosophy'
 import ProcessSection from '@/components/home/ProcessSection'
 import TestimonialsSlider, { type Testimonial } from '@/components/home/TestimonialsSlider'
-import Disciplines from '@/components/home/Disciplines'
 import Recognition from '@/components/home/Recognition'
 import ConsultationCTA from '@/components/home/ConsultationCTA'
 
@@ -38,21 +35,17 @@ const HOME_SERVICES = [
 
 async function getHomeContent() {
   try {
-    const [tips, testimonials] = await Promise.all([
-      prisma.tip.findMany({ where: { published: true }, orderBy: [{ displayOrder: 'asc' }, { createdAt: 'asc' }] }),
-      prisma.testimonial.findMany({ where: { approved: true }, orderBy: { createdAt: 'desc' }, take: 8 }),
-    ])
+    const testimonials = await prisma.testimonial.findMany({ where: { approved: true }, orderBy: { createdAt: 'desc' }, take: 8 })
     return {
-      principles: tips.map((t) => t.title),
       testimonials: testimonials.map<Testimonial>((t) => ({ id: t.id, name: t.name, message: t.message, rating: t.rating })),
     }
   } catch {
-    return { principles: site.principles, testimonials: [] as Testimonial[] }
+    return { testimonials: [] as Testimonial[] }
   }
 }
 
 export default async function HomePage() {
-  const [studio, projects, services, { principles, testimonials }] = await Promise.all([
+  const [studio, projects, services, { testimonials }] = await Promise.all([
     getStudio(),
     getPublishedProjects(),
     getPublishedServices(),
@@ -73,14 +66,12 @@ export default async function HomePage() {
         featured={lead ? { slug: lead.slug, title: lead.title, location: lead.location, year: lead.year } : null}
       />
       <StudioIntro studio={studio} />
-      <PrinciplesMarquee items={principles} />
       <ServicesOverview services={homeServices} />
       <FeaturedProjects projects={showcase} />
       <Philosophy />
       <ProcessSection />
-      <Disciplines />
-      <Recognition studio={studio} />
-      <TestimonialsSlider items={testimonials} index="08" />
+      <Recognition studio={studio} index="06" />
+      <TestimonialsSlider items={testimonials} index="07" />
       <ConsultationCTA studio={studio} />
     </>
   )
