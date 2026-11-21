@@ -97,7 +97,7 @@ export default function Navbar({ studio }: { studio: StudioData }) {
                 key={l.href}
                 href={l.href}
                 aria-current={isActive(l.href) ? 'page' : undefined}
-                className="font-mono link-draw pb-1 text-[11px] font-medium tracking-[0.2em] uppercase"
+                className="link-draw pb-0.5 text-[0.9rem] transition-opacity aria-[current=page]:opacity-100 opacity-70 hover:opacity-100"
               >
                 {l.label}
               </Link>

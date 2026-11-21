@@ -217,7 +217,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="container-x">
             <div className="flex items-end justify-between gap-6">
               <SectionHeading label="Related projects" title="You may" accent="also like." />
-              <Link href="/projects" className="font-mono hidden sm:inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
+              <Link href="/projects" className="hidden sm:inline-flex items-center gap-2 text-[0.95rem] font-medium text-ink link-draw pb-1">
                 <ArrowLeft size={14} /> All projects
               </Link>
             </div>

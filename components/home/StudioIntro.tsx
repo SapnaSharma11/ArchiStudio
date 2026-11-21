@@ -10,7 +10,7 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
       <div className="container-x grid gap-14 lg:grid-cols-12 lg:gap-20 items-start">
         <div className="lg:col-span-5 lg:sticky lg:top-32">
           <FadeIn>
-            <p className="eyebrow flex items-center gap-3">01 <span className="h-px w-8 bg-bronze-deep/50" aria-hidden /> The Studio</p>
+            <p className="eyebrow">The Studio</p>
             <h2 className="display mt-5 text-[2.5rem] sm:text-5xl lg:text-[3.6rem] text-ink">
               Architecture shaped by <em className="not-italic text-bronze-deep">light, climate</em> and the way people live.
             </h2>
@@ -34,7 +34,7 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
                 <p className="font-mono text-xs tracking-[0.16em] uppercase text-muted mt-1">{studio.principal.title}</p>
               </div>
             </div>
-            <Link href="/about" className="font-mono mt-10 inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
+            <Link href="/about" className="mt-10 inline-flex items-center gap-2 text-[0.95rem] font-medium text-ink link-draw pb-1">
               About the studio <ArrowRight size={14} />
             </Link>
           </FadeIn>

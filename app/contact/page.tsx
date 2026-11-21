@@ -58,7 +58,7 @@ export default async function ContactPage() {
             <FadeIn delay={0.1}>
               <h2 className="eyebrow">The studio</h2>
               <address className="not-italic mt-5 display text-3xl text-ink leading-snug">{studio.address.full}</address>
-              <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="font-mono mt-4 inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
+              <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-[0.95rem] font-medium text-ink link-draw pb-1">
                 Get directions <ArrowUpRight size={13} />
               </a>
             </FadeIn>

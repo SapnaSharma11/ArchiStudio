@@ -98,7 +98,7 @@ export default function Slider({
   }
 
   const btn = cn(
-    'w-12 h-12 rounded-full border flex items-center justify-center transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none',
+    'w-11 h-11 rounded-full border flex items-center justify-center transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none',
     dark ? 'border-white/25 text-ivory hover:bg-ivory hover:text-ink' : 'border-stone text-ink hover:bg-ink hover:text-ivory hover:border-ink',
   )
 
@@ -138,16 +138,20 @@ export default function Slider({
       </div>
 
       <div className="container-x mt-10 flex items-center gap-6">
-        <span className={cn('text-xs tracking-[0.2em] tabular-nums shrink-0', dark ? 'text-ivory/60' : 'text-muted')}>
-          {String(state.index + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
-        </span>
-        <div className={cn('relative h-px flex-1', dark ? 'bg-white/15' : 'bg-stone')} aria-hidden>
-          <div
-            className={cn('absolute inset-y-0 left-0 transition-[width] duration-300', dark ? 'bg-ivory' : 'bg-ink')}
-            style={{ width: `${Math.max(8, state.progress * 100)}%` }}
-          />
+        <div className="flex items-center gap-2" aria-hidden>
+          {slides.map((_, i) => (
+            <span
+              key={i}
+              className={cn(
+                'h-1.5 rounded-full transition-all duration-500',
+                i === state.index ? cn('w-7', dark ? 'bg-ivory' : 'bg-ink') : cn('w-1.5', dark ? 'bg-white/25' : 'bg-stone'),
+              )}
+            />
+          ))}
         </div>
-        <div className="flex gap-3 shrink-0">
+        <span className="sr-only" aria-live="polite">Slide {state.index + 1} of {slides.length}</span>
+        <span className={cn('ml-auto hidden sm:inline text-sm', dark ? 'text-ivory/50' : 'text-muted')}>Drag or swipe to explore</span>
+        <div className="flex gap-2 shrink-0 ml-auto sm:ml-0">
           <button type="button" onClick={() => go(-1)} disabled={state.atStart} aria-label="Previous" className={btn}>
             <ArrowLeft size={16} />
           </button>

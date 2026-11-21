@@ -76,8 +76,6 @@ export default function FeaturedProjects({ projects }: { projects: PortfolioProj
                 <span className="absolute right-5 top-5 w-11 h-11 rounded-full bg-ivory text-ink flex items-center justify-center opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                   <ArrowUpRight size={16} />
                 </span>
-                <span aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/45 to-transparent" />
-                <span className="absolute left-5 bottom-5 display text-7xl text-white leading-none">{String(i + 1).padStart(2, '0')}</span>
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
@@ -91,7 +89,7 @@ export default function FeaturedProjects({ projects }: { projects: PortfolioProj
             </Link>
           ))}
 
-          <Link href="/projects" className="group shrink-0 w-[24vw] h-[56vh] bg-ink text-ivory flex flex-col justify-between p-10">
+          <Link href="/projects" className="group shrink-0 w-[24vw] h-[56vh] rounded-media bg-ink text-ivory flex flex-col justify-between p-10">
             <span className="eyebrow !text-bronze">Portfolio</span>
             <span>
               <span className="display block text-5xl leading-tight">View all<br /><em className="not-italic text-bronze">projects</em></span>

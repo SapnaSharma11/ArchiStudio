@@ -2,11 +2,10 @@ import FadeIn from '@/components/shared/FadeIn'
 import { cn } from '@/utils/cn'
 
 /**
- * Editorial section heading: "01 — Label" eyebrow, large serif title (with an
+ * Section heading: dot label (no numbering — `index` is accepted but unused), large display title (with an
  * optional accent word, set in bronze) and an optional intro paragraph.
  */
 export default function SectionHeading({
-  index,
   label,
   title,
   accent,
@@ -29,11 +28,7 @@ export default function SectionHeading({
   const dark = tone === 'dark'
   return (
     <FadeIn className={cn(align === 'center' && 'text-center mx-auto', 'max-w-3xl', className)}>
-      <p className={cn('eyebrow flex items-center gap-3', align === 'center' && 'justify-center', dark && '!text-bronze')}>
-        {index && <span>{index}</span>}
-        {index && <span aria-hidden className={cn('h-px w-8', dark ? 'bg-bronze/60' : 'bg-bronze-deep/50')} />}
-        <span>{label}</span>
-      </p>
+      <p className={cn('eyebrow', align === 'center' && 'justify-center', dark && '!text-ivory/60')}>{label}</p>
       <Tag className={cn('display mt-5 text-[2.5rem] sm:text-5xl lg:text-[3.6rem]', dark ? 'text-ivory' : 'text-ink')}>
         {title}
         {accent && (

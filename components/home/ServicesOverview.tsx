@@ -60,8 +60,6 @@ export default function ServicesOverview({ services }: { services: PublicService
             {s.image && (
               <Image src={s.image} alt={`${s.title} by the studio`} fill sizes="30vw" className="object-cover" />
             )}
-            <span aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/45 to-transparent" />
-            <span className="absolute left-5 bottom-4 display text-6xl text-white leading-none">{String(i + 1).padStart(2, '0')}</span>
             <span className="absolute right-5 top-5 w-11 h-11 rounded-full bg-ivory text-ink flex items-center justify-center opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
               <ArrowUpRight size={16} />
             </span>
@@ -71,7 +69,7 @@ export default function ServicesOverview({ services }: { services: PublicService
         </Link>
       ))}
 
-      <Link href="/services" className="group shrink-0 w-[22vw] h-[50vh] bg-ink text-ivory flex flex-col justify-between p-10">
+      <Link href="/services" className="group shrink-0 w-[22vw] h-[50vh] rounded-media bg-ink text-ivory flex flex-col justify-between p-10">
         <span className="eyebrow !text-bronze">Services</span>
         <span>
           <span className="display block text-4xl leading-tight">

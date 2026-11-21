@@ -65,13 +65,25 @@
 
 @layer components {
   /* Small uppercase label used above headings ("01 — Studio") */
+  /* Quiet Gallery label: a small accent dot and the word, normal case, no numbering. */
   .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-bronze-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-muted);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-bronze);
+    flex-shrink: 0;
   }
   .display {
     font-family: var(--font-display);
@@ -90,30 +102,42 @@
   @media (min-width: 1024px) { .container-x { padding-inline: 3.5rem; } }
 
   /* Buttons */
+  /* Quiet Gallery buttons: pills; a trailing arrow icon becomes a disc that rolls on hover. */
   .btn {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    padding: 0.95rem 1.6rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    transition: background-color 0.4s var(--ease-arch), color 0.4s var(--ease-arch), border-color 0.4s var(--ease-arch);
+    gap: 0.85rem;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    transition: background-color 0.4s var(--ease-arch), color 0.4s var(--ease-arch), box-shadow 0.4s var(--ease-arch);
     white-space: nowrap;
   }
-  .btn-dark { background: var(--color-ink); color: #fff; }
-  .btn-dark:hover { background: var(--color-bronze-deep); }
-  .btn-light { background: #fff; color: var(--color-ink); }
-  .btn-light:hover { background: var(--color-bronze-soft); }
-  .btn-outline { border: 1px solid currentColor; }
-  .btn-outline:hover { background: var(--color-ink); color: #fff; border-color: var(--color-ink); }
-  .btn-outline-light { border: 1px solid rgb(255 255 255 / 0.6); color: #fff; }
-  .btn-outline-light:hover { background: #fff; color: var(--color-ink); border-color: #fff; }
-  .btn .btn-arrow { transition: transform 0.4s var(--ease-arch); }
-  .btn:hover .btn-arrow { transform: translateX(4px); }
+  .btn:has(> svg:last-child) { padding: 0.3rem 0.3rem 0.3rem 1.3rem; }
+  .btn > svg:last-child {
+    box-sizing: content-box;
+    width: 15px;
+    height: 15px;
+    padding: 0.6rem;
+    border-radius: 50%;
+    background: var(--color-bronze);
+    color: var(--color-ink);
+    transition: transform 0.45s var(--ease-arch), background-color 0.4s;
+  }
+  .btn:hover > svg:last-child { transform: translateX(3px) rotate(-45deg); }
+  .btn-dark { background: var(--color-ink); color: var(--color-ivory); }
+  .btn-light { background: var(--color-ivory); color: var(--color-ink); }
+  .btn-outline { box-shadow: inset 0 0 0 1px var(--color-stone); }
+  .btn-outline > svg:last-child { background: var(--color-ink); color: var(--color-ivory); }
+  .btn-outline:hover { box-shadow: inset 0 0 0 1px var(--color-ink); }
+  .btn-outline-light { box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.45); color: #fff; }
+  .btn-outline-light:hover { box-shadow: inset 0 0 0 1px #fff; }
+  .btn-outline-light > svg:last-child { background: #fff; color: var(--color-ink); }
 
   /* Underline link that draws in on hover */
   .link-draw {
@@ -217,3 +241,9 @@ video:-webkit-full-screen {
   }
 }
 
+
+/* Quiet Gallery: softly rounded imagery and tiles. */
+.img-zoom,
+.rounded-media {
+  border-radius: 14px;
+}

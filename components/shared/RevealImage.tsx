@@ -18,7 +18,7 @@ export default function RevealImage({
   return (
     <motion.div
       ref={ref}
-      className={cn('relative overflow-hidden bg-sand', className)}
+      className={cn('relative overflow-hidden bg-sand rounded-media', className)}
       initial={{ clipPath: 'inset(12% 0% 0% 0%)' }}
       animate={inView ? { clipPath: 'inset(0% 0% 0% 0%)' } : undefined}
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}

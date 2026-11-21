@@ -57,7 +57,7 @@ export default async function ServicesPage() {
         <section key={g.label} id={g.value} className="scroll-mt-24 py-16 sm:py-24">
           <div className="container-x">
             <FadeIn>
-              <h2 className="eyebrow flex items-center gap-3"><span className="h-px w-8 bg-bronze-deep/50" aria-hidden /> {g.label}</h2>
+              <h2 className="eyebrow">{g.label}</h2>
             </FadeIn>
             <div className="mt-12 space-y-20 sm:space-y-28">
               {g.items.map((s) => {

@@ -4,21 +4,21 @@ import FadeIn from '@/components/shared/FadeIn'
 import type { StudioData } from '@/lib/clinic'
 
 /** Awards & recognition band: big count, then ruled award rows (Dashboard → Awards). */
-export default function Recognition({ studio, index = '07' }: { studio: StudioData; index?: string }) {
+export default function Recognition({ studio }: { studio: StudioData; index?: string }) {
   const awards = studio.awards
   if (!awards.length) return null
   return (
     <section className="bg-surface py-24 sm:py-32 border-y border-line">
       <div className="container-x grid gap-14 lg:grid-cols-12">
         <FadeIn className="lg:col-span-4">
-          <p className="eyebrow flex items-center gap-3">{index} <span className="h-px w-8 bg-bronze-deep/50" aria-hidden /> Recognition</p>
+          <p className="eyebrow">Recognition</p>
           <p className="display mt-6 text-[7rem] sm:text-[9rem] leading-none text-ink [font-variant-numeric:lining-nums]">
             {String(awards.length).padStart(2, '0')}
           </p>
           <p className="mt-6 text-muted leading-relaxed max-w-xs">
             Awards and citations for design quality, workplace interiors and sustainable building.
           </p>
-          <Link href="/about" className="font-mono mt-8 inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
+          <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-medium text-ink link-draw pb-1">
             About the studio <ArrowUpRight size={13} />
           </Link>
         </FadeIn>

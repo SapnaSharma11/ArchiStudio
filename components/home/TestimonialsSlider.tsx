@@ -7,7 +7,7 @@ import FadeIn from '@/components/shared/FadeIn'
 export type Testimonial = { id: number; name: string; message: string; rating: number }
 
 /** Large editorial quote carousel of approved client testimonials. */
-export default function TestimonialsSlider({ items, index = '06' }: { items: Testimonial[]; index?: string }) {
+export default function TestimonialsSlider({ items }: { items: Testimonial[]; index?: string }) {
   const [i, setI] = useState(0)
   if (!items.length) return null
   const t = items[i]
@@ -18,7 +18,7 @@ export default function TestimonialsSlider({ items, index = '06' }: { items: Tes
     <section className="py-24 sm:py-32 lg:py-40 bg-surface" aria-roledescription="carousel" aria-label="Client testimonials">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <FadeIn className="lg:col-span-3">
-          <p className="eyebrow flex items-center gap-3">{index} <span className="h-px w-8 bg-bronze-deep/50" aria-hidden /> Client stories</p>
+          <p className="eyebrow">Client stories</p>
           <p className="mt-6 text-muted text-sm leading-relaxed max-w-xs">
             The truest measure of our work is how it feels to the people who live and work in it.
           </p>

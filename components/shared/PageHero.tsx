@@ -49,7 +49,7 @@ export default function PageHero({
       </div>
       {image && (
         <div className="container-x">
-          <div className="relative aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-sand">
+          <div className="relative aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-sand rounded-media">
             <Image src={image} alt={imageAlt ?? ''} fill preload sizes="(min-width: 1400px) 1400px, 100vw" className="object-cover" />
           </div>
         </div>
