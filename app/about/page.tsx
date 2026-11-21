@@ -9,6 +9,7 @@ import RevealImage from '@/components/shared/RevealImage'
 import Philosophy from '@/components/home/Philosophy'
 import ProcessSection from '@/components/home/ProcessSection'
 import ConsultationCTA from '@/components/home/ConsultationCTA'
+import Recognition from '@/components/home/Recognition'
 
 export const metadata: Metadata = pageMeta({
   title: SEO.about.title,
@@ -17,7 +18,7 @@ export const metadata: Metadata = pageMeta({
   image: '/images/arche/studio-drawing-board.jpg',
 })
 
-// Live from the DB so dashboard edits to the principal, team and awards appear instantly.
+// Live from the DB so dashboard edits to the architect's profile appear instantly.
 export const dynamic = 'force-dynamic'
 
 export default async function AboutPage() {
@@ -27,76 +28,41 @@ export default async function AboutPage() {
   return (
     <>
       <PageHero
-        label="About the studio"
-        title="Designing spaces."
-        accent="Creating experiences."
-        intro={`${studio.name} is an architecture and interior design consultancy for people who value clarity, craft and longevity.`}
-        image="/images/arche/office-glass-studio.jpg"
-        imageAlt="The studio — a glass-walled workspace with long tables and concrete ceilings"
+        label="About"
+        title={`${p.name},`}
+        accent="Architect."
+        intro={`The architect behind ${studio.name} in Najafgarh, New Delhi — building design, structural design and architectural design for homes and businesses.`}
+        image="/images/arche/studio-drawing-board.jpg"
+        imageAlt="Architect drafting a building plan by hand"
         crumbs={[{ label: 'About' }]}
       />
 
-      {/* Introduction + vision / mission */}
-      <section className="py-24 sm:py-32">
-        <div className="container-x grid gap-16 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <SectionHeading index="01" label="The studio" title="A small studio with a" accent="long view." />
-            <FadeIn delay={0.1} className="mt-8 space-y-5 text-muted leading-relaxed max-w-xl">
-              <p>
-                We began with a simple conviction: that architecture should make everyday life better — quieter, lighter,
-                more generous. Today we work on private homes, workplaces, hospitality and interiors across India.
-              </p>
-              <p>
-                Every commission is led by a senior architect from first conversation to handover, supported by interior
-                designers, engineers, visualisers and project managers working as one team.
-              </p>
-            </FadeIn>
-          </div>
-          <div className="lg:col-span-6 grid sm:grid-cols-2 gap-10 lg:pt-28">
-            <FadeIn className="border-t border-ink pt-6">
-              <h3 className="eyebrow">Vision</h3>
-              <p className="display text-2xl sm:text-3xl text-ink mt-4 leading-snug">
-                Buildings that feel inevitable — rooted in place, honest in material and built to last generations.
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.1} className="border-t border-ink pt-6">
-              <h3 className="eyebrow">Mission</h3>
-              <p className="display text-2xl sm:text-3xl text-ink mt-4 leading-snug">
-                To guide every client through design and construction with clarity, care and uncompromising detail.
-              </p>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      <Philosophy index="02" />
-
-      {/* Principal architect */}
+      {/* The architect */}
       <section className="py-24 sm:py-32">
         <div className="container-x grid gap-14 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
             {p.photo ? (
               <RevealImage src={p.photo} alt={`${p.name}, ${p.title}`} sizes="(min-width: 1024px) 40vw, 100vw" className="aspect-[4/5]" />
             ) : (
-              <FadeIn className="relative aspect-[4/5] bg-sand overflow-hidden">
-                <Image src="/images/arche/studio-drawing-board.jpg" alt="Hand-drafted architectural drawings at the studio" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+              <FadeIn className="relative aspect-[4/5] bg-sand overflow-hidden rounded-media">
+                <Image src="/images/arche/house-white-terrace.jpg" alt="Contemporary white house with terraces" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
               </FadeIn>
             )}
           </div>
           <div className="lg:col-span-7 lg:pl-8">
-            <SectionHeading index="03" label="Principal architect" title={p.name} />
+            <SectionHeading label="The architect" title={p.name} />
             <FadeIn delay={0.1}>
-              <p className="font-mono mt-3 text-xs tracking-[0.18em] uppercase text-muted">{p.title}{p.experience ? ` · ${p.experience}+ years of practice` : ''}</p>
+              <p className="mt-3 text-muted">{p.title}</p>
               {p.biography && <p className="mt-8 text-lg text-muted leading-relaxed max-w-2xl">{p.biography}</p>}
-              <div className="mt-12 grid gap-10 sm:grid-cols-3">
+              <div className="mt-12 grid gap-4 sm:grid-cols-3">
                 {[
                   { title: 'Education', items: p.education },
                   { title: 'Expertise', items: p.expertise },
-                  { title: 'Registrations', items: p.achievements },
+                  { title: 'Recognition', items: p.achievements },
                 ]
                   .filter((g) => g.items.length)
                   .map((g) => (
-                    <div key={g.title} className="border-t border-line pt-5">
+                    <div key={g.title} className="rounded-[22px] bg-surface p-5">
                       <h3 className="eyebrow">{g.title}</h3>
                       <ul className="mt-4 space-y-2 text-sm text-ink leading-relaxed">
                         {g.items.map((x) => <li key={x}>{x}</li>)}
@@ -109,48 +75,44 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Experience & achievements */}
-      <section className="py-24 sm:py-32">
+      {/* The practice: approach, vision, mission */}
+      <section className="pb-24 sm:pb-32">
         <div className="container-x grid gap-16 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <SectionHeading index="05" label="Experience & recognition" title="Work that has" accent="been noticed." />
-            {studio.stats.length > 0 && (
-              <dl className="mt-12 grid grid-cols-2 gap-y-10 border-t border-line pt-8">
-                {studio.stats.map((s) => (
-                  <div key={s.label}>
-                    <dt className="sr-only">{s.label}</dt>
-                    <dd>
-                      <span className="display block text-5xl text-ink">{s.value}</span>
-                      <span className="font-mono block mt-2 text-xs tracking-[0.14em] uppercase text-muted">{s.label}</span>
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            )}
+          <div className="lg:col-span-6">
+            <SectionHeading label={studio.name} title="A personal practice with a" accent="long view." />
+            <FadeIn delay={0.1} className="mt-8 space-y-5 text-muted leading-relaxed max-w-xl">
+              <p>
+                {studio.name} is {p.name.split(' ')[0]}&rsquo;s architecture practice. Because it is personal, you work
+                directly with the architect at every stage — from the free first consultation and site visit to the final
+                drawings and visits on site.
+              </p>
+              <p>
+                The work covers building design, structural design and architectural design for homes, rental buildings and
+                small commercial projects across Delhi NCR.
+              </p>
+            </FadeIn>
           </div>
-          <div className="lg:col-span-7">
-            {studio.awards.length > 0 ? (
-              <ul className="border-t border-ink">
-                {studio.awards.map((a, i) => (
-                  <FadeIn as="li" key={`${a.name}-${i}`} delay={i * 0.06} className="grid grid-cols-12 gap-4 py-7 border-b border-line">
-                    <span className="col-span-3 sm:col-span-2 display text-2xl text-bronze-deep">{a.year ?? '—'}</span>
-                    <div className="col-span-9 sm:col-span-10">
-                      <h3 className="display text-2xl sm:text-3xl text-ink">{a.name}</h3>
-                      <p className="text-sm text-muted mt-1">
-                        {[a.organization, a.description].filter(Boolean).join(' — ')}
-                      </p>
-                    </div>
-                  </FadeIn>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-muted">Awards and publications will appear here.</p>
-            )}
+          <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4 lg:pt-24">
+            <FadeIn className="rounded-[24px] bg-surface p-6">
+              <h3 className="eyebrow">Vision</h3>
+              <p className="display text-2xl text-ink mt-4 leading-snug">
+                Buildings that feel right for their site — practical, safe and built to last generations.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1} className="rounded-[24px] bg-surface p-6">
+              <h3 className="eyebrow">Mission</h3>
+              <p className="display text-2xl text-ink mt-4 leading-snug">
+                To guide every client through design and construction with clarity, honesty and care.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      <ProcessSection index="06" />
+      <Philosophy />
+      <Recognition studio={studio} />
+
+      <ProcessSection />
       <ConsultationCTA studio={studio} />
     </>
   )

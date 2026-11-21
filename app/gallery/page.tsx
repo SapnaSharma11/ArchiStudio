@@ -26,11 +26,11 @@ export default async function GalleryPage() {
   return (
     <>
       <PageHero
-        label="Studio archive"
+        label="Project archive"
         title="Light, material"
         accent="& detail."
         intro="An image archive from our projects — spaces, textures and moments we return to for inspiration."
-        crumbs={[{ label: 'Studio archive' }]}
+        crumbs={[{ label: 'Project archive' }]}
       />
       <section className="pb-24 sm:pb-32">
         <div className="container-x">

@@ -5,12 +5,12 @@ import { BRAND } from '@/lib/brand'
 import { Wordmark } from '@/components/layout/Navbar'
 
 const navigation = [
-  { label: 'About the studio', href: '/about' },
+  { label: 'About Akash Sharma', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Our process', href: '/#process' },
   { label: 'Journal', href: '/journal' },
-  { label: 'Studio archive', href: '/gallery' },
+  { label: 'Project archive', href: '/gallery' },
   { label: 'Client stories', href: '/testimonials' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -60,7 +60,7 @@ export default function Footer({
           </div>
 
           <nav aria-label="Footer" className="lg:col-span-2">
-            <h2 className="eyebrow !text-bronze">Studio</h2>
+            <h2 className="eyebrow !text-bronze">Explore</h2>
             <ul className="mt-5 space-y-2.5 text-sm">
               {navigation.map((l) => (
                 <li key={l.href}>
@@ -95,7 +95,7 @@ export default function Footer({
               {hoursSummary(studio).map((l) => <li key={l}>{l}</li>)}
             </ul>
             <Link href="/contact#consultation" className="btn btn-light mt-7 !px-5">
-              Book a consultation <ArrowUpRight size={14} className="btn-arrow" />
+              Book a free consultation <ArrowUpRight size={14} className="btn-arrow" />
             </Link>
           </div>
         </div>

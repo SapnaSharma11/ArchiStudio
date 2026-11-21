@@ -34,7 +34,7 @@ export function Wordmark({ light, className }: { light?: boolean; className?: st
           light ? 'text-white/70' : 'text-muted',
         )}
       >
-        Studio
+        Enterprises
       </span>
     </span>
   )
@@ -112,7 +112,7 @@ export default function Navbar({ studio }: { studio: StudioData }) {
                 overlay ? 'btn-outline-light' : 'btn-dark',
               )}
             >
-              Get a Consultation <ArrowUpRight size={14} className="btn-arrow" />
+              Free Consultation <ArrowUpRight size={14} className="btn-arrow" />
             </Link>
             <button
               type="button"
@@ -164,7 +164,7 @@ export default function Navbar({ studio }: { studio: StudioData }) {
                 ))}
               </ul>
               <Link href="/contact#consultation" onClick={() => setOpen(false)} className="btn btn-light w-full mt-8">
-                Get a Consultation <ArrowUpRight size={14} />
+                Free Consultation <ArrowUpRight size={14} />
               </Link>
             </nav>
             <div className="container-x mt-10 text-sm text-ivory/60 space-y-1">

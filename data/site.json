@@ -97,64 +97,22 @@
     "Details that endure",
     "Quiet architecture"
   ],
-  "testimonials": [
-    {
-      "name": "Neha Sharma — The Courtyard House",
-      "rating": 5,
-      "message": "They understood how our family lives better than we did. The courtyard has become the centre of our home, and the house stays cool even in May."
-    },
-    {
-      "name": "Arjun Kapoor — White Ledge Villa",
-      "rating": 5,
-      "message": "From the first sketch to the final snag list the studio was precise, calm and honest about cost. The villa is exactly what we imagined, only better."
-    },
-    {
-      "name": "Facilities Head — Meridian Analytics",
-      "rating": 5,
-      "message": "A workplace our team actually wants to come back to. Delivered on programme, and flexible enough that we've already reconfigured twice without builders."
-    },
-    {
-      "name": "Riya Iyer — Ivory Apartment",
-      "rating": 5,
-      "message": "The 3D walkthroughs made every decision easy. The finished apartment is serene — friends ask for the designer's number every time they visit."
-    }
-  ],
-  "awards": [
-    {
-      "name": "Residential Project of the Year",
-      "organization": "Indian Architecture Awards",
-      "issueDate": "2024-11-01",
-      "description": "The Courtyard House"
-    },
-    {
-      "name": "Best Workplace Interior — Commended",
-      "organization": "Design Excellence Forum",
-      "issueDate": "2024-06-01",
-      "description": "Meridian Workplace"
-    },
-    {
-      "name": "Sustainable Design Citation",
-      "organization": "Green Building Council Chapter",
-      "issueDate": "2023-09-01",
-      "description": "Pavilion Garden"
-    }
-  ],
   "faq": [
     {
-      "q": "How do your fees work?",
-      "a": "For full architectural commissions we usually charge a percentage of construction cost, staged against design milestones. Interiors, drawings-only and consultancy work can be fixed-fee. We confirm everything in writing after the first consultation."
+      "q": "Is the first consultation really free?",
+      "a": "Yes. The initial design consultation is free — we discuss your plot, requirements and budget, and explain how the design process and fees work before you commit to anything."
     },
     {
-      "q": "Do you work outside Jaipur?",
-      "a": "Yes. We work across India, combining site visits at key milestones with remote design reviews."
+      "q": "Which areas do you work in?",
+      "a": "We are based in Najafgarh, New Delhi, and work across Delhi NCR. Projects further away can be discussed on a call."
     },
     {
-      "q": "How long does a typical house take?",
-      "a": "Design and approvals usually take four to six months, and construction twelve to eighteen months depending on size and specification."
+      "q": "What does building and structural design include?",
+      "a": "Floor plans, elevations and 3D views for the building, plus coordinated structural drawings — foundations, columns, beams and slabs — that your contractor can build from."
     },
     {
       "q": "Can you work with my contractor?",
-      "a": "Absolutely. We can prepare tender drawings for competitive pricing or coordinate with a builder you already trust, with our supervision on site."
+      "a": "Yes. We prepare clear drawings for your builder and can visit site during construction to check that the work follows the design."
     }
   ]
 }

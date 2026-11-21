@@ -27,7 +27,7 @@ export default function ConsultationCTA({ studio }: { studio: StudioData }) {
               Let&rsquo;s Build Something <em className="not-italic text-bronze">Meaningful.</em>
             </h2>
             <p className="mt-6 text-ivory/65 leading-relaxed max-w-lg">
-              Tell us a little about your site and ambitions. We&rsquo;ll arrange an initial consultation — at the studio,
+              Tell us a little about your plot and plans. Your first design consultation with Akash is free — at the office,
               on site or online — to talk through possibilities, process and fees.
             </p>
           </FadeIn>

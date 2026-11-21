@@ -38,14 +38,14 @@ export default async function JournalPage() {
         label="Journal"
         title="News, talks"
         accent="& films."
-        intro="Studio news, exhibitions, talks and site visits, and walkthrough films of our work."
+        intro="News, talks and site visits, and walkthrough films of our work."
         crumbs={[{ label: 'Journal' }]}
       />
 
       {empty && (
         <section className="container-x pb-32">
           <p className="border-t border-line pt-10 text-muted max-w-xl leading-relaxed">
-            The journal is being written. In the meantime, explore our recent projects or follow the studio on social media.
+            The journal is being written. In the meantime, explore our recent projects or book a free consultation.
           </p>
         </section>
       )}

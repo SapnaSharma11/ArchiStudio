@@ -26,8 +26,9 @@ export const dynamic = 'force-dynamic'
 /** The six services highlighted on the homepage (falls back to the first six). */
 const HOME_SERVICES = [
   'architectural-design',
-  'interior-design',
+  'building-design',
   'structural-drawings',
+  'interior-design',
   '3d-visualization',
   'renovation-remodeling',
   'project-supervision',

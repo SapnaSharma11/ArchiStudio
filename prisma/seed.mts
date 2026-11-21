@@ -131,7 +131,7 @@ async function seedStudio() {
     state: s.address.state,
     pincode: s.address.pincode,
     addressFull: s.address.full,
-    mapsEmbedUrl: 'https://maps.google.com/maps?q=C-Scheme%2C%20Jaipur&output=embed',
+    mapsEmbedUrl: 'https://maps.google.com/maps?q=203A%20New%20Roshanpura%20Najafgarh%20New%20Delhi&output=embed',
     heroVideoUrl: null,
     heroImageUrl: '/images/arche/hero-dusk-residence.jpg',
     hours: s.hours,
@@ -146,12 +146,12 @@ async function seedStudio() {
     name: p.name,
     designation: p.title,
     biography: p.biography,
-    experience: `${p.experience} years`,
+    experience: p.experience ? `${p.experience} years` : null,
     education: p.education,
     specializations: p.expertise,
     achievements: p.achievements,
     phone: null,
-    email: s.email,
+    email: s.email || null,
     socials: s.socials,
   }
   await prisma.profile.upsert({ where: { id: 1 }, update: profile, create: { id: 1, ...profile } })
@@ -162,7 +162,7 @@ async function seedSiteContent() {
   const site = readJson('data/site.json')
 
   // Awards (Certification table has no publish flag → update rows in place by order).
-  const awards: { name: string; organization: string; issueDate: string; description: string }[] = site.awards
+  const awards: { name: string; organization: string; issueDate: string; description: string }[] = site.awards ?? []
   const existing = await prisma.certification.findMany({ orderBy: [{ displayOrder: 'asc' }, { id: 'asc' }] })
   for (const [i, a] of awards.entries()) {
     const data = { name: a.name, organization: a.organization, issueDate: new Date(a.issueDate), description: a.description, image: null, displayOrder: i }
@@ -188,10 +188,25 @@ async function seedSiteContent() {
 
   // Sample client testimonials — created as UNAPPROVED drafts so nothing
   // fabricated goes live; approve or replace them in Dashboard → Testimonials.
-  for (const t of site.testimonials as { name: string; rating: number; message: string }[]) {
+  for (const t of (site.testimonials ?? []) as { name: string; rating: number; message: string }[]) {
     const hit = await prisma.testimonial.findFirst({ where: { name: t.name } })
     if (!hit) await prisma.testimonial.create({ data: { ...t, approved: false } })
   }
+
+  // Invented sample reviews from the earlier template must never be public.
+  await prisma.testimonial.updateMany({
+    where: {
+      name: {
+        in: [
+          'Neha Sharma — The Courtyard House',
+          'Arjun Kapoor — White Ledge Villa',
+          'Facilities Head — Meridian Analytics',
+          'Riya Iyer — Ivory Apartment',
+        ],
+      },
+    },
+    data: { approved: false },
+  })
 
   // Films (Session table): hide legacy clinic videos.
   const films = await prisma.session.updateMany({ where: { published: true }, data: { published: false } })

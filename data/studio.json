@@ -1,104 +1,54 @@
 {
-  "name": "ARCHÉ Studio",
-  "fullName": "Architecture & Interior Design Consultancy",
+  "name": "APN Enterprises",
+  "fullName": "Architecture, Building & Structural Design",
   "tagline": "Designing Spaces. Creating Experiences.",
   "principal": {
     "name": "Akash Sharma",
-    "title": "Principal Architect & Founder",
+    "title": "Architect & Founder, APN Enterprises",
     "photo": "",
-    "experience": "16",
-    "biography": "Akash founded the studio after years of practice across residential, hospitality and workplace projects, and leads every commission personally from first sketch to handover — with a belief that good architecture is quiet, precise and built to age well.",
+    "experience": "",
+    "biography": "Akash Sharma is the architect behind APN Enterprises in Najafgarh, New Delhi. He trained in architecture at Lovely Professional University (LPU) and today leads every commission personally — from the first free consultation and site visit to building design, structural design and the drawings your builder works from.",
     "education": [
       "B.Arch — Lovely Professional University (LPU)"
     ],
     "expertise": [
-      "Residential architecture",
-      "Climate-responsive design",
-      "Adaptive reuse",
-      "Interior architecture"
+      "Building design",
+      "Structural design",
+      "Architectural design",
+      "Residential planning"
     ],
     "achievements": [
-      "Registered with the Council of Architecture (CoA)",
-      "IGBC Accredited Professional"
+      "Rated 4.8 on Google by 29+ clients"
     ]
   },
   "address": {
-    "line1": "Studio 4, Design District",
-    "line2": "C-Scheme, Jaipur",
-    "state": "Rajasthan",
-    "pincode": "302001",
-    "full": "Studio 4, Design District, C-Scheme, Jaipur, Rajasthan 302001"
+    "line1": "203A, New Roshanpura",
+    "line2": "Najafgarh, New Delhi",
+    "state": "Delhi",
+    "pincode": "",
+    "full": "203A, New Roshanpura, Najafgarh, New Delhi, Delhi"
   },
-  "phone": "+91 00000 00000",
+  "phone": "+91 92201 22543",
   "whatsapp": "",
-  "email": "hello@archestudio.example",
+  "email": "",
   "stats": [
     {
-      "value": "16",
-      "label": "Years of practice"
+      "value": "4.8",
+      "label": "Google rating"
     },
     {
-      "value": "140+",
-      "label": "Projects completed"
+      "value": "29+",
+      "label": "Google reviews"
     },
     {
-      "value": "2.1M",
-      "label": "Sq. ft designed"
+      "value": "Free",
+      "label": "Initial design consultation"
     },
     {
-      "value": "98%",
-      "label": "Clients who return or refer"
+      "value": "Delhi",
+      "label": "Najafgarh, New Delhi"
     }
   ],
-  "hours": [
-    {
-      "day": "Monday",
-      "morningOpen": "10:00",
-      "morningClose": "13:30",
-      "eveningOpen": "14:30",
-      "eveningClose": "19:00"
-    },
-    {
-      "day": "Tuesday",
-      "morningOpen": "10:00",
-      "morningClose": "13:30",
-      "eveningOpen": "14:30",
-      "eveningClose": "19:00"
-    },
-    {
-      "day": "Wednesday",
-      "morningOpen": "10:00",
-      "morningClose": "13:30",
-      "eveningOpen": "14:30",
-      "eveningClose": "19:00"
-    },
-    {
-      "day": "Thursday",
-      "morningOpen": "10:00",
-      "morningClose": "13:30",
-      "eveningOpen": "14:30",
-      "eveningClose": "19:00"
-    },
-    {
-      "day": "Friday",
-      "morningOpen": "10:00",
-      "morningClose": "13:30",
-      "eveningOpen": "14:30",
-      "eveningClose": "19:00"
-    },
-    {
-      "day": "Saturday",
-      "morningOpen": "10:00",
-      "morningClose": "14:00"
-    },
-    {
-      "day": "Sunday",
-      "byAppointment": true
-    }
-  ],
-  "socials": {
-    "instagram": "https://instagram.com/",
-    "linkedin": "https://linkedin.com/",
-    "pinterest": "https://pinterest.com/"
-  }
+  "hours": [],
+  "socials": {}
 }

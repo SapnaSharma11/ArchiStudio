@@ -10,7 +10,7 @@ export default function WhatsAppButton({ whatsapp }: { whatsapp: string }) {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full bg-ink text-ivory border border-white/10 flex items-center justify-center hover:bg-bronze-deep transition-colors"
-      aria-label="Message the studio on WhatsApp"
+      aria-label="Message APN Enterprises on WhatsApp"
     >
       <MessageCircle size={20} strokeWidth={1.5} />
     </a>

@@ -11,7 +11,7 @@ export default function ServiceCard({ service }: { service: PublicService; index
         {service.image && (
           <Image
             src={service.image}
-            alt={`${service.title} by the studio`}
+            alt={`${service.title} by APN Enterprises`}
             fill
             sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover"

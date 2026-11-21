@@ -65,7 +65,7 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.9, ease }}
         >
-          {studio.name} — {studio.fullName}
+          {studio.principal.name}, Architect · {studio.name}
         </motion.p>
         <h1 className="display mt-6 font-extralight text-[2.9rem] leading-[1.02] sm:text-6xl lg:text-[5.4rem] xl:text-[6rem] max-w-6xl">
           {['Spaces That Inspire.', 'Architecture That Lasts.'].map((line, i) => (
@@ -94,15 +94,20 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
           transition={{ delay: 1.45, duration: 0.9, ease }}
         >
           <p className="max-w-lg text-base sm:text-lg text-white/80 leading-relaxed">
-            We design homes, workplaces and interiors that feel calm, work beautifully and age with grace — from first
-            sketch to the final detail on site.
+            Building, structural and architectural design for homes and businesses across Delhi — calm, practical
+            spaces that work beautifully and age with grace.
+            <span className="mt-4 flex items-center gap-2 text-sm text-white/90">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur px-3 py-1">
+                <span aria-hidden className="text-[#f1c96b]">★</span> 4.8 on Google · 29+ reviews
+              </span>
+            </span>
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/projects" className="btn btn-light">
               Explore Projects <ArrowRight size={15} className="btn-arrow" />
             </Link>
             <Link href="/contact#consultation" className="btn btn-outline-light">
-              Book a Consultation
+              Free Consultation
             </Link>
           </div>
         </motion.div>

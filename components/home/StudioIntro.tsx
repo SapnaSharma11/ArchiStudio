@@ -10,7 +10,7 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
       <div className="container-x grid gap-14 lg:grid-cols-12 lg:gap-20 items-start">
         <div className="lg:col-span-5 lg:sticky lg:top-32">
           <FadeIn>
-            <p className="eyebrow">The Studio</p>
+            <p className="eyebrow">The architect</p>
             <h2 className="display mt-5 text-[2.5rem] sm:text-5xl lg:text-[3.6rem] text-ink">
               Architecture shaped by <em className="not-italic text-bronze-deep">light, climate</em> and the way people live.
             </h2>
@@ -18,24 +18,26 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
           <FadeIn delay={0.1}>
             <div className="mt-8 space-y-5 text-muted leading-relaxed">
               <p>
-                {studio.name} is an architecture and interior design consultancy working across residential, commercial
-                and interior projects. We are a small, senior team — every project is led personally from the first
-                conversation to handover.
+                {studio.principal.name} is the architect behind {studio.name}, based in Najafgarh, New Delhi. He leads
+                every project personally — building design, structural design and architectural design — from the first
+                conversation to the drawings your builder works from.
               </p>
               <p>
-                Our work is quiet rather than loud: considered plans, honest materials and details resolved with care. We
-                believe the best buildings feel inevitable — as if they could not have been designed any other way.
+                His approach is practical and calm: plans that make the most of your plot and budget, structure that is
+                safe and economical, and details resolved with care. The first design consultation is always free.
               </p>
             </div>
-            <div className="mt-10 flex items-center gap-5">
-              <div className="h-px w-10 bg-bronze" aria-hidden />
+            <div className="mt-10 flex items-center gap-4">
+              <span aria-hidden className="w-12 h-12 rounded-full bg-sand flex items-center justify-center display text-lg text-bronze-deep">
+                {studio.principal.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}
+              </span>
               <div>
                 <p className="display text-2xl text-ink">{studio.principal.name}</p>
-                <p className="font-mono text-xs tracking-[0.16em] uppercase text-muted mt-1">{studio.principal.title}</p>
+                <p className="text-sm text-muted mt-0.5">{studio.principal.title}</p>
               </div>
             </div>
             <Link href="/about" className="mt-10 inline-flex items-center gap-2 text-[0.95rem] font-medium text-ink link-draw pb-1">
-              About the studio <ArrowRight size={14} />
+              More about Akash <ArrowRight size={14} />
             </Link>
           </FadeIn>
         </div>
@@ -68,7 +70,7 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
                   <dt className="sr-only">{s.label}</dt>
                   <dd>
                     <span className="display block text-5xl sm:text-6xl text-ink">{s.value}</span>
-                    <span className="font-mono block mt-2 text-xs tracking-[0.14em] uppercase text-muted">{s.label}</span>
+                    <span className="block mt-2 text-sm text-muted">{s.label}</span>
                   </dd>
                 </FadeIn>
               ))}

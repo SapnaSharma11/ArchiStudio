@@ -58,7 +58,7 @@ export default function ServicesOverview({ services }: { services: PublicService
         <Link key={s.slug} href={`/services/${s.slug}`} className="group shrink-0 w-[30vw] xl:w-[27rem]">
           <div className={`img-zoom relative overflow-hidden bg-sand ${i % 2 === 0 ? 'h-[50vh]' : 'h-[42vh]'}`}>
             {s.image && (
-              <Image src={s.image} alt={`${s.title} by the studio`} fill sizes="30vw" className="object-cover" />
+              <Image src={s.image} alt={`${s.title} by APN Enterprises`} fill sizes="30vw" className="object-cover" />
             )}
             <span className="absolute right-5 top-5 w-11 h-11 rounded-full bg-ivory text-ink flex items-center justify-center opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
               <ArrowUpRight size={16} />

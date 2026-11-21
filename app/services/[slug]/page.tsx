@@ -69,7 +69,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
         {service.image && (
           <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] bg-sand overflow-hidden">
-            <Image src={service.image} alt={`${service.title} — studio project`} fill preload sizes="100vw" className="object-cover" />
+            <Image src={service.image} alt={`${service.title} — APN Enterprises`} fill preload sizes="100vw" className="object-cover" />
           </div>
         )}
       </section>

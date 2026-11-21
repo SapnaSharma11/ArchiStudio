@@ -7,10 +7,14 @@
  *   NEXT_PUBLIC_BRAND_NAME, NEXT_PUBLIC_BRAND_TAGLINE, SITE_URL
  */
 export const BRAND = {
-  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'ARCHÉ Studio',
+  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'APN Enterprises',
   /** Wordmark shown in the navbar / sidebar. */
-  wordmark: process.env.NEXT_PUBLIC_BRAND_WORDMARK || 'ARCHÉ',
-  descriptor: 'Architecture & Interiors',
+  wordmark: process.env.NEXT_PUBLIC_BRAND_WORDMARK || 'APN',
+  descriptor: 'Architecture & Structural Design',
+  /** Principal architect — the site is his practice portfolio. */
+  architect: 'Akash Sharma',
+  /** Public review summary shown on the site (from Google). */
+  rating: { value: '4.8', count: '29+', source: 'Google' },
   tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Designing Spaces. Creating Experiences.',
   siteUrl: (process.env.SITE_URL || 'http://localhost:3000').replace(/\/$/, ''),
   locale: 'en_IN',

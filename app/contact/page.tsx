@@ -45,7 +45,7 @@ export default async function ContactPage() {
             <FadeIn className="bg-surface border border-line p-6 sm:p-10 lg:p-12">
               <h2 className="display text-4xl text-ink">Request a consultation</h2>
               <p className="mt-3 text-muted leading-relaxed max-w-xl">
-                Share a few details and a preferred time. Initial consultations take around 45 minutes — at the studio, on site
+                Share a few details and a preferred time. Your first design consultation is free and takes around 45 minutes — at the office, on site
                 or online.
               </p>
               <div className="mt-10">
@@ -56,7 +56,7 @@ export default async function ContactPage() {
 
           <aside className="lg:col-span-5 space-y-12">
             <FadeIn delay={0.1}>
-              <h2 className="eyebrow">The studio</h2>
+              <h2 className="eyebrow">The office</h2>
               <address className="not-italic mt-5 display text-3xl text-ink leading-snug">{studio.address.full}</address>
               <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-[0.95rem] font-medium text-ink link-draw pb-1">
                 Get directions <ArrowUpRight size={13} />
@@ -78,7 +78,7 @@ export default async function ContactPage() {
             </FadeIn>
             {studio.hours.length > 0 && (
               <FadeIn delay={0.2} className="border-t border-line pt-8">
-                <h3 className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted">Studio hours</h3>
+                <h3 className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted">Office hours</h3>
                 <dl className="mt-4 text-sm">
                   {studio.hours.map((h) => (
                     <div key={h.day} className="flex justify-between gap-6 py-2 border-b border-line/70">
@@ -94,7 +94,7 @@ export default async function ContactPage() {
       </section>
 
       {studio.mapsEmbedUrl && (
-        <section aria-label="Studio location map" className="container-x pb-24 sm:pb-32">
+        <section aria-label="Office location map" className="container-x pb-24 sm:pb-32">
           <div className="relative aspect-[4/3] sm:aspect-[21/9] bg-sand overflow-hidden border border-line">
             <iframe
               src={studio.mapsEmbedUrl}

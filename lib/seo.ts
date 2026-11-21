@@ -6,7 +6,7 @@ const DEFAULT_OG = '/images/arche/hero-dusk-residence.jpg'
 
 /**
  * Page-level metadata with canonical URL, Open Graph and Twitter cards.
- * `title` is rendered through the root layout's template ("%s | ARCHÉ Studio").
+ * `title` is rendered through the root layout's template ("%s | <brand>").
  */
 export function pageMeta({
   title,

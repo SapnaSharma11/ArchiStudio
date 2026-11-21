@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * ARCHÉ design tokens — shared by the public website and the dashboard.
+ * Design tokens — shared by the public website and the dashboard.
  * Fonts are loaded with next/font in app/layout.tsx and exposed as
  * --font-display-src / --font-sans-src CSS variables.
  */

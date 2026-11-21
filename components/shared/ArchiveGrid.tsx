@@ -21,7 +21,7 @@ export default function ArchiveGrid({ items }: { items: ArchiveItem[] }) {
             className={`img-zoom relative block w-full mb-4 sm:mb-6 break-inside-avoid overflow-hidden bg-sand cursor-zoom-in ${aspects[i % aspects.length]}`}
             aria-label={g.caption ? `Open: ${g.caption}` : 'Open image'}
           >
-            <Image src={g.image} alt={g.caption ?? 'Studio archive image'} fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, 50vw" className="object-cover" />
+            <Image src={g.image} alt={g.caption ?? 'Project archive image'} fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, 50vw" className="object-cover" />
           </button>
         ))}
       </div>

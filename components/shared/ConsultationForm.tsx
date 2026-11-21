@@ -88,7 +88,7 @@ export default function ConsultationForm({
         </span>
         <h3 className="display text-4xl mt-6">Thank you, {done}.</h3>
         <p className={cn('mt-4 leading-relaxed max-w-md', dark ? 'text-ivory/70' : 'text-muted')}>
-          Your consultation request has reached the studio. We&rsquo;ll be in touch within one working day to confirm a time.
+          Your request has reached Akash at APN Enterprises. We&rsquo;ll be in touch within one working day to confirm a time.
         </p>
         <button type="button" onClick={() => setDone(null)} className={cn('mt-8 link-draw text-[11px] tracking-[0.2em] uppercase font-semibold', dark ? 'text-bronze' : 'text-bronze-deep')}>
           Send another enquiry
@@ -168,7 +168,7 @@ export default function ConsultationForm({
         </p>
         <button type="submit" disabled={loading} className={cn('btn disabled:opacity-60', dark ? 'btn-light' : 'btn-dark')}>
           {loading ? <Loader2 size={15} className="animate-spin" /> : null}
-          {loading ? 'Sending…' : 'Request consultation'}
+          {loading ? 'Sending…' : 'Book free consultation'}
           {!loading && <ArrowRight size={15} className="btn-arrow" />}
         </button>
       </div>
