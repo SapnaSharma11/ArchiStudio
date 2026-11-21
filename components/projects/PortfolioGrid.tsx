@@ -34,11 +34,19 @@ export default function PortfolioGrid({ projects, initial = 'all' }: { projects:
               disabled={!count}
               onClick={() => setFilter(f.value)}
               className={cn(
-                'shrink-0 px-5 py-2.5 text-[11px] font-semibold tracking-[0.18em] uppercase border transition-colors duration-300 disabled:opacity-35 disabled:cursor-not-allowed',
-                active ? 'bg-ink text-ivory border-ink' : 'border-stone text-ink hover:border-ink',
+                'shrink-0 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[0.9rem] font-medium border transition-colors duration-300 disabled:opacity-35 disabled:cursor-not-allowed',
+                active ? 'bg-ink text-ivory border-ink' : 'bg-surface/60 border-stone text-ink hover:border-ink',
               )}
             >
-              {f.label} <span className={cn('ml-1 tabular-nums', active ? 'text-bronze' : 'text-muted')}>{count}</span>
+              {f.label}
+              <span
+                className={cn(
+                  'min-w-6 h-6 px-1.5 rounded-full text-[0.75rem] tabular-nums flex items-center justify-center',
+                  active ? 'bg-bronze text-ink' : 'bg-sand text-muted',
+                )}
+              >
+                {count}
+              </span>
             </button>
           )
         })}

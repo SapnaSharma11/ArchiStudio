@@ -28,8 +28,7 @@ export default function Philosophy({ index = '04' }: { index?: string | null }) 
         <ol className="lg:col-span-7 grid sm:grid-cols-2 gap-x-10">
           {site.philosophy.map((p, i) => (
             <FadeIn as="li" key={p.title} delay={i * 0.08} className="border-t border-white/15 pt-7 pb-10">
-              <span className="text-[11px] tracking-[0.22em] text-bronze font-semibold">0{i + 1}</span>
-              <h3 className="display text-3xl mt-3">{p.title}</h3>
+              <h3 className="display text-3xl">{p.title}</h3>
               <p className="mt-4 text-ivory/65 leading-relaxed text-sm sm:text-base">{p.text}</p>
             </FadeIn>
           ))}

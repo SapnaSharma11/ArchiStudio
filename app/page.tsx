@@ -67,8 +67,8 @@ export default async function HomePage() {
       />
       <StudioIntro studio={studio} />
       <ServicesOverview services={homeServices} />
-      <FeaturedProjects projects={showcase} />
       <Philosophy />
+      <FeaturedProjects projects={showcase} />
       <ProcessSection />
       <Recognition studio={studio} index="06" />
       <TestimonialsSlider items={testimonials} index="07" />
