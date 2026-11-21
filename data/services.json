@@ -1,0 +1,123 @@
+[
+  {
+    "id": "architectural-design",
+    "title": "Architectural Design",
+    "description": "Concept-led architecture that answers to site, climate and the way you live or work — from first massing study to a resolved building.",
+    "detailedDescription": "Every building starts with listening. We study the site's light, wind, views and context, then develop a concept that turns your brief into a clear architectural idea.\n\nFrom there we refine plans, sections and elevations in close dialogue with you, testing each decision in drawings and models until the design is resolved, buildable and unmistakably yours.",
+    "image": "/images/arche/house-timber-facade.jpg",
+    "benefits": ["Site analysis & feasibility", "Concept design & massing studies", "Plans, sections & elevations", "Material & façade strategy", "Statutory approval drawings"],
+    "duration": "8 – 16 weeks for design",
+    "pricing": "Fee on % of construction cost",
+    "category": "architecture"
+  },
+  {
+    "id": "interior-design",
+    "title": "Interior Design",
+    "description": "Interiors composed as architecture — proportion, light, material and detail working together as one calm, considered whole.",
+    "detailedDescription": "We design interiors from the inside out: how a room is entered, where light falls through the day, what the hand touches. Joinery, lighting and finishes are drawn as part of the architecture, never applied afterwards.\n\nThe result is a space with a quiet, lasting character — one that feels resolved on day one and better ten years on.",
+    "image": "/images/arche/interior-living-sunlit.jpg",
+    "benefits": ["Interior layouts & zoning", "Bespoke joinery & furniture", "Lighting design", "Material, finish & colour palettes", "Furniture, fabric & art curation"],
+    "duration": "6 – 12 weeks for design",
+    "pricing": "Fixed fee or per sq. ft",
+    "category": "interiors"
+  },
+  {
+    "id": "residential-architecture",
+    "title": "Residential Architecture",
+    "description": "Private homes, villas and farmhouses designed around family life — generous, climate-aware and made to last generations.",
+    "detailedDescription": "A home is the most personal brief there is. We spend time understanding rituals — mornings, gatherings, solitude — and plan spaces that hold them gracefully.\n\nCourtyards, shaded verandahs, cross-ventilation and natural materials are recurring tools in our residential work, balancing modern living with the climate of the Indian subcontinent.",
+    "image": "/images/arche/villa-terrace-pool.jpg",
+    "benefits": ["Independent houses & villas", "Farmhouses & weekend homes", "Courtyard & climate-responsive planning", "Landscape integration", "Smart-home & services coordination"],
+    "duration": "12 – 24 months, design to handover",
+    "pricing": "Fee on % of construction cost",
+    "category": "architecture"
+  },
+  {
+    "id": "commercial-architecture",
+    "title": "Commercial Architecture",
+    "description": "Workplaces, retail and hospitality buildings that express a brand clearly and perform efficiently for the people using them.",
+    "detailedDescription": "Commercial buildings must work hard: for occupants, operators and the balance sheet. We design for flexible floor plates, efficient structure and services, and a clear public identity at street level.\n\nWe coordinate closely with consultants and developers to keep programme, compliance and budget aligned from day one.",
+    "image": "/images/arche/commercial-towers.jpg",
+    "benefits": ["Offices & corporate campuses", "Retail & showrooms", "Hospitality & F&B", "Mixed-use developments", "Façade & signage design"],
+    "duration": "Project specific",
+    "pricing": "Fee on % of construction cost",
+    "category": "architecture"
+  },
+  {
+    "id": "structural-drawings",
+    "title": "Structural Drawings",
+    "description": "Coordinated structural drawings prepared with our engineering partners — precise, buildable and approval-ready.",
+    "detailedDescription": "Working with licensed structural engineers, we prepare foundation, column, beam and slab drawings fully coordinated with the architecture.\n\nClear dimensions, schedules and reinforcement details mean fewer site queries and a structure that does exactly what the design intends.",
+    "image": "/images/arche/studio-drawing-board.jpg",
+    "benefits": ["Foundation & footing layouts", "Column, beam & slab drawings", "Reinforcement schedules", "Staircase & special details", "Structural stability certification (via partners)"],
+    "duration": "3 – 6 weeks",
+    "pricing": "Fixed fee",
+    "category": "delivery"
+  },
+  {
+    "id": "3d-visualization",
+    "title": "2D Planning & 3D Visualization",
+    "description": "Clear 2D plans and photoreal 3D renders and walkthroughs, so you can see — and decide — before anything is built.",
+    "detailedDescription": "Good decisions need good pictures. We produce measured 2D plans alongside photoreal stills, aerial views and walkthrough films of your project.\n\nVisualisation is part of how we design, not just how we present: options are tested in 3D so material, light and proportion are agreed with confidence.",
+    "image": "/images/arche/interior-open-living.jpg",
+    "benefits": ["Measured 2D floor plans", "Furniture & layout options", "Photoreal interior & exterior renders", "Walkthrough & fly-through films", "VR-ready models on request"],
+    "duration": "2 – 4 weeks",
+    "pricing": "Per view or package",
+    "category": "architecture"
+  },
+  {
+    "id": "renovation-remodeling",
+    "title": "Renovation & Remodeling",
+    "description": "Giving existing buildings a second life — reworking plans, light and services while respecting what makes them special.",
+    "detailedDescription": "Many of our favourite projects begin with an existing building. We survey carefully, keep what has character and rethink what no longer works — opening plans, bringing in light, upgrading structure and services.\n\nPhasing and site management are planned so renovation is as calm as possible for those still living or working there.",
+    "image": "/images/arche/interior-warm-living.jpg",
+    "benefits": ["Measured surveys & condition reports", "Space re-planning", "Structural & services upgrades", "Façade refresh", "Phased execution plans"],
+    "duration": "3 – 9 months",
+    "pricing": "Fixed fee or % of cost",
+    "category": "interiors"
+  },
+  {
+    "id": "space-planning",
+    "title": "Space Planning",
+    "description": "Making every square foot count — layouts that flow, store well and adapt as needs change.",
+    "detailedDescription": "Space planning is where comfort is won or lost. We map how people move and use each area, then test layouts that improve flow, storage, privacy and natural light.\n\nFor workplaces, we plan for growth and flexibility; for homes, for the stages of family life.",
+    "image": "/images/arche/interior-minimal-chair.jpg",
+    "benefits": ["Usage & adjacency studies", "Test-fit layouts", "Storage strategy", "Workplace planning & density", "Accessibility review"],
+    "duration": "2 – 4 weeks",
+    "pricing": "Fixed fee",
+    "category": "interiors"
+  },
+  {
+    "id": "architectural-consultancy",
+    "title": "Architectural Consultancy",
+    "description": "Independent advice before you buy, build or invest — feasibility, design reviews and second opinions.",
+    "detailedDescription": "Not every client needs a full commission. We advise on land purchase, feasibility, bye-law potential, design reviews and value engineering.\n\nA few focused hours of expert input at the right moment can save months and significant cost later.",
+    "image": "/images/arche/interior-study-green.jpg",
+    "benefits": ["Site & land feasibility", "Bye-law & FAR studies", "Design peer reviews", "Value engineering", "Contractor & tender advice"],
+    "duration": "1 – 3 weeks",
+    "pricing": "Hourly or fixed fee",
+    "category": "delivery"
+  },
+  {
+    "id": "construction-documentation",
+    "title": "Construction Documentation",
+    "description": "Complete, coordinated working drawings and specifications — the instruction set your builder needs.",
+    "detailedDescription": "A beautiful design is only as good as the drawings that build it. We prepare comprehensive working drawings, details, door and window schedules, and specifications.\n\nEvery set is coordinated with structure and services so contractors can price accurately and build without guesswork.",
+    "image": "/images/arche/site-construction.jpg",
+    "benefits": ["Working drawings & details", "Door, window & finish schedules", "Services coordination (MEP)", "Bills of quantities (via partners)", "Tender documentation"],
+    "duration": "6 – 10 weeks",
+    "pricing": "Included or fixed fee",
+    "category": "delivery"
+  },
+  {
+    "id": "project-supervision",
+    "title": "Project Supervision",
+    "description": "Regular site presence to make sure what's built matches what was designed — on quality, time and budget.",
+    "detailedDescription": "We stay with the project on site. Scheduled visits, quality checks, contractor coordination and clear reporting keep the build true to the design.\n\nYou receive concise progress updates with photos, so you always know where things stand.",
+    "image": "/images/arche/site-supervision.jpg",
+    "benefits": ["Scheduled site visits", "Quality & workmanship checks", "Contractor coordination", "Progress reports with photos", "Snagging & handover"],
+    "duration": "Throughout construction",
+    "pricing": "Monthly or % of cost",
+    "category": "delivery"
+  }
+]

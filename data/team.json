@@ -1,0 +1,8 @@
+[
+  { "name": "Ananya Rao", "role": "Principal Architect & Founder", "discipline": "architect", "bio": "Leads design on every commission, from first sketch to handover." },
+  { "name": "Kabir Malhotra", "role": "Associate Architect", "discipline": "architect", "bio": "Heads residential projects and the studio's climate-responsive research." },
+  { "name": "Meera Joshi", "role": "Lead Interior Designer", "discipline": "interior", "bio": "Shapes interiors, joinery and material palettes across the studio's work." },
+  { "name": "Rohan Verma", "role": "Structural Engineer", "discipline": "engineer", "bio": "Coordinates structure and services with our consulting engineers." },
+  { "name": "Sana Qureshi", "role": "Project Manager", "discipline": "project-manager", "bio": "Keeps programme, budget and site teams aligned through construction." },
+  { "name": "Dev Arora", "role": "3D Visualisation Lead", "discipline": "studio", "bio": "Produces renders and walkthroughs used to test and present every design." }
+]

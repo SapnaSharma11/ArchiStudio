@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * ARCHÉ design tokens — shared by the public website and the dashboard.
+ * Fonts are loaded with next/font in app/layout.tsx and exposed as
+ * --font-display-src / --font-sans-src CSS variables.
+ */
+@theme {
+  /* Core palette */
+  --color-ink: #252522;          /* primary — charcoal */
+  --color-ink-soft: #3a3934;
+  --color-ink-muted: #4a4842;
+  --color-bronze: #b49a7a;       /* secondary — accents, rules, icons */
+  --color-bronze-deep: #7a6347;  /* bronze for text on light grounds (AA, 5:1 on ivory) */
+  --color-bronze-soft: #e9dfd1;
+  --color-ivory: #f5f3ee;        /* page background */
+  --color-sand: #ece7de;         /* subtle panels */
+  --color-stone: #d9d3c8;        /* borders on sand */
+  --color-line: #e4dfd6;         /* hairlines */
+  --color-surface: #ffffff;
+  --color-text: #242424;
+  --color-muted: #6f6b65;        /* muted text (AA on ivory & white) */
+  --color-concrete: #a19d95;
+  --color-olive: #5f6347;
+  --color-olive-soft: #e6e7dc;
+  --color-rust: #9a3b2e;         /* errors / destructive */
+  --color-rust-soft: #f4e6e2;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-display-src), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-sans-src), 'Manrope', system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --ease-arch: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-ivory);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-bronze);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-bronze-deep);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Small uppercase label used above headings ("01 — Studio") */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-bronze-deep);
+  }
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.02;
+  }
+  /* Editorial container: generous gutters, 16px on phones */
+  .container-x {
+    width: 100%;
+    max-width: 88rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) { .container-x { padding-inline: 2rem; } }
+  @media (min-width: 1024px) { .container-x { padding-inline: 3.5rem; } }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.95rem 1.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background-color 0.4s var(--ease-arch), color 0.4s var(--ease-arch), border-color 0.4s var(--ease-arch);
+    white-space: nowrap;
+  }
+  .btn-dark { background: var(--color-ink); color: #fff; }
+  .btn-dark:hover { background: var(--color-bronze-deep); }
+  .btn-light { background: #fff; color: var(--color-ink); }
+  .btn-light:hover { background: var(--color-bronze-soft); }
+  .btn-outline { border: 1px solid currentColor; }
+  .btn-outline:hover { background: var(--color-ink); color: #fff; border-color: var(--color-ink); }
+  .btn-outline-light { border: 1px solid rgb(255 255 255 / 0.6); color: #fff; }
+  .btn-outline-light:hover { background: #fff; color: var(--color-ink); border-color: #fff; }
+  .btn .btn-arrow { transition: transform 0.4s var(--ease-arch); }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+
+  /* Underline link that draws in on hover */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-arch);
+  }
+  .link-draw:hover, .link-draw[aria-current='page'] { background-size: 100% 1px; }
+
+  /* Form controls (website) */
+  .field {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-stone);
+    padding: 0.85rem 0;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    outline: none;
+    border-radius: 0;
+    transition: border-color 0.3s;
+  }
+  .field::placeholder { color: var(--color-concrete); }
+  .field:focus { border-bottom-color: var(--color-ink); }
+  .field-label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  /* Dashboard controls */
+  .input {
+    width: 100%;
+    margin-top: 0.35rem;
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .input:focus { border-color: var(--color-bronze); box-shadow: 0 0 0 3px rgb(180 154 122 / 0.18); }
+  .label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+  }
+}
+
+/* Image hover zoom used on project / service cards */
+.img-zoom img { transition: transform 1.2s var(--ease-arch); }
+.group:hover .img-zoom img, .img-zoom:hover img { transform: scale(1.045); }
+
+/* When any video goes fullscreen, show the full frame — no cropping */
+video:fullscreen,
+video:-webkit-full-screen {
+  object-fit: contain !important;
+  background: #000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

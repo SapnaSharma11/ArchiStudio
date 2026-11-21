@@ -1,0 +1,255 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Website enquiry / consultation request (formerly a physio appointment).
+/// Column names are kept for API + data compatibility:
+///   problem       → project description / requirements
+///   preferredDate → preferred consultation date
+///   status        → pending (New) · contacted · confirmed (Consultation booked)
+///                   · completed (Converted to project) · cancelled (Closed) · missed
+model Booking {
+  id            Int       @id @default(autoincrement())
+  fullName      String
+  phone         String
+  email         String
+  age           Int? // legacy (physio) — no longer collected
+  gender        String? // legacy (physio) — no longer collected
+  problem       String
+  preferredDate DateTime
+  preferredTime String
+  notes         String?
+  projectType   String?
+  budget        String?
+  location      String?
+  assignedTo    String?
+  followUpDate  DateTime?
+  projectId     Int? // set when the enquiry is converted into a Project
+  status        String    @default("pending")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  name      String
+  rating    Int
+  message   String
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+/// Studio services shown on /services (managed in dashboard)
+model Service {
+  id                  Int      @id @default(autoincrement())
+  slug                String   @unique
+  title               String
+  description         String // short description
+  detailedDescription String?
+  image               String?
+  benefits            String[]
+  duration            String?
+  pricing             String?
+  category            String   @default("architecture") // architecture | interiors | delivery (legacy: speciality | conditions | rehabilitation)
+  published           Boolean  @default(true)
+  displayOrder        Int      @default(0)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+/// Studio films / 3D walkthroughs shown in the Journal
+model Session {
+  id           Int      @id @default(autoincrement())
+  title        String
+  image        String?
+  description  String?
+  videoUrl     String?
+  sessionType  String? // category label
+  duration     String?
+  date         DateTime?
+  time         String?
+  published    Boolean  @default(true)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Talks, workshops & site visits shown in the Journal
+model Workshop {
+  id               Int       @id @default(autoincrement())
+  name             String
+  bannerImage      String?
+  description      String?
+  date             DateTime?
+  startTime        String?
+  endTime          String?
+  location         String?
+  capacity         Int?
+  registrationInfo String?
+  published        Boolean   @default(true)
+  displayOrder     Int       @default(0)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+/// Studio news, exhibitions & events shown in the Journal
+model Event {
+  id           Int       @id @default(autoincrement())
+  name         String
+  bannerImage  String?
+  description  String?
+  date         DateTime?
+  location     String?
+  details      String?
+  published    Boolean   @default(true)
+  displayOrder Int       @default(0)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+/// Videos (legacy, unused by the UI)
+model Video {
+  id           Int      @id @default(autoincrement())
+  title        String
+  thumbnail    String?
+  videoUrl     String?
+  description  String?
+  category     String?
+  published    Boolean  @default(true)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Studio archive images
+model GalleryItem {
+  id           Int      @id @default(autoincrement())
+  image        String
+  caption      String?
+  category     String?
+  published    Boolean  @default(true)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Awards & recognition shown on the About page
+model Certification {
+  id           Int       @id @default(autoincrement())
+  name         String
+  organization String?
+  issueDate    DateTime?
+  image        String?
+  description  String?
+  displayOrder Int       @default(0)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+/// Design principles shown as a ticker on the homepage (emoji = optional marker).
+model Tip {
+  id           Int      @id @default(autoincrement())
+  emoji        String?
+  title        String
+  published    Boolean  @default(true)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+/// Site-wide studio settings (singleton row, id = 1) — name, contact, address,
+/// hours, stats, hero media, map — all editable by the Super Admin.
+model ClinicSettings {
+  id           Int      @id @default(1)
+  name         String
+  fullName     String?
+  tagline      String?
+  phone        String?
+  whatsapp     String?
+  email        String?
+  addressLine1 String?
+  addressLine2 String?
+  state        String?
+  pincode      String?
+  addressFull  String?
+  mapsEmbedUrl String?
+  heroVideoUrl String?
+  heroImageUrl String?
+  hours        Json?
+  stats        Json?
+  socials      Json?
+  updatedAt    DateTime @updatedAt
+}
+
+/// Principal architect profile (singleton row, id = 1)
+model Profile {
+  id              Int      @id @default(1)
+  photo           String?
+  name            String
+  designation     String?
+  biography       String?
+  experience      String?
+  education       String[]
+  specializations String[]
+  achievements    String[]
+  phone           String?
+  email           String?
+  socials         Json?
+  updatedAt       DateTime @updatedAt
+}
+
+/// Architecture project — drives both project management (dashboard) and the
+/// public portfolio (/projects). `published` controls portfolio visibility.
+model Project {
+  id             Int       @id @default(autoincrement())
+  slug           String    @unique
+  title          String
+  category       String    @default("residential") // residential | commercial | interior | renovation | landscape
+  status         String    @default("concept") // enquiry | concept | design | documentation | construction | completed | on-hold
+  location       String?
+  year           Int?
+  area           String?
+  summary        String?
+  concept        String?
+  description    String?
+  coverImage     String?
+  gallery        String[]
+  materials      String[]
+  specs          String[] // "Label: value" lines
+  services       String[]
+  clientName     String?
+  clientEmail    String?
+  clientPhone    String?
+  budget         Int? // in INR
+  startDate      DateTime?
+  deadline       DateTime?
+  progress       Int       @default(0) // 0–100
+  documents      String? // links / notes on drawings & documentation
+  featured       Boolean   @default(false)
+  published      Boolean   @default(false)
+  seoTitle       String?
+  seoDescription String?
+  displayOrder   Int       @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+/// Studio team — architects, interior designers, engineers, project managers.
+model TeamMember {
+  id           Int      @id @default(autoincrement())
+  name         String
+  role         String
+  discipline   String   @default("architect") // architect | interior | engineer | project-manager | studio
+  photo        String?
+  bio          String?
+  email        String?
+  linkedin     String?
+  published    Boolean  @default(true)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

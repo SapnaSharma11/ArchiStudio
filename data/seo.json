@@ -1,0 +1,15 @@
+{
+  "default": {
+    "title": "ARCHÉ Studio — Architecture & Interior Design Consultancy",
+    "description": "ARCHÉ Studio is an architecture firm and interior design consultancy creating residential, commercial and interior spaces — from concept and 3D visualisation to construction documentation and site supervision.",
+    "keywords": "architecture firm, architectural design consultancy, interior design services, residential architecture, commercial architecture, house planning and design, structural drawings, 3D architectural visualization, architects in Jaipur"
+  },
+  "home":     { "title": "Architecture & Interior Design Studio", "description": "Spaces that inspire, architecture that lasts. ARCHÉ Studio designs homes, workplaces and interiors with clarity, craft and care. Book a consultation." },
+  "about":    { "title": "About the Studio", "description": "Meet ARCHÉ Studio — our design philosophy, our team of architects and interior designers, and our approach to architecture." },
+  "services": { "title": "Architecture & Interior Design Services", "description": "Architectural design, interior design, residential and commercial architecture, structural drawings, 2D planning & 3D visualisation, renovation, consultancy and project supervision." },
+  "projects": { "title": "Projects & Portfolio", "description": "Explore selected residential, commercial, interior, renovation and landscape projects by ARCHÉ Studio." },
+  "contact":  { "title": "Contact & Consultations", "description": "Start a project with ARCHÉ Studio. Book a consultation for architecture, interiors or renovation." },
+  "journal":  { "title": "Journal — News, Talks & Films", "description": "Studio news, exhibitions, talks, site visits and walkthrough films from ARCHÉ Studio." },
+  "gallery":  { "title": "Studio Archive", "description": "An image archive of architecture, interiors and details from ARCHÉ Studio projects." },
+  "testimonials": { "title": "Client Stories", "description": "What our clients say about designing and building with ARCHÉ Studio." }
+}

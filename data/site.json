@@ -1,0 +1,199 @@
+{
+  "philosophy": [
+    {
+      "title": "Concept-driven design",
+      "text": "Every project begins with a single clear idea — drawn from site, climate and brief — that guides every decision that follows."
+    },
+    {
+      "title": "Functional spaces",
+      "text": "Beauty that works. Plans are tested against daily life so rooms flow, store well and adapt over time."
+    },
+    {
+      "title": "Sustainable materials",
+      "text": "We favour honest, local and long-lived materials, and passive strategies that reduce energy use from the start."
+    },
+    {
+      "title": "Attention to detail",
+      "text": "The joint, the threshold, the handle. Precision at the smallest scale is what makes a space feel complete."
+    }
+  ],
+  "process": [
+    {
+      "title": "Discovery",
+      "text": "We listen, visit the site and understand your brief, budget and timeline in depth.",
+      "duration": "1 – 2 weeks",
+      "image": "/images/arche/house-mediterranean.jpg",
+      "alt": "Existing house and garden surveyed during discovery",
+      "deliverables": [
+        "Site visit & survey",
+        "Brief & budget workshop",
+        "Feasibility & bye-law check",
+        "Fee proposal"
+      ]
+    },
+    {
+      "title": "Concept Development",
+      "text": "Sketches, massing models and mood boards establish the big idea and the direction.",
+      "duration": "2 – 4 weeks",
+      "image": "/images/arche/studio-drawing-board.jpg",
+      "alt": "Architect sketching concept plans by hand",
+      "deliverables": [
+        "Concept sketches",
+        "Massing models",
+        "Mood & material boards",
+        "Concept presentation"
+      ]
+    },
+    {
+      "title": "Design & Planning",
+      "text": "Plans, elevations and 3D views are refined with you until every space is resolved.",
+      "duration": "4 – 10 weeks",
+      "image": "/images/arche/interior-open-living.jpg",
+      "alt": "Photoreal 3D view of a living space developed in design",
+      "deliverables": [
+        "Plans, sections & elevations",
+        "3D views & walkthroughs",
+        "Interior layouts",
+        "Cost plan update"
+      ]
+    },
+    {
+      "title": "Documentation",
+      "text": "Coordinated working drawings, specifications and approvals ready for tender and construction.",
+      "duration": "4 – 8 weeks",
+      "image": "/images/arche/commercial-white-facade.jpg",
+      "alt": "Precise white façade reflecting resolved construction drawings",
+      "deliverables": [
+        "Working drawings & details",
+        "Structure & MEP coordination",
+        "Specifications & schedules",
+        "Approval & tender sets"
+      ]
+    },
+    {
+      "title": "Execution & Supervision",
+      "text": "Regular site visits and reporting keep quality, cost and programme on track to handover.",
+      "duration": "Through construction",
+      "image": "/images/arche/site-supervision.jpg",
+      "alt": "Studio team reviewing progress on a construction site",
+      "deliverables": [
+        "Scheduled site visits",
+        "Quality & snag checks",
+        "Progress reports with photos",
+        "Handover & as-built set"
+      ]
+    }
+  ],
+  "principles": [
+    "Light before form",
+    "Climate as a design brief",
+    "Fewer, better materials",
+    "Rooms for real life",
+    "Details that endure",
+    "Quiet architecture"
+  ],
+  "testimonials": [
+    {
+      "name": "Neha Sharma — The Courtyard House",
+      "rating": 5,
+      "message": "They understood how our family lives better than we did. The courtyard has become the centre of our home, and the house stays cool even in May."
+    },
+    {
+      "name": "Arjun Kapoor — White Ledge Villa",
+      "rating": 5,
+      "message": "From the first sketch to the final snag list the studio was precise, calm and honest about cost. The villa is exactly what we imagined, only better."
+    },
+    {
+      "name": "Facilities Head — Meridian Analytics",
+      "rating": 5,
+      "message": "A workplace our team actually wants to come back to. Delivered on programme, and flexible enough that we've already reconfigured twice without builders."
+    },
+    {
+      "name": "Riya Iyer — Ivory Apartment",
+      "rating": 5,
+      "message": "The 3D walkthroughs made every decision easy. The finished apartment is serene — friends ask for the designer's number every time they visit."
+    }
+  ],
+  "awards": [
+    {
+      "name": "Residential Project of the Year",
+      "organization": "Indian Architecture Awards",
+      "issueDate": "2024-11-01",
+      "description": "The Courtyard House"
+    },
+    {
+      "name": "Best Workplace Interior — Commended",
+      "organization": "Design Excellence Forum",
+      "issueDate": "2024-06-01",
+      "description": "Meridian Workplace"
+    },
+    {
+      "name": "Sustainable Design Citation",
+      "organization": "Green Building Council Chapter",
+      "issueDate": "2023-09-01",
+      "description": "Pavilion Garden"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do your fees work?",
+      "a": "For full architectural commissions we usually charge a percentage of construction cost, staged against design milestones. Interiors, drawings-only and consultancy work can be fixed-fee. We confirm everything in writing after the first consultation."
+    },
+    {
+      "q": "Do you work outside Jaipur?",
+      "a": "Yes. We work across India, combining site visits at key milestones with remote design reviews."
+    },
+    {
+      "q": "How long does a typical house take?",
+      "a": "Design and approvals usually take four to six months, and construction twelve to eighteen months depending on size and specification."
+    },
+    {
+      "q": "Can you work with my contractor?",
+      "a": "Absolutely. We can prepare tender drawings for competitive pricing or coordinate with a builder you already trust, with our supervision on site."
+    }
+  ],
+  "disciplines": [
+    {
+      "glyph": "Ar",
+      "name": "Architecture",
+      "label": "Buildings",
+      "text": "Homes, villas and commercial buildings — concept to construction drawings.",
+      "href": "/services/architectural-design"
+    },
+    {
+      "glyph": "In",
+      "name": "Interiors",
+      "label": "Spaces",
+      "text": "Interior architecture, joinery, lighting and material palettes.",
+      "href": "/services/interior-design"
+    },
+    {
+      "glyph": "St",
+      "name": "Structure",
+      "label": "Engineering",
+      "text": "Coordinated structural drawings with licensed engineering partners.",
+      "href": "/services/structural-drawings"
+    },
+    {
+      "glyph": "3D",
+      "name": "Visualisation",
+      "label": "2D · 3D",
+      "text": "Measured plans, photoreal renders and walkthrough films.",
+      "href": "/services/3d-visualization"
+    },
+    {
+      "glyph": "Re",
+      "name": "Renovation",
+      "label": "Remodeling",
+      "text": "Second lives for existing buildings — re-planned, re-lit, re-serviced.",
+      "href": "/services/renovation-remodeling"
+    },
+    {
+      "glyph": "Si",
+      "name": "Site",
+      "label": "Supervision",
+      "text": "Scheduled visits, quality checks and reporting through to handover.",
+      "href": "/services/project-supervision"
+    }
+  ]
+}

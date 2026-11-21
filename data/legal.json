@@ -1,0 +1,22 @@
+{
+  "privacy": {
+    "lastUpdated": "2026-11-21",
+    "sections": [
+      { "title": "Information We Collect", "content": "When you submit an enquiry we collect your name, email, phone number, project location, project type, indicative budget and the details you choose to share about your project." },
+      { "title": "How We Use Your Information", "content": "We use this information only to respond to your enquiry, schedule consultations and deliver our architecture and interior design services. We do not sell or rent your data." },
+      { "title": "Project Imagery", "content": "Photographs of completed projects are published only with the client's consent, and private details such as exact addresses are never disclosed." },
+      { "title": "Data Security & Retention", "content": "Data is stored securely and retained only as long as needed for the purposes above or as required by law." },
+      { "title": "Contact Us", "content": "For any privacy request, please write to the studio using the email address on our Contact page." }
+    ]
+  },
+  "terms": {
+    "lastUpdated": "2026-11-21",
+    "sections": [
+      { "title": "Consultations", "content": "Consultation requests are subject to availability. Scope, fees and deliverables for any commission are confirmed separately in a written agreement." },
+      { "title": "Intellectual Property", "content": "All drawings, renders, photographs and text on this website are the property of the studio or used under licence, and may not be reproduced without permission." },
+      { "title": "Information Only", "content": "Content on this website is for general information and does not constitute professional advice for a specific site or project." },
+      { "title": "Limitation of Liability", "content": "The studio is not liable for decisions made solely on the basis of information published on this website." },
+      { "title": "Governing Law", "content": "These terms are governed by the laws of India, with jurisdiction in Jaipur, Rajasthan." }
+    ]
+  }
+}
