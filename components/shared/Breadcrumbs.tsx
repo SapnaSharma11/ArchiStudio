@@ -18,7 +18,7 @@ export default function Breadcrumbs({ items, tone = 'light' }: { items: Crumb[];
   }
   const base = tone === 'dark' ? 'text-ivory/60' : 'text-muted'
   return (
-    <nav aria-label="Breadcrumb" className={`mb-8 text-[11px] tracking-[0.18em] uppercase ${base}`}>
+    <nav aria-label="Breadcrumb" className={`font-mono mb-8 text-[11px] tracking-[0.18em] uppercase ${base}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <ol className="flex flex-wrap items-center gap-2">
         {all.map((c, i) => (

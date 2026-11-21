@@ -57,3 +57,6 @@ next-env.d.ts
 /.mcp.json
 /public/uploads/*
 !/public/uploads/.gitkeep
+
+# production DB URL for one-off seeding (never commit)
+/.prod-db-url

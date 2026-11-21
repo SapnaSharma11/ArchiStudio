@@ -31,10 +31,10 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
               <div className="h-px w-10 bg-bronze" aria-hidden />
               <div>
                 <p className="display text-2xl text-ink">{studio.principal.name}</p>
-                <p className="text-xs tracking-[0.16em] uppercase text-muted mt-1">{studio.principal.title}</p>
+                <p className="font-mono text-xs tracking-[0.16em] uppercase text-muted mt-1">{studio.principal.title}</p>
               </div>
             </div>
-            <Link href="/about" className="mt-10 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-ink link-draw pb-1">
+            <Link href="/about" className="font-mono mt-10 inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
               About the studio <ArrowRight size={14} />
             </Link>
           </FadeIn>
@@ -68,7 +68,7 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
                   <dt className="sr-only">{s.label}</dt>
                   <dd>
                     <span className="display block text-5xl sm:text-6xl text-ink">{s.value}</span>
-                    <span className="block mt-2 text-xs tracking-[0.14em] uppercase text-muted">{s.label}</span>
+                    <span className="font-mono block mt-2 text-xs tracking-[0.14em] uppercase text-muted">{s.label}</span>
                   </dd>
                 </FadeIn>
               ))}

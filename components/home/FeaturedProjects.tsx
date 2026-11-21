@@ -58,7 +58,7 @@ function PinnedGallery({ projects }: { projects: PortfolioProject[] }) {
         <motion.div ref={track} style={{ x }} className="slider-pad flex items-center gap-10 w-max will-change-transform">
           <div className="w-[30vw] max-w-[30rem] shrink-0 pr-6">
             <Intro />
-            <p className="mt-10 text-[11px] tracking-[0.22em] uppercase text-muted flex items-center gap-3">
+            <p className="font-mono mt-10 text-[11px] tracking-[0.22em] uppercase text-muted flex items-center gap-3">
               Scroll to explore <ArrowRight size={14} />
             </p>
           </div>
@@ -83,7 +83,7 @@ function PinnedGallery({ projects }: { projects: PortfolioProject[] }) {
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
-                  <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-bronze-deep">
+                  <p className="font-mono text-[10px] font-medium tracking-[0.22em] uppercase text-bronze-deep">
                     {labelOf(PROJECT_CATEGORIES, p.category)}{p.year ? ` · ${p.year}` : ''}
                   </p>
                   <h3 className="display text-3xl xl:text-4xl text-ink mt-2 group-hover:text-bronze-deep transition-colors">{p.title}</h3>

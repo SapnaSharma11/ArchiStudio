@@ -39,7 +39,7 @@ export default function ProjectCard({
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
-          <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-bronze-deep">
+          <p className="font-mono text-[10px] font-medium tracking-[0.22em] uppercase text-bronze-deep">
             {labelOf(PROJECT_CATEGORIES, project.category)}
             {project.year ? ` · ${project.year}` : ''}
           </p>

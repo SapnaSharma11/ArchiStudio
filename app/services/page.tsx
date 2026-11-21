@@ -44,7 +44,7 @@ export default async function ServicesPage() {
       />
 
       <nav aria-label="Service categories" className="container-x pb-4">
-        <ul className="flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-6 text-[11px] font-semibold tracking-[0.2em] uppercase">
+        <ul className="font-mono flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-6 text-[11px] font-medium tracking-[0.2em] uppercase">
           {groups.map((g) => (
             <li key={g.label}>
               <a href={`#${g.value}`} className="link-draw pb-1 text-ink">{g.label} <span className="text-muted">({g.items.length})</span></a>

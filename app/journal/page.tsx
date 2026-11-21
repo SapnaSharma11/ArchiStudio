@@ -61,7 +61,7 @@ export default async function JournalPage() {
                     <div className="relative aspect-[4/3] bg-sand overflow-hidden">
                       {e.bannerImage && <Image src={e.bannerImage} alt={e.name} fill sizes="(min-width: 1024px) 30vw, 100vw" className="object-cover" />}
                     </div>
-                    <p className="mt-5 text-[10px] tracking-[0.22em] uppercase text-bronze-deep font-semibold">
+                    <p className="font-mono mt-5 text-[10px] tracking-[0.22em] uppercase text-bronze-deep font-medium">
                       {[fmtDate(e.date), e.location].filter(Boolean).join(' · ')}
                     </p>
                     <h3 className="display text-3xl text-ink mt-2">{e.name}</h3>
@@ -84,7 +84,7 @@ export default async function JournalPage() {
                   <p className="sm:col-span-3 display text-2xl text-bronze-deep">{fmtDate(w.date) ?? 'Date TBC'}</p>
                   <div className="sm:col-span-9">
                     <h3 className="display text-3xl text-ink">{w.name}</h3>
-                    <p className="mt-1 text-xs tracking-[0.14em] uppercase text-muted">
+                    <p className="font-mono mt-1 text-xs tracking-[0.14em] uppercase text-muted">
                       {[w.startTime && `${w.startTime}${w.endTime ? ` – ${w.endTime}` : ''}`, w.location, w.capacity && `${w.capacity} places`].filter(Boolean).join(' · ')}
                     </p>
                     {w.description && <p className="mt-3 text-muted leading-relaxed max-w-2xl">{w.description}</p>}

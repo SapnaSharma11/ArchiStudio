@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { headers } from 'next/headers'
-import { Cormorant_Garamond, Manrope } from 'next/font/google'
+import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
@@ -12,17 +12,23 @@ import { SEO } from '@/lib/seo'
 import { getStudio } from '@/lib/clinic'
 import { getPublishedServices } from '@/lib/services'
 
-const display = Cormorant_Garamond({
+// Type system: editorial serif for display, neutral grotesk for text, and a
+// mono for drawing-style annotations (labels, numbers, specs).
+const display = Instrument_Serif({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: '400',
   style: ['normal', 'italic'],
   variable: '--font-display-src',
   display: 'swap',
 })
-const sans = Manrope({
+const sans = Geist({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-sans-src',
+  display: 'swap',
+})
+const mono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono-src',
   display: 'swap',
 })
 
@@ -104,7 +110,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   }
 
   return (
-    <html lang="en-IN" data-scroll-behavior="smooth" className={`${display.variable} ${sans.variable}`}>
+    <html lang="en-IN" data-scroll-behavior="smooth" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <MotionProvider>

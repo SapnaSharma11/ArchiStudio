@@ -103,7 +103,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {project.year ? ` · ${project.year}` : ''}
             </p>
             <h1 className="display mt-4 text-[3rem] sm:text-7xl lg:text-8xl max-w-5xl">{project.title}</h1>
-            {project.location && <p className="mt-5 text-white/75 text-sm tracking-[0.14em] uppercase">{project.location}</p>}
+            {project.location && <p className="font-mono mt-5 text-white/75 text-sm tracking-[0.14em] uppercase">{project.location}</p>}
           </FadeIn>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <dl className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-x-6 border-t border-ink self-start">
             {facts.map((f) => (
               <div key={f.k} className="py-4 border-b border-line">
-                <dt className="text-[10px] tracking-[0.22em] uppercase text-muted">{f.k}</dt>
+                <dt className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted">{f.k}</dt>
                 <dd className="mt-1.5 text-ink">{f.v}</dd>
               </div>
             ))}
@@ -217,7 +217,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="container-x">
             <div className="flex items-end justify-between gap-6">
               <SectionHeading label="Related projects" title="You may" accent="also like." />
-              <Link href="/projects" className="hidden sm:inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-ink link-draw pb-1">
+              <Link href="/projects" className="font-mono hidden sm:inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
                 <ArrowLeft size={14} /> All projects
               </Link>
             </div>

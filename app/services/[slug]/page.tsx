@@ -95,13 +95,13 @@ export default async function ServiceDetailPage({ params }: Props) {
               <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-ink pt-6">
                 {service.duration && (
                   <div>
-                    <dt className="text-[10px] tracking-[0.2em] uppercase text-muted">Typical timeline</dt>
+                    <dt className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted">Typical timeline</dt>
                     <dd className="mt-2 text-sm text-ink">{service.duration}</dd>
                   </div>
                 )}
                 {service.pricing && (
                   <div>
-                    <dt className="text-[10px] tracking-[0.2em] uppercase text-muted">Engagement</dt>
+                    <dt className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted">Engagement</dt>
                     <dd className="mt-2 text-sm text-ink">{service.pricing}</dd>
                   </div>
                 )}

@@ -39,7 +39,7 @@ export default function TestimonialsSlider({ items, index = '06' }: { items: Tes
                 </blockquote>
                 <figcaption className="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-1">
                   <span className="text-sm font-semibold text-ink">{name}</span>
-                  {project && <span className="text-xs tracking-[0.16em] uppercase text-muted">{project}</span>}
+                  {project && <span className="font-mono text-xs tracking-[0.16em] uppercase text-muted">{project}</span>}
                 </figcaption>
               </motion.figure>
             </AnimatePresence>

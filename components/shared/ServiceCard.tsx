@@ -22,7 +22,7 @@ export default function ServiceCard({ service, index }: { service: PublicService
         <span className="text-[11px] tracking-[0.22em] text-bronze-deep font-semibold">{String(index + 1).padStart(2, '0')}</span>
         <h3 className="display text-[1.9rem] text-ink mt-2">{service.title}</h3>
         <p className="mt-3 text-sm text-muted leading-relaxed flex-1">{service.description}</p>
-        <span className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-ink">
+        <span className="font-mono mt-5 inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink">
           Explore <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1" />
         </span>
       </div>

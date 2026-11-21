@@ -90,7 +90,7 @@ export default async function AboutPage() {
           <div className="lg:col-span-7 lg:pl-8">
             <SectionHeading index="03" label="Principal architect" title={p.name} />
             <FadeIn delay={0.1}>
-              <p className="mt-3 text-xs tracking-[0.18em] uppercase text-muted">{p.title}{p.experience ? ` · ${p.experience}+ years of practice` : ''}</p>
+              <p className="font-mono mt-3 text-xs tracking-[0.18em] uppercase text-muted">{p.title}{p.experience ? ` · ${p.experience}+ years of practice` : ''}</p>
               {p.biography && <p className="mt-8 text-lg text-muted leading-relaxed max-w-2xl">{p.biography}</p>}
               <div className="mt-12 grid gap-10 sm:grid-cols-3">
                 {[
@@ -124,7 +124,7 @@ export default async function AboutPage() {
               {team.map((m) => (
                 <div key={m.id} className="group">
                   <MemberPortrait name={m.name} role={m.role} photo={m.photo} sizes="(min-width: 1024px) 24vw, (min-width: 640px) 40vw, 72vw" className="aspect-[4/5]" />
-                  <p className="mt-5 text-[10px] font-semibold tracking-[0.22em] uppercase text-bronze-deep">{labelOf(TEAM_DISCIPLINES, m.discipline)}</p>
+                  <p className="font-mono mt-5 text-[10px] font-medium tracking-[0.22em] uppercase text-bronze-deep">{labelOf(TEAM_DISCIPLINES, m.discipline)}</p>
                   <h3 className="display text-3xl text-ink mt-2">{m.name}</h3>
                   <p className="text-sm text-muted mt-1">{m.role}</p>
                   {m.bio && <p className="text-sm text-muted mt-3 leading-relaxed">{m.bio}</p>}
@@ -147,7 +147,7 @@ export default async function AboutPage() {
                     <dt className="sr-only">{s.label}</dt>
                     <dd>
                       <span className="display block text-5xl text-ink">{s.value}</span>
-                      <span className="block mt-2 text-xs tracking-[0.14em] uppercase text-muted">{s.label}</span>
+                      <span className="font-mono block mt-2 text-xs tracking-[0.14em] uppercase text-muted">{s.label}</span>
                     </dd>
                   </div>
                 ))}

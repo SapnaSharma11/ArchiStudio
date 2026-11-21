@@ -58,27 +58,27 @@ export default async function ContactPage() {
             <FadeIn delay={0.1}>
               <h2 className="eyebrow">The studio</h2>
               <address className="not-italic mt-5 display text-3xl text-ink leading-snug">{studio.address.full}</address>
-              <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-ink link-draw pb-1">
+              <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="font-mono mt-4 inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
                 Get directions <ArrowUpRight size={13} />
               </a>
             </FadeIn>
             <FadeIn delay={0.15} className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8 border-t border-line pt-8">
               {studio.email && (
                 <div>
-                  <h3 className="text-[10px] tracking-[0.22em] uppercase text-muted">Email</h3>
+                  <h3 className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted">Email</h3>
                   <a href={`mailto:${studio.email}`} className="mt-2 block text-ink break-all link-draw">{studio.email}</a>
                 </div>
               )}
               {studio.phone && (
                 <div>
-                  <h3 className="text-[10px] tracking-[0.22em] uppercase text-muted">Phone</h3>
+                  <h3 className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted">Phone</h3>
                   <a href={`tel:${studio.phone.replace(/\s/g, '')}`} className="mt-2 block text-ink link-draw">{studio.phone}</a>
                 </div>
               )}
             </FadeIn>
             {studio.hours.length > 0 && (
               <FadeIn delay={0.2} className="border-t border-line pt-8">
-                <h3 className="text-[10px] tracking-[0.22em] uppercase text-muted">Studio hours</h3>
+                <h3 className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted">Studio hours</h3>
                 <dl className="mt-4 text-sm">
                   {studio.hours.map((h) => (
                     <div key={h.day} className="flex justify-between gap-6 py-2 border-b border-line/70">

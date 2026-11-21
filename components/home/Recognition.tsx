@@ -18,7 +18,7 @@ export default function Recognition({ studio, index = '07' }: { studio: StudioDa
           <p className="mt-6 text-muted leading-relaxed max-w-xs">
             Awards and citations for design quality, workplace interiors and sustainable building.
           </p>
-          <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase text-ink link-draw pb-1">
+          <Link href="/about" className="font-mono mt-8 inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-ink link-draw pb-1">
             About the studio <ArrowUpRight size={13} />
           </Link>
         </FadeIn>
@@ -31,7 +31,7 @@ export default function Recognition({ studio, index = '07' }: { studio: StudioDa
                 <p className="mt-1.5 text-sm text-muted">{a.organization}</p>
               </div>
               {a.description && (
-                <p className="col-span-12 sm:col-span-3 sm:text-right text-xs tracking-[0.16em] uppercase text-muted">{a.description}</p>
+                <p className="font-mono col-span-12 sm:col-span-3 sm:text-right text-xs tracking-[0.16em] uppercase text-muted">{a.description}</p>
               )}
             </FadeIn>
           ))}

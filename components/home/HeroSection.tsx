@@ -109,7 +109,7 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
       </div>
 
       <div className="absolute bottom-0 inset-x-0 border-t border-white/15">
-        <div className="container-x h-14 flex items-center justify-between text-[10px] tracking-[0.22em] uppercase text-white/70">
+        <div className="font-mono container-x h-14 flex items-center justify-between text-[10px] tracking-[0.22em] uppercase text-white/70">
           <a href="#studio" className="flex items-center gap-2 hover:text-white">
             <ArrowDown size={13} className="motion-safe:animate-bounce" /> Scroll
           </a>

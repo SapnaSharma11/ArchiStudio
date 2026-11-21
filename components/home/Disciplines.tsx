@@ -41,7 +41,7 @@ export default function Disciplines({ index = '06' }: { index?: string }) {
                 <span aria-hidden className="absolute left-7 top-7 text-[10px] tracking-[0.22em] text-bronze-deep font-semibold transition-colors duration-700 group-hover:text-bronze">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span aria-hidden className="absolute right-7 top-7 text-[10px] tracking-[0.22em] uppercase text-muted transition-colors duration-700 group-hover:text-ivory/60">
+                <span aria-hidden className="font-mono absolute right-7 top-7 text-[10px] tracking-[0.22em] uppercase text-muted transition-colors duration-700 group-hover:text-ivory/60">
                   {d.label}
                 </span>
                 <span

@@ -26,8 +26,9 @@
   --color-rust: #9a3b2e;         /* errors / destructive */
   --color-rust-soft: #f4e6e2;
 
-  --font-display: var(--font-display-src), 'Cormorant Garamond', Georgia, serif;
-  --font-sans: var(--font-sans-src), 'Manrope', system-ui, sans-serif;
+  --font-display: var(--font-display-src), 'Instrument Serif', Georgia, serif;
+  --font-sans: var(--font-sans-src), 'Geist', system-ui, sans-serif;
+  --font-mono: var(--font-mono-src), 'Geist Mono', ui-monospace, monospace;
 
   --ease-arch: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -63,17 +64,17 @@
 @layer components {
   /* Small uppercase label used above headings ("01 — Studio") */
   .eyebrow {
-    font-family: var(--font-sans);
+    font-family: var(--font-mono);
     font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.24em;
+    font-weight: 500;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--color-bronze-deep);
   }
   .display {
     font-family: var(--font-display);
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
     line-height: 1.02;
   }
   /* Editorial container: generous gutters, 16px on phones */
@@ -88,14 +89,15 @@
 
   /* Buttons */
   .btn {
+    font-family: var(--font-mono);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     padding: 0.95rem 1.6rem;
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     transition: background-color 0.4s var(--ease-arch), color 0.4s var(--ease-arch), border-color 0.4s var(--ease-arch);
     white-space: nowrap;
@@ -137,6 +139,7 @@
   .field::placeholder { color: var(--color-concrete); }
   .field:focus { border-bottom-color: var(--color-ink); }
   .field-label {
+    font-family: var(--font-mono);
     display: block;
     font-size: 0.6875rem;
     font-weight: 600;

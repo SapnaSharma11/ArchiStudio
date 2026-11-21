@@ -129,7 +129,7 @@ function PinnedProcess({ steps, index }: { steps: Step[]; index?: string }) {
               })}
             </ol>
 
-            <p className="mt-6 pl-12 text-[10px] tracking-[0.22em] uppercase text-muted">
+            <p className="font-mono mt-6 pl-12 text-[10px] tracking-[0.22em] uppercase text-muted">
               Scroll to move through the stages · Typical house <span className="text-ink">14 – 24 months</span>
             </p>
           </div>
@@ -155,7 +155,7 @@ function PinnedProcess({ steps, index }: { steps: Step[]; index?: string }) {
               </span>
               <div className="absolute inset-x-0 bottom-0 p-10 text-ivory flex items-end justify-between gap-6">
                 <div>
-                  <p className="text-[10px] tracking-[0.24em] uppercase text-bronze-soft">
+                  <p className="font-mono text-[10px] tracking-[0.24em] uppercase text-bronze-soft">
                     Stage {String(active + 1).padStart(2, '0')} / {String(steps.length).padStart(2, '0')}
                   </p>
                   <AnimatePresence mode="wait">
@@ -172,9 +172,9 @@ function PinnedProcess({ steps, index }: { steps: Step[]; index?: string }) {
                   </AnimatePresence>
                 </div>
                 <div className="text-right shrink-0">
-                  <span className="block text-[10px] tracking-[0.24em] uppercase text-ivory/60">Duration</span>
+                  <span className="font-mono block text-[10px] tracking-[0.24em] uppercase text-ivory/60">Duration</span>
                   <span className="block mt-1 text-sm">{step.duration}</span>
-                  <Link href="/contact#consultation" className="mt-5 inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-ivory hover:text-bronze-soft">
+                  <Link href="/contact#consultation" className="font-mono mt-5 inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-ivory hover:text-bronze-soft">
                     Start a project <ArrowRight size={13} />
                   </Link>
                 </div>
@@ -207,7 +207,7 @@ function StackedProcess({ steps, index }: { steps: Step[]; index?: string }) {
                 <Image src={s.image} alt={s.alt} fill sizes="(min-width: 640px) 90vw, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" aria-hidden />
                 <span className="absolute left-5 bottom-4 display text-6xl text-ivory leading-none">{String(i + 1).padStart(2, '0')}</span>
-                <span className="absolute right-5 bottom-5 text-[10px] tracking-[0.2em] uppercase text-ivory/80">{s.duration}</span>
+                <span className="font-mono absolute right-5 bottom-5 text-[10px] tracking-[0.2em] uppercase text-ivory/80">{s.duration}</span>
               </div>
               <h3 className="display text-3xl sm:text-4xl text-ink mt-5">{s.title}</h3>
               <p className="mt-3 text-muted leading-relaxed">{s.text}</p>
