@@ -43,7 +43,7 @@ function Deliverables({ items }: { items: string[] }) {
   return (
     <span className="mt-4 flex flex-wrap gap-2">
       {items.map((d) => (
-        <span key={d} className="px-3.5 py-1.5 rounded-full bg-ivory text-[0.82rem] text-ink">
+        <span key={d} className="px-3.5 py-1.5 rounded-full border border-stone text-[0.82rem] text-ink">
           {d}
         </span>
       ))}
@@ -105,12 +105,9 @@ function PinnedProcess({ steps }: { steps: Step[] }) {
                       type="button"
                       onClick={() => jump(i)}
                       aria-current={isActive ? 'step' : undefined}
-                      className={cn(
-                        'w-full text-left flex gap-4 rounded-[22px] transition-all duration-500',
-                        isActive ? 'bg-surface p-4 -ml-4 my-1.5 shadow-[0_18px_40px_-28px_rgba(37,37,34,0.45)]' : 'py-1.5',
-                      )}
+                      className={cn('w-full text-left flex gap-4 transition-all duration-500', isActive ? 'py-3' : 'py-1.5')}
                     >
-                      <span className={cn('rounded-full', !isActive && 'ring-[6px] ring-[#efece6]')}>
+                      <span className="rounded-full ring-[6px] ring-[#efece6]">
                         <StageIcon name={s.icon} active={isActive || i < active} />
                       </span>
                       <span className="min-w-0 pt-2.5">

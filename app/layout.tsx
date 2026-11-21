@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { headers } from 'next/headers'
-import { Hanken_Grotesk, Tenor_Sans } from 'next/font/google'
+import { Outfit, Plus_Jakarta_Sans } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
@@ -12,15 +12,14 @@ import { SEO } from '@/lib/seo'
 import { getStudio } from '@/lib/clinic'
 import { getPublishedServices } from '@/lib/services'
 
-// Type system ("Monument"): wide inscription-like Tenor Sans for display,
-// Hanken Grotesk for running text and for the small uppercase labels.
-const display = Tenor_Sans({
+// Type system: soft geometric Outfit for display, Plus Jakarta Sans for text and labels.
+const display = Outfit({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['200', '300', '400', '500'],
   variable: '--font-display-src',
   display: 'swap',
 })
-const sans = Hanken_Grotesk({
+const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-sans-src',
   display: 'swap',

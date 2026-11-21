@@ -26,11 +26,11 @@
   --color-rust: #9a3b2e;         /* errors / destructive */
   --color-rust-soft: #f4e6e2;
 
-  --font-display: var(--font-display-src), 'Tenor Sans', 'Optima', sans-serif;
-  --font-sans: var(--font-sans-src), 'Hanken Grotesk', system-ui, sans-serif;
+  --font-display: var(--font-display-src), 'Outfit', system-ui, sans-serif;
+  --font-sans: var(--font-sans-src), 'Plus Jakarta Sans', system-ui, sans-serif;
   /* `font-mono` is used for small uppercase labels (eyebrows, nav, buttons,
-     categories); in this type system those are set in Hanken Grotesk. */
-  --font-mono: var(--font-sans-src), 'Hanken Grotesk', system-ui, sans-serif;
+     categories); in this type system those are set in Plus Jakarta Sans. */
+  --font-mono: var(--font-sans-src), 'Plus Jakarta Sans', system-ui, sans-serif;
 
   --ease-arch: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -87,9 +87,9 @@
   }
   .display {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: 0.005em;
-    line-height: 1.08;
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
   }
   /* Editorial container: generous gutters, 16px on phones */
   .container-x {
