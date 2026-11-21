@@ -1,17 +1,13 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import SectionHeading from '@/components/shared/SectionHeading'
 import ProjectCard from '@/components/shared/ProjectCard'
 import Slider from '@/components/shared/Slider'
+import PinnedTrack from '@/components/shared/PinnedTrack'
 import { labelOf, PROJECT_CATEGORIES } from '@/lib/brand'
 import type { PortfolioProject } from '@/lib/projects'
-
-// useLayoutEffect warns during SSR; fall back to useEffect on the server.
-const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 /** Panel widths for the pinned gallery — alternating wide / narrow rhythm. */
 const WIDTHS = ['w-[46vw]', 'w-[30vw]', 'w-[38vw]', 'w-[30vw]', 'w-[46vw]', 'w-[34vw]']
@@ -28,34 +24,36 @@ function Intro() {
   )
 }
 
-/** Desktop: the section pins while vertical scroll drives a horizontal track. */
-function PinnedGallery({ projects }: { projects: PortfolioProject[] }) {
-  const section = useRef<HTMLElement>(null)
-  const track = useRef<HTMLDivElement>(null)
-  const [distance, setDistance] = useState(0)
-
-  useIsoLayoutEffect(() => {
-    const measure = () => {
-      if (track.current) setDistance(Math.max(0, track.current.scrollWidth - window.innerWidth))
-    }
-    measure()
-    const ro = new ResizeObserver(measure)
-    if (track.current) ro.observe(track.current)
-    window.addEventListener('resize', measure)
-    return () => {
-      ro.disconnect()
-      window.removeEventListener('resize', measure)
-    }
-  }, [])
-
-  const { scrollYProgress } = useScroll({ target: section, offset: ['start start', 'end end'] })
-  const smooth = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 })
-  const x = useTransform(smooth, [0, 1], [0, -distance])
-
+/** Mobile / tablet / reduced motion: native swipe slider. */
+function SlideGallery({ projects }: { projects: PortfolioProject[] }) {
   return (
-    <section ref={section} aria-label="Selected work" className="relative" style={{ height: `calc(100vh + ${distance}px)` }}>
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-20">
-        <motion.div ref={track} style={{ x }} className="slider-pad flex items-center gap-10 w-max will-change-transform">
+    <section className="py-24 sm:py-32 overflow-hidden">
+      <div className="container-x flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+        <Intro />
+        <Link href="/projects" className="btn btn-dark shrink-0 self-start lg:self-auto">
+          View all projects <ArrowRight size={15} className="btn-arrow" />
+        </Link>
+      </div>
+      <div className="mt-14">
+        <Slider label="Selected projects" slideClassName="w-[84vw] sm:w-[60vw] lg:w-[44vw]">
+          {projects.map((p, i) => (
+            <ProjectCard
+              key={p.slug}
+              project={p}
+              aspect={i % 2 === 0 ? 'aspect-[4/3]' : 'aspect-[4/5]'}
+              sizes="(min-width: 1024px) 44vw, (min-width: 640px) 60vw, 84vw"
+            />
+          ))}
+        </Slider>
+      </div>
+    </section>
+  )
+}
+
+export default function FeaturedProjects({ projects }: { projects: PortfolioProject[] }) {
+  if (!projects.length) return null
+  return (
+    <PinnedTrack label="Selected work" fallback={<SlideGallery projects={projects} />}>
           <div className="w-[30vw] max-w-[30rem] shrink-0 pr-6">
             <Intro />
             <p className="font-mono mt-10 text-[11px] tracking-[0.22em] uppercase text-muted flex items-center gap-3">
@@ -102,56 +100,6 @@ function PinnedGallery({ projects }: { projects: PortfolioProject[] }) {
               </span>
             </span>
           </Link>
-        </motion.div>
-
-        <div className="container-x mt-10">
-          <div className="relative h-px bg-stone" aria-hidden>
-            <motion.div className="absolute inset-y-0 left-0 right-0 bg-ink origin-left" style={{ scaleX: smooth }} />
-          </div>
-        </div>
-      </div>
-    </section>
+    </PinnedTrack>
   )
-}
-
-/** Mobile / tablet / reduced motion: native swipe slider. */
-function SlideGallery({ projects }: { projects: PortfolioProject[] }) {
-  return (
-    <section className="py-24 sm:py-32 overflow-hidden">
-      <div className="container-x flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-        <Intro />
-        <Link href="/projects" className="btn btn-dark shrink-0 self-start lg:self-auto">
-          View all projects <ArrowRight size={15} className="btn-arrow" />
-        </Link>
-      </div>
-      <div className="mt-14">
-        <Slider label="Selected projects" slideClassName="w-[84vw] sm:w-[60vw] lg:w-[44vw]">
-          {projects.map((p, i) => (
-            <ProjectCard
-              key={p.slug}
-              project={p}
-              aspect={i % 2 === 0 ? 'aspect-[4/3]' : 'aspect-[4/5]'}
-              sizes="(min-width: 1024px) 44vw, (min-width: 640px) 60vw, 84vw"
-            />
-          ))}
-        </Slider>
-      </div>
-    </section>
-  )
-}
-
-export default function FeaturedProjects({ projects }: { projects: PortfolioProject[] }) {
-  const reduce = useReducedMotion()
-  const [desktop, setDesktop] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px) and (min-height: 640px)')
-    const on = () => setDesktop(mq.matches)
-    on()
-    mq.addEventListener('change', on)
-    return () => mq.removeEventListener('change', on)
-  }, [])
-
-  if (!projects.length) return null
-  return desktop && !reduce ? <PinnedGallery projects={projects} /> : <SlideGallery projects={projects} />
 }
