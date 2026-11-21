@@ -18,15 +18,15 @@
       "Residential planning"
     ],
     "achievements": [
-      "Rated 4.8 on Google by 29+ clients"
+      "Rated 4.8 on Google"
     ]
   },
   "address": {
     "line1": "203A, New Roshanpura",
     "line2": "Najafgarh, New Delhi",
     "state": "Delhi",
-    "pincode": "",
-    "full": "203A, New Roshanpura, Najafgarh, New Delhi, Delhi"
+    "pincode": "110043",
+    "full": "203A, New Roshanpura, Najafgarh, New Delhi, Delhi 110043"
   },
   "phone": "+91 92201 22543",
   "whatsapp": "",
@@ -37,7 +37,7 @@
       "label": "Google rating"
     },
     {
-      "value": "29+",
+      "value": "5",
       "label": "Google reviews"
     },
     {
@@ -49,6 +49,42 @@
       "label": "Najafgarh, New Delhi"
     }
   ],
-  "hours": [],
+  "hours": [
+    {
+      "day": "Monday",
+      "morningOpen": "00:00",
+      "morningClose": "23:59"
+    },
+    {
+      "day": "Tuesday",
+      "morningOpen": "00:00",
+      "morningClose": "23:59"
+    },
+    {
+      "day": "Wednesday",
+      "morningOpen": "00:00",
+      "morningClose": "23:59"
+    },
+    {
+      "day": "Thursday",
+      "morningOpen": "00:00",
+      "morningClose": "23:59"
+    },
+    {
+      "day": "Friday",
+      "morningOpen": "00:00",
+      "morningClose": "23:59"
+    },
+    {
+      "day": "Saturday",
+      "morningOpen": "00:00",
+      "morningClose": "23:59"
+    },
+    {
+      "day": "Sunday",
+      "morningOpen": "00:00",
+      "morningClose": "23:59"
+    }
+  ],
   "socials": {}
 }

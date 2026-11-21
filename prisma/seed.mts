@@ -40,11 +40,11 @@ type RawService = {
   benefits: string[]; duration: string; pricing?: string; category: string
 }
 type RawProject = {
-  slug: string; title: string; category: string; status: string; location: string; year: number
-  area: string; summary: string; concept: string; description: string; coverImage: string
+  slug: string; title: string; category: string; status: string; location: string; year: number | null
+  area: string | null; summary: string; concept: string | null; description: string | null; coverImage: string
   gallery: string[]; materials: string[]; specs: string[]; services: string[]
-  clientName: string; clientEmail: string; clientPhone: string; budget: number
-  startDate: string; deadline: string; progress: number; featured: boolean; published: boolean
+  clientName: string | null; clientEmail: string | null; clientPhone: string; budget: number | null
+  startDate: string | null; deadline: string | null; progress: number; featured: boolean; published: boolean
 }
 
 async function seedServices() {
@@ -90,12 +90,12 @@ async function seedProjects() {
       materials: p.materials,
       specs: p.specs,
       services: p.services,
-      clientName: p.clientName,
-      clientEmail: p.clientEmail,
+      clientName: p.clientName || null,
+      clientEmail: p.clientEmail || null,
       clientPhone: p.clientPhone || null,
       budget: p.budget,
-      startDate: new Date(p.startDate),
-      deadline: new Date(p.deadline),
+      startDate: p.startDate ? new Date(p.startDate) : null,
+      deadline: p.deadline ? new Date(p.deadline) : null,
       progress: p.progress,
       featured: p.featured,
       published: p.published,
@@ -211,20 +211,24 @@ async function seedSiteContent() {
   // Films (Session table): hide legacy clinic videos.
   const films = await prisma.session.updateMany({ where: { published: true }, data: { published: false } })
 
-  // Studio archive (GalleryItem): hide legacy clinic photos, add project imagery.
+  // Project archive (GalleryItem): show only imagery from published projects.
+  const projects: RawProject[] = readJson('data/projects.json')
+  const live = projects.filter((p) => p.published)
+  const liveImages = [...new Set(live.flatMap((p) => [p.coverImage, ...p.gallery]))]
   const legacyGallery = await prisma.galleryItem.updateMany({
-    where: { NOT: { image: { startsWith: '/images/arche/' } }, published: true },
+    where: { image: { notIn: liveImages }, published: true },
     data: { published: false },
   })
-  const projects: RawProject[] = readJson('data/projects.json')
   let order = 0
-  for (const p of projects) {
+  for (const p of live) {
     for (const image of [p.coverImage, ...p.gallery]) {
       const hit = await prisma.galleryItem.findFirst({ where: { image } })
       if (!hit) {
         await prisma.galleryItem.create({
           data: { image, caption: `${p.title} — ${p.location}`, category: p.category, published: true, displayOrder: order },
         })
+      } else if (!hit.published) {
+        await prisma.galleryItem.update({ where: { id: hit.id }, data: { published: true } })
       }
       order += 1
     }

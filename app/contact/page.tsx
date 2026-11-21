@@ -19,6 +19,7 @@ export const dynamic = 'force-dynamic'
 function formatHours(h: HoursEntry): string {
   if (h.byAppointment) return 'By appointment'
   if (h.closed) return 'Closed'
+  if (h.morningOpen === '00:00' && (h.morningClose === '23:59' || h.eveningClose === '23:59')) return 'Open 24 hours'
   const slots: string[] = []
   if (h.morningOpen && h.morningClose) slots.push(`${h.morningOpen} – ${h.morningClose}`)
   if (h.eveningOpen && h.eveningClose) slots.push(`${h.eveningOpen} – ${h.eveningClose}`)

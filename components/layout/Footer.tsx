@@ -27,6 +27,8 @@ const SOCIAL_LABELS: Record<string, string> = {
 function hoursSummary(studio: StudioData): string[] {
   const open = studio.hours.filter((h) => !h.byAppointment && !h.closed && h.morningOpen)
   if (!open.length) return []
+  const allDay = (h: (typeof open)[number]) => h.morningOpen === '00:00' && (h.morningClose ?? h.eveningClose) === '23:59'
+  if (open.length === 7 && open.every(allDay)) return ['Open 24 hours, 7 days a week']
   const first = open[0]
   const weekdays = open.filter((h) => h.morningOpen === first.morningOpen && (h.eveningClose ?? h.morningClose) === (first.eveningClose ?? first.morningClose))
   const lines = [`${weekdays[0].day.slice(0, 3)} – ${weekdays[weekdays.length - 1].day.slice(0, 3)}  ·  ${first.morningOpen} – ${first.eveningClose ?? first.morningClose}`]

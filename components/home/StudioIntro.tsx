@@ -45,14 +45,15 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
         <div className="lg:col-span-7">
           <div className="grid grid-cols-6 gap-4 sm:gap-6">
             <RevealImage
-              src="/images/arche/office-interior-long.jpg"
-              alt="A long, light-filled studio workspace with concrete floors and an open kitchen"
+              src="/images/apn/residential-building-elevation.jpg"
+              alt="Residential building designed by APN Enterprises, with brick-tone and grey cladding lit at dusk"
+              imgClassName="object-[center_30%]"
               sizes="(min-width: 1024px) 55vw, 100vw"
               className="col-span-6 aspect-[4/3]"
             />
             <RevealImage
-              src="/images/arche/interior-kitchen-island.jpg"
-              alt="Timber and white kitchen with a long island and pendant lights"
+              src="/images/apn/hexagon-panel-wall.jpg"
+              alt="Hexagonal wood-panel feature wall with warm LED outlines"
               sizes="(min-width: 1024px) 25vw, 50vw"
               className="col-span-3 aspect-[3/4] -mt-16 sm:-mt-24 ml-6 sm:ml-10 border-[6px] sm:border-8 border-ivory"
             />

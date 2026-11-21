@@ -14,7 +14,7 @@ export const BRAND = {
   /** Principal architect — the site is his practice portfolio. */
   architect: 'Akash Sharma',
   /** Public review summary shown on the site (from Google). */
-  rating: { value: '4.8', count: '29+', source: 'Google' },
+  rating: { value: '4.8', count: '5', source: 'Google' },
   tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Designing Spaces. Creating Experiences.',
   siteUrl: (process.env.SITE_URL || 'http://localhost:3000').replace(/\/$/, ''),
   locale: 'en_IN',

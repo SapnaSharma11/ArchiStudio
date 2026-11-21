@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react'
 import type { StudioData } from '@/lib/clinic'
+import { BRAND } from '@/lib/brand'
 
 type Featured = { slug: string; title: string; location: string | null; year: number | null } | null
 
@@ -98,7 +99,7 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
             spaces that work beautifully and age with grace.
             <span className="mt-4 flex items-center gap-2 text-sm text-white/90">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur px-3 py-1">
-                <span aria-hidden className="text-[#f1c96b]">★</span> 4.8 on Google · 29+ reviews
+                <span aria-hidden className="text-[#f1c96b]">★</span> {BRAND.rating.value} on {BRAND.rating.source} · {BRAND.rating.count} reviews
               </span>
             </span>
           </p>
