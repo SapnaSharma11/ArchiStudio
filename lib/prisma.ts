@@ -9,8 +9,12 @@ import { Pool } from 'pg'
  * skipped because the `pg` driver needs a direct TCP connection.
  */
 export function resolveDatabaseUrl(): string | undefined {
+  // Runtime prefers a pooled URL (Prisma Postgres on Vercel injects
+  // DATABASE_URL_POOLED); migrations/seed use the direct URL instead.
   const candidates = [
+    process.env.DATABASE_URL_POOLED,
     process.env.DATABASE_URL,
+    process.env.DATABASE_POSTGRES_URL,
     process.env.POSTGRES_URL,
     process.env.DATABASE_URL_UNPOOLED,
     process.env.POSTGRES_URL_NON_POOLING,

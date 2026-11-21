@@ -20,7 +20,7 @@ import { PrismaPg } from '@prisma/adapter-pg'
 import { Pool } from 'pg'
 
 const url =
-  [process.env.DATABASE_URL, process.env.POSTGRES_URL, process.env.DATABASE_URL_UNPOOLED, process.env.POSTGRES_URL_NON_POOLING].find(
+  [process.env.DATABASE_URL, process.env.DATABASE_POSTGRES_URL, process.env.POSTGRES_URL, process.env.DATABASE_URL_UNPOOLED, process.env.POSTGRES_URL_NON_POOLING].find(
     (u) => u && /^postgres(ql)?:\/\//.test(u),
   ) ?? ''
 const isLocal = /@(localhost|127\.0\.0\.1|\[::1\])(:\d+)?\//.test(url)

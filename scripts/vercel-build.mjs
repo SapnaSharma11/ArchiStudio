@@ -7,6 +7,7 @@ import { execSync } from 'node:child_process'
 const run = (cmd) => execSync(cmd, { stdio: 'inherit' })
 const dbUrl = [
   process.env.DATABASE_URL,
+  process.env.DATABASE_POSTGRES_URL,
   process.env.POSTGRES_URL,
   process.env.DATABASE_URL_UNPOOLED,
   process.env.POSTGRES_URL_NON_POOLING,

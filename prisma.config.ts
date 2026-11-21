@@ -12,6 +12,7 @@ loadEnv()
 // (Vercel integrations may inject POSTGRES_URL instead of DATABASE_URL).
 const databaseUrl = [
   process.env.DATABASE_URL,
+  process.env.DATABASE_POSTGRES_URL,
   process.env.POSTGRES_URL,
   process.env.DATABASE_URL_UNPOOLED,
   process.env.POSTGRES_URL_NON_POOLING,
