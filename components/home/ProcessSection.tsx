@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Compass, FileText, HardHat, Layers, Mouse, PencilRuler, type LucideIcon } from 'lucide-react'
 import SectionHeading from '@/components/shared/SectionHeading'
 import FadeIn from '@/components/shared/FadeIn'
 import site from '@/data/site.json'
@@ -13,29 +13,50 @@ const ease = [0.22, 1, 0.36, 1] as const
 /** Scroll distance (in viewport heights) spent on each stage while pinned. */
 const VH_PER_STEP = 70
 
+const ICONS: Record<string, LucideIcon> = {
+  compass: Compass,
+  pencil: PencilRuler,
+  layers: Layers,
+  file: FileText,
+  hardhat: HardHat,
+}
+
 type Step = (typeof site.process)[number]
 
-const grid =
-  '[background-image:linear-gradient(var(--color-stone)_1px,transparent_1px),linear-gradient(90deg,var(--color-stone)_1px,transparent_1px)] [background-size:88px_88px]'
+function StageIcon({ name, active, size = 'md' }: { name: string; active: boolean; size?: 'md' | 'lg' }) {
+  const Icon = ICONS[name] ?? Compass
+  return (
+    <span
+      aria-hidden
+      className={cn(
+        'rounded-full flex items-center justify-center shrink-0 transition-colors duration-500',
+        size === 'lg' ? 'w-14 h-14' : 'w-12 h-12',
+        active ? 'bg-bronze text-ink' : 'bg-surface text-muted',
+      )}
+    >
+      <Icon size={size === 'lg' ? 22 : 20} strokeWidth={1.5} />
+    </span>
+  )
+}
 
 function Deliverables({ items }: { items: string[] }) {
   return (
-    <ul className="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+    <span className="mt-4 flex flex-wrap gap-2">
       {items.map((d) => (
-        <li key={d} className="flex items-center gap-2.5 text-sm text-ink">
-          <span aria-hidden className="w-3 h-px bg-bronze-deep" /> {d}
-        </li>
+        <span key={d} className="px-3.5 py-1.5 rounded-full bg-ivory text-[0.82rem] text-ink">
+          {d}
+        </span>
       ))}
-    </ul>
+    </span>
   )
 }
 
 /**
- * Desktop: the section pins and scrolling advances through the five stages —
- * the photograph, the open stage and the timeline progress all follow scroll.
- * Clicking a stage scrolls the page to it.
+ * Desktop: the section pins and scrolling moves through the stages. A soft
+ * timeline of round icons on the left (the active stage opens into a rounded
+ * card); a rounded photograph with a frosted caption on the right.
  */
-function PinnedProcess({ steps, index }: { steps: Step[]; index?: string }) {
+function PinnedProcess({ steps }: { steps: Step[] }) {
   const section = useRef<HTMLElement>(null)
   const [active, setActive] = useState(0)
   const { scrollYProgress } = useScroll({ target: section, offset: ['start start', 'end end'] })
@@ -63,85 +84,82 @@ function PinnedProcess({ steps, index }: { steps: Step[]; index?: string }) {
       style={{ height: `${100 + steps.length * VH_PER_STEP}vh` }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div aria-hidden className={cn('absolute inset-0 opacity-[0.35] pointer-events-none', grid)} />
-        <div className="relative container-x h-full pt-28 pb-10 grid grid-cols-12 gap-14 items-center">
-          {/* Left: heading + stage list */}
+        <div className="container-x h-full pt-28 pb-10 grid grid-cols-12 gap-14 items-center">
+          {/* Left: heading + soft timeline */}
           <div className="col-span-5 flex flex-col justify-center h-full">
-            <SectionHeading index={index ?? undefined} label="Our process" title="A clear path from" accent="idea to handover." />
+            <SectionHeading label="Our process" title="A clear path from" accent="idea to handover." />
 
-            <ol className="relative mt-10" aria-label="Project stages">
-              <span aria-hidden className="absolute left-[11px] top-4 bottom-4 w-px bg-stone" />
+            <ol className="relative mt-9" aria-label="Project stages">
+              {/* soft rail behind the icons, filling with scroll */}
+              <span aria-hidden className="absolute left-[22px] top-6 bottom-6 w-[3px] rounded-full bg-stone/70" />
               <motion.span
                 aria-hidden
-                className="absolute left-[11px] top-4 bottom-4 w-px bg-ink origin-top"
+                className="absolute left-[22px] top-6 bottom-6 w-[3px] rounded-full bg-bronze origin-top"
                 style={{ scaleY: scrollYProgress }}
               />
               {steps.map((s, i) => {
                 const isActive = i === active
                 return (
-                  <li key={s.title} className="relative pl-12">
-                    <span
-                      aria-hidden
-                      className={cn(
-                        'absolute left-0 top-[15px] w-[23px] h-[23px] rotate-45 border transition-colors duration-500 flex items-center justify-center',
-                        isActive ? 'bg-ink border-ink' : i < active ? 'bg-bronze border-bronze' : 'bg-ivory border-stone',
-                      )}
-                    >
-                      <span className={cn('w-1.5 h-1.5', isActive ? 'bg-bronze' : 'bg-transparent')} />
-                    </span>
+                  <li key={s.title} className="relative">
                     <button
                       type="button"
                       onClick={() => jump(i)}
                       aria-current={isActive ? 'step' : undefined}
-                      className="w-full text-left py-2.5 flex items-baseline gap-4 group"
+                      className={cn(
+                        'w-full text-left flex gap-4 rounded-[22px] transition-all duration-500',
+                        isActive ? 'bg-surface p-4 -ml-4 my-1.5 shadow-[0_18px_40px_-28px_rgba(37,37,34,0.45)]' : 'py-1.5',
+                      )}
                     >
-                      <span className={cn('text-[11px] tracking-[0.22em] font-semibold tabular-nums transition-colors', isActive ? 'text-bronze-deep' : 'text-muted')}>
-                        {String(i + 1).padStart(2, '0')}
+                      <span className={cn('rounded-full', !isActive && 'ring-[6px] ring-[#efece6]')}>
+                        <StageIcon name={s.icon} active={isActive || i < active} />
                       </span>
-                      <span
-                        className={cn(
-                          'display transition-all duration-500',
-                          isActive ? 'text-ink text-[2.1rem] xl:text-4xl' : 'text-ink/40 text-2xl xl:text-[1.7rem] group-hover:text-ink/75',
-                        )}
-                      >
-                        {s.title}
+                      <span className="min-w-0 pt-2.5">
+                        <span
+                          className={cn(
+                            'block display transition-colors duration-500',
+                            isActive ? 'text-ink text-[1.65rem] xl:text-3xl' : 'text-ink/45 text-xl xl:text-[1.4rem]',
+                          )}
+                        >
+                          {s.title}
+                        </span>
+                        <AnimatePresence initial={false}>
+                          {isActive && (
+                            <motion.span
+                              key="body"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.5, ease }}
+                              className="block overflow-hidden"
+                            >
+                              <span className="block mt-2 text-muted leading-relaxed text-[0.95rem]">{s.text}</span>
+                              <Deliverables items={s.deliverables} />
+                            </motion.span>
+                          )}
+                        </AnimatePresence>
                       </span>
                     </button>
-                    <AnimatePresence initial={false}>
-                      {isActive && (
-                        <motion.div
-                          key="body"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.5, ease }}
-                          className="overflow-hidden"
-                        >
-                          <div className="pb-5 pl-9">
-                            <p className="text-muted leading-relaxed text-[0.95rem]">{s.text}</p>
-                            <Deliverables items={s.deliverables} />
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
                   </li>
                 )
               })}
             </ol>
 
-            <p className="font-mono mt-6 pl-12 text-[10px] tracking-[0.22em] uppercase text-muted">
-              Scroll to move through the stages · Typical house <span className="text-ink">14 – 24 months</span>
-            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-3 text-sm text-muted">
+              <span className="inline-flex items-center gap-2">
+                <Mouse size={16} strokeWidth={1.5} /> Scroll to move through the stages
+              </span>
+              <span className="px-3 py-1 rounded-full bg-surface text-ink text-[0.82rem]">Typical house · 14 – 24 months</span>
+            </div>
           </div>
 
-          {/* Right: photograph for the active stage */}
+          {/* Right: rounded photograph with a frosted caption */}
           <div className="col-span-7 h-full max-h-[78vh] self-center">
-            <div className="relative h-full overflow-hidden bg-ink">
+            <div className="relative h-full overflow-hidden rounded-[32px] bg-ink">
               <AnimatePresence initial={false}>
                 <motion.div
                   key={active}
                   className="absolute inset-0"
-                  initial={{ opacity: 0, scale: 1.06 }}
+                  initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1, ease }}
@@ -149,35 +167,28 @@ function PinnedProcess({ steps, index }: { steps: Step[]; index?: string }) {
                   <Image src={step.image} alt={step.alt} fill sizes="58vw" className="object-cover" />
                 </motion.div>
               </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" aria-hidden />
-              <span aria-hidden className="absolute top-6 right-8 display text-[9rem] leading-none text-ivory/20 select-none">
-                {String(active + 1).padStart(2, '0')}
-              </span>
-              <div className="absolute inset-x-0 bottom-0 p-10 text-ivory flex items-end justify-between gap-6">
-                <div>
-                  <p className="font-mono text-[10px] tracking-[0.24em] uppercase text-bronze-soft">
-                    Stage {String(active + 1).padStart(2, '0')} / {String(steps.length).padStart(2, '0')}
-                  </p>
-                  <AnimatePresence mode="wait">
-                    <motion.p
-                      key={active}
-                      className="display text-5xl mt-3"
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -8 }}
-                      transition={{ duration: 0.45, ease }}
-                    >
-                      {step.title}
-                    </motion.p>
-                  </AnimatePresence>
+              <div className="absolute inset-x-5 bottom-5 rounded-[24px] bg-white/80 backdrop-blur-md p-3 pl-4 flex items-center justify-between gap-6">
+                <div className="flex items-center gap-4 min-w-0">
+                  <StageIcon name={step.icon} active size="lg" />
+                  <div className="min-w-0">
+                    <AnimatePresence mode="wait">
+                      <motion.p
+                        key={active}
+                        className="display text-2xl text-ink truncate"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.4, ease }}
+                      >
+                        {step.title}
+                      </motion.p>
+                    </AnimatePresence>
+                    <p className="text-sm text-muted">{step.duration}</p>
+                  </div>
                 </div>
-                <div className="text-right shrink-0">
-                  <span className="font-mono block text-[10px] tracking-[0.24em] uppercase text-ivory/60">Duration</span>
-                  <span className="block mt-1 text-sm">{step.duration}</span>
-                  <Link href="/contact#consultation" className="font-mono mt-5 inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-ivory hover:text-bronze-soft">
-                    Start a project <ArrowRight size={13} />
-                  </Link>
-                </div>
+                <Link href="/contact#consultation" className="btn btn-dark shrink-0">
+                  Start a project <ArrowRight size={15} />
+                </Link>
               </div>
             </div>
           </div>
@@ -187,50 +198,54 @@ function PinnedProcess({ steps, index }: { steps: Step[]; index?: string }) {
   )
 }
 
-/** Mobile / tablet: every stage stacked with its photograph — normal scrolling reveals them. */
-function StackedProcess({ steps, index }: { steps: Step[]; index?: string }) {
+/** Mobile / tablet: soft stacked cards — normal scrolling reveals them. */
+function StackedProcess({ steps }: { steps: Step[] }) {
   return (
-    <section className="lg:hidden relative py-24 sm:py-32 bg-sand/60 overflow-hidden">
-      <div aria-hidden className={cn('absolute inset-0 opacity-[0.3] pointer-events-none', grid)} />
-      <div className="relative container-x">
+    <section className="lg:hidden py-24 sm:py-32 bg-sand/60">
+      <div className="container-x">
         <SectionHeading
-          index={index ?? undefined}
           label="Our process"
           title="A clear path from"
           accent="idea to handover."
-          intro="Five stages, each with defined deliverables and sign-off — so you always know what happens next, and why."
+          intro="Five stages, each with clear deliverables and sign-off — so you always know what happens next, and why."
         />
-        <ol className="mt-14 space-y-16">
-          {steps.map((s, i) => (
-            <FadeIn as="li" key={s.title}>
-              <div className="relative aspect-[4/3] overflow-hidden bg-ink">
+        <ol className="mt-12 space-y-5">
+          {steps.map((s) => (
+            <FadeIn as="li" key={s.title} className="bg-surface rounded-[26px] p-3 pb-6">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[20px]">
                 <Image src={s.image} alt={s.alt} fill sizes="(min-width: 640px) 90vw, 100vw" className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" aria-hidden />
-                <span className="absolute left-5 bottom-4 display text-6xl text-ivory leading-none">{String(i + 1).padStart(2, '0')}</span>
-                <span className="font-mono absolute right-5 bottom-5 text-[10px] tracking-[0.2em] uppercase text-ivory/80">{s.duration}</span>
+                <span className="absolute left-3 bottom-3 px-3 py-1.5 rounded-full bg-white/85 backdrop-blur text-[0.8rem] text-ink">
+                  {s.duration}
+                </span>
               </div>
-              <h3 className="display text-3xl sm:text-4xl text-ink mt-5">{s.title}</h3>
-              <p className="mt-3 text-muted leading-relaxed">{s.text}</p>
-              <Deliverables items={s.deliverables} />
+              <div className="px-3 pt-5 flex items-center gap-4">
+                <StageIcon name={s.icon} active />
+                <h3 className="display text-2xl sm:text-3xl text-ink">{s.title}</h3>
+              </div>
+              <p className="px-3 mt-3 text-muted leading-relaxed">{s.text}</p>
+              <div className="px-3">
+                <Deliverables items={s.deliverables} />
+              </div>
             </FadeIn>
           ))}
         </ol>
-        <Link href="/contact#consultation" className="btn btn-dark mt-14">
-          Start with a discovery call <ArrowRight size={15} className="btn-arrow" />
+        <Link href="/contact#consultation" className="btn btn-dark mt-10">
+          Start with a discovery call <ArrowRight size={15} />
         </Link>
       </div>
     </section>
   )
 }
 
-export default function ProcessSection({ index = '05' }: { index?: string | null }) {
+export default function ProcessSection(props: { index?: string | null }) {
+  void props
   const steps = site.process
   return (
     <>
       {/* anchor target for "/#process" that works at every breakpoint */}
       <span id="process" aria-hidden className="block" />
-      <PinnedProcess steps={steps} index={index ?? undefined} />
-      <StackedProcess steps={steps} index={index ?? undefined} />
+      <PinnedProcess steps={steps} />
+      <StackedProcess steps={steps} />
     </>
   )
 }

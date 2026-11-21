@@ -29,7 +29,8 @@
         "Brief & budget workshop",
         "Feasibility & bye-law check",
         "Fee proposal"
-      ]
+      ],
+      "icon": "compass"
     },
     {
       "title": "Concept Development",
@@ -42,7 +43,8 @@
         "Massing models",
         "Mood & material boards",
         "Concept presentation"
-      ]
+      ],
+      "icon": "pencil"
     },
     {
       "title": "Design & Planning",
@@ -55,7 +57,8 @@
         "3D views & walkthroughs",
         "Interior layouts",
         "Cost plan update"
-      ]
+      ],
+      "icon": "layers"
     },
     {
       "title": "Documentation",
@@ -68,7 +71,8 @@
         "Structure & MEP coordination",
         "Specifications & schedules",
         "Approval & tender sets"
-      ]
+      ],
+      "icon": "file"
     },
     {
       "title": "Execution & Supervision",
@@ -81,7 +85,8 @@
         "Quality & snag checks",
         "Progress reports with photos",
         "Handover & as-built set"
-      ]
+      ],
+      "icon": "hardhat"
     }
   ],
   "principles": [
