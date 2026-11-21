@@ -19,7 +19,10 @@ import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { Pool } from 'pg'
 
-const url = process.env.DATABASE_URL ?? ''
+const url =
+  [process.env.DATABASE_URL, process.env.POSTGRES_URL, process.env.DATABASE_URL_UNPOOLED, process.env.POSTGRES_URL_NON_POOLING].find(
+    (u) => u && /^postgres(ql)?:\/\//.test(u),
+  ) ?? ''
 const isLocal = /@(localhost|127\.0\.0\.1|\[::1\])(:\d+)?\//.test(url)
 if (!isLocal && process.env.SEED_ALLOW_REMOTE !== '1') {
   console.error('✋ Refusing to seed a non-local database. Set SEED_ALLOW_REMOTE=1 if you really mean it.')

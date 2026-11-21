@@ -60,6 +60,15 @@ public/images/arche/   project photography (Unsplash licence — see CREDITS.md)
 
 Clients are derived from enquiries + projects (grouped by email) — no separate table.
 
+## Deployment (Vercel + Prisma Postgres / Neon + Cloudinary)
+
+- Vercel runs `vercel-build` = `prisma generate && prisma migrate deploy && next build`,
+  so every deploy applies pending migrations to the production database automatically.
+- The DB URL is resolved from `DATABASE_URL`, then `POSTGRES_URL`, `DATABASE_URL_UNPOOLED`,
+  `POSTGRES_URL_NON_POOLING` — the first direct `postgres://` URL wins (`prisma+postgres://`
+  Accelerate URLs are ignored; use the *direct* connection string).
+- First-time starter content: `SEED_ALLOW_REMOTE=1 DATABASE_URL="<prod url>" npm run db:seed`.
+
 ## Deployment notes
 
 - Vercel cron (`vercel.json`) still calls `/api/cron/check-appointments` daily; it now sends a polite "let's find a new time" email.

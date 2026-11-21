@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "db:seed": "prisma db seed"
+    "db:seed": "prisma db seed",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "db:migrate": "prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
