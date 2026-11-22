@@ -40,7 +40,7 @@ type RawService = {
   benefits: string[]; duration: string; pricing?: string; category: string
 }
 type RawProject = {
-  slug: string; title: string; category: string; status: string; location: string; year: number | null
+  slug: string; title: string; category: string; status: string; location: string | null; year: number | null
   area: string | null; summary: string; concept: string | null; description: string | null; coverImage: string
   gallery: string[]; materials: string[]; specs: string[]; services: string[]
   clientName: string | null; clientEmail: string | null; clientPhone: string; budget: number | null
@@ -225,7 +225,7 @@ async function seedSiteContent() {
       const hit = await prisma.galleryItem.findFirst({ where: { image } })
       if (!hit) {
         await prisma.galleryItem.create({
-          data: { image, caption: `${p.title} — ${p.location}`, category: p.category, published: true, displayOrder: order },
+          data: { image, caption: p.location ? `${p.title} — ${p.location}` : p.title, category: p.category, published: true, displayOrder: order },
         })
       } else if (!hit.published) {
         await prisma.galleryItem.update({ where: { id: hit.id }, data: { published: true } })

@@ -36,6 +36,52 @@
     "published": true
   },
   {
+    "slug": "multi-floor-residence-interiors",
+    "title": "Multi-floor Residence Interiors",
+    "category": "interior",
+    "status": "documentation",
+    "location": null,
+    "year": null,
+    "area": null,
+    "summary": "Interior concept and elevation drawings for a multi-floor family residence — bedroom feature walls, wardrobe shutters, a lobby wall and washroom concepts — detailed room by room before work starts on site.",
+    "concept": "Every room is planned twice: first as a concept with reference images and options, then as measured elevations with dimensions, materials and fittings, so the carpenter and contractor build exactly what the client approved.",
+    "description": "The drawing set covers the upper ground, first and second floors. Each sheet pairs a key plan with wall elevations, design options and reference images — from a back-lit bedroom wall with a study table, to fluted wardrobe shutters, a panelled lobby wall and four washroom concepts.",
+    "coverImage": "/images/apn/residence-bedroom-wall-concept.jpg",
+    "gallery": [
+      "/images/apn/residence-bedroom-elevation-detail.jpg",
+      "/images/apn/residence-front-bedroom-wardrobe.jpg",
+      "/images/apn/residence-ug-bedroom-wardrobe.jpg",
+      "/images/apn/residence-lobby-wall-elevation.jpg",
+      "/images/apn/residence-washroom-concept.jpg"
+    ],
+    "materials": [
+      "Laminate wardrobe shutters",
+      "Fluted panels",
+      "Profile handles",
+      "Back-lit wall panels"
+    ],
+    "specs": [
+      "Floors: Upper ground, first & second",
+      "Rooms: Bedrooms, lobby, washrooms",
+      "Drawings: Key plans, elevations, concepts"
+    ],
+    "services": [
+      "interior-design",
+      "construction-documentation",
+      "3d-visualization",
+      "space-planning"
+    ],
+    "clientName": null,
+    "clientEmail": null,
+    "clientPhone": "",
+    "budget": null,
+    "startDate": null,
+    "deadline": null,
+    "progress": 60,
+    "featured": true,
+    "published": true
+  },
+  {
     "slug": "bedroom-interiors",
     "title": "Bedroom Interiors",
     "category": "interior",

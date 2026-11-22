@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = await getProjectBySlug(slug)
   if (!p) return { title: 'Project not found', robots: { index: false } }
   return pageMeta({
-    title: p.seoTitle || `${p.title} — ${labelOf(PROJECT_CATEGORIES, p.category)} project in ${p.location ?? 'India'}`,
+    title: p.seoTitle || `${p.title} — ${labelOf(PROJECT_CATEGORIES, p.category)} project in ${p.location ?? 'Delhi NCR'}`,
     description: p.seoDescription || p.summary || `${p.title} by ${BRAND.name}.`,
     path: `/projects/${p.slug}`,
     image: p.coverImage,
