@@ -39,7 +39,7 @@ export default function LoginForm({ from }: { from?: string }) {
     <div className="min-h-screen grid lg:grid-cols-2 bg-ivory">
       <div className="relative hidden lg:block bg-ink">
         <Image
-          src="/images/arche/office-glass-studio.jpg"
+          src="/images/apn/residential-building-elevation.jpg"
           alt="Daylit architecture studio with glass walls"
           fill
           sizes="50vw"

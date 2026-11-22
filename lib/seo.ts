@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BRAND } from '@/lib/brand'
 import seo from '@/data/seo.json'
 
-const DEFAULT_OG = '/images/arche/hero-dusk-residence.jpg'
+const DEFAULT_OG = '/images/apn/residential-building-elevation.jpg'
 
 /**
  * Page-level metadata with canonical URL, Open Graph and Twitter cards.
@@ -33,7 +33,7 @@ export function pageMeta({
       siteName: BRAND.name,
       locale: BRAND.locale,
       type,
-      images: [{ url: img, width: 1600, height: 1067, alt: title }],
+      images: [{ url: img, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',

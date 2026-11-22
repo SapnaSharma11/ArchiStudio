@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMeta({
   title: SEO.projects.title,
   description: SEO.projects.description,
   path: '/projects',
-  image: '/images/arche/villa-white-pool.jpg',
+  image: '/images/apn/hexagon-panel-wall.jpg',
 })
 
 export const dynamic = 'force-dynamic'

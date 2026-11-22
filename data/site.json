@@ -22,8 +22,8 @@
       "title": "Discovery",
       "text": "We listen, visit the site and understand your brief, budget and timeline in depth.",
       "duration": "1 – 2 weeks",
-      "image": "/images/arche/house-mediterranean.jpg",
-      "alt": "Existing house and garden surveyed during discovery",
+      "image": "/images/apn/residential-building-elevation.jpg",
+      "alt": "Residential building designed by APN Enterprises",
       "deliverables": [
         "Site visit & survey",
         "Brief & budget workshop",
@@ -36,8 +36,8 @@
       "title": "Concept Development",
       "text": "Sketches, massing models and mood boards establish the big idea and the direction.",
       "duration": "2 – 4 weeks",
-      "image": "/images/arche/studio-drawing-board.jpg",
-      "alt": "Architect sketching concept plans by hand",
+      "image": "/images/apn/residence-bedroom-wall-concept.jpg",
+      "alt": "Bedroom wall concept sheet with key plan and design options",
       "deliverables": [
         "Concept sketches",
         "Massing models",
@@ -50,8 +50,8 @@
       "title": "Design & Planning",
       "text": "Plans, elevations and 3D views are refined with you until every space is resolved.",
       "duration": "4 – 10 weeks",
-      "image": "/images/arche/interior-open-living.jpg",
-      "alt": "Photoreal 3D view of a living space developed in design",
+      "image": "/images/apn/residence-bedroom-elevation-detail.jpg",
+      "alt": "Measured bedroom elevations with reference images",
       "deliverables": [
         "Plans, sections & elevations",
         "3D views & walkthroughs",
@@ -64,8 +64,8 @@
       "title": "Documentation",
       "text": "Coordinated working drawings, specifications and approvals ready for tender and construction.",
       "duration": "4 – 8 weeks",
-      "image": "/images/arche/commercial-white-facade.jpg",
-      "alt": "Precise white façade reflecting resolved construction drawings",
+      "image": "/images/apn/residence-lobby-wall-elevation.jpg",
+      "alt": "Lobby wall elevation drawing with dimensions and finishes",
       "deliverables": [
         "Working drawings & details",
         "Structure & MEP coordination",
@@ -113,6 +113,36 @@
     {
       "q": "Can you work with my contractor?",
       "a": "Yes. We prepare clear drawings for your builder and can visit site during construction to check that the work follows the design."
+    }
+  ],
+  "films": [
+    {
+      "title": "Bedroom with arched wardrobe shutters",
+      "video": "/videos/apn/bedroom-wardrobe-walkthrough.mp4",
+      "poster": "/images/apn/bedroom-wardrobe.jpg",
+      "duration": "0:13",
+      "type": "Interiors"
+    },
+    {
+      "title": "Wardrobe panelling in progress",
+      "video": "/videos/apn/wardrobe-panelling-progress.mp4",
+      "poster": "/images/apn/wardrobe-panelling-progress.jpg",
+      "duration": "0:14",
+      "type": "On site"
+    },
+    {
+      "title": "Sculpted TV and console wall",
+      "video": "/videos/apn/tv-console-wall.mp4",
+      "poster": "/images/apn/tv-console-wall.jpg",
+      "duration": "0:16",
+      "type": "Interiors"
+    },
+    {
+      "title": "Ceiling and staircase wall work",
+      "video": "/videos/apn/ceiling-staircase-work.mp4",
+      "poster": "/images/apn/ceiling-work-progress.jpg",
+      "duration": "0:03",
+      "type": "On site"
     }
   ]
 }

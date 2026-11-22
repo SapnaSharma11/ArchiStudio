@@ -22,7 +22,7 @@ function defaults(): StudioSettingsDTO {
     addressFull: j.address.full,
     mapsEmbedUrl: process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL ?? '',
     heroVideoUrl: '',
-    heroImageUrl: '/images/arche/hero-dusk-residence.jpg',
+    heroImageUrl: '/images/apn/residential-building-elevation.jpg',
     hours: j.hours,
     stats: j.stats,
     socials: j.socials,

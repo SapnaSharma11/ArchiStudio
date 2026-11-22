@@ -7,7 +7,7 @@ export default function Philosophy({ index = '04' }: { index?: string | null }) 
   return (
     <section className="relative bg-ink text-ivory py-24 sm:py-32 lg:py-40 overflow-hidden">
       <Image
-        src="/images/arche/house-black-detail.jpg"
+        src="/images/apn/staircase-feature-wall.jpg"
         alt=""
         fill
         sizes="100vw"

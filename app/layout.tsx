@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     siteName: BRAND.name,
     type: 'website',
     locale: BRAND.locale,
-    images: [{ url: '/images/arche/hero-dusk-residence.jpg', width: 1600, height: 1067, alt: BRAND.name }],
+    images: [{ url: '/images/apn/residential-building-elevation.jpg', width: 1077, height: 1280, alt: BRAND.name }],
   },
   twitter: {
     card: 'summary_large_image',
     title: SEO.default.title,
     description: SEO.default.description,
-    images: ['/images/arche/hero-dusk-residence.jpg'],
+    images: ['/images/apn/residential-building-elevation.jpg'],
   },
 }
 
@@ -69,7 +69,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     description: SEO.default.description,
     slogan: studio.tagline,
     url: BRAND.siteUrl,
-    image: `${BRAND.siteUrl}/images/arche/hero-dusk-residence.jpg`,
+    image: `${BRAND.siteUrl}/images/apn/residential-building-elevation.jpg`,
     email: studio.email || undefined,
     telephone: studio.phone || undefined,
     address: {

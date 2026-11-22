@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMeta({
   title: SEO.services.title,
   description: SEO.services.description,
   path: '/services',
-  image: '/images/arche/house-timber-facade.jpg',
+  image: '/images/apn/residential-building-elevation.jpg',
 })
 
 // Read live from the DB so dashboard edits appear without a redeploy.

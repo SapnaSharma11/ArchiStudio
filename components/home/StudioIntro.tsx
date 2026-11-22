@@ -45,9 +45,8 @@ export default function StudioIntro({ studio }: { studio: StudioData }) {
         <div className="lg:col-span-7">
           <div className="grid grid-cols-6 gap-4 sm:gap-6">
             <RevealImage
-              src="/images/apn/residential-building-elevation.jpg"
-              alt="Residential building designed by APN Enterprises, with brick-tone and grey cladding lit at dusk"
-              imgClassName="object-[center_30%]"
+              src="/images/apn/residence-bedroom-elevation-detail.jpg"
+              alt="Bedroom elevation drawing by Akash Sharma with key plan, measured walls and reference images"
               sizes="(min-width: 1024px) 55vw, 100vw"
               className="col-span-6 aspect-[4/3]"
             />

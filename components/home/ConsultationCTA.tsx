@@ -9,8 +9,8 @@ export default function ConsultationCTA({ studio }: { studio: StudioData }) {
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[360px] lg:min-h-full">
           <Image
-            src="/images/arche/house-black-dusk.jpg"
-            alt="Dark-clad contemporary house glowing at dusk"
+            src="/images/apn/bedroom-panelled-headboard.jpg"
+            alt="Bedroom with a sculpted panel headboard wall designed by APN Enterprises"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"

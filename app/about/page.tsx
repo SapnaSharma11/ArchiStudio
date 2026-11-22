@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMeta({
   title: SEO.about.title,
   description: SEO.about.description,
   path: '/about',
-  image: '/images/arche/studio-drawing-board.jpg',
+  image: '/images/apn/residence-lobby-wall-elevation.jpg',
 })
 
 // Live from the DB so dashboard edits to the architect's profile appear instantly.
@@ -32,8 +32,8 @@ export default async function AboutPage() {
         title={`${p.name},`}
         accent="Architect."
         intro={`The architect behind ${studio.name} in Najafgarh, New Delhi — building design, structural design and architectural design for homes and businesses.`}
-        image="/images/arche/studio-drawing-board.jpg"
-        imageAlt="Architect drafting a building plan by hand"
+        image="/images/apn/residence-lobby-wall-elevation.jpg"
+        imageAlt="Lobby wall elevation drawing by APN Enterprises"
         crumbs={[{ label: 'About' }]}
       />
 
@@ -45,7 +45,7 @@ export default async function AboutPage() {
               <RevealImage src={p.photo} alt={`${p.name}, ${p.title}`} sizes="(min-width: 1024px) 40vw, 100vw" className="aspect-[4/5]" />
             ) : (
               <FadeIn className="relative aspect-[4/5] bg-sand overflow-hidden rounded-media">
-                <Image src="/images/arche/house-white-terrace.jpg" alt="Contemporary white house with terraces" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+                <Image src="/images/apn/residential-building-elevation.jpg" alt="Residential building designed by APN Enterprises" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
               </FadeIn>
             )}
           </div>

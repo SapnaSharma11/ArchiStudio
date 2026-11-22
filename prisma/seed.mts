@@ -73,6 +73,9 @@ async function seedServices() {
 }
 
 async function seedProjects() {
+  // Remove the template's sample projects (stock imagery, invented clients).
+  const removed = await prisma.project.deleteMany({ where: { coverImage: { startsWith: '/images/arche/' } } })
+  if (removed.count) console.log(`✓ removed ${removed.count} sample projects`)
   const projects: RawProject[] = readJson('data/projects.json')
   for (const [i, p] of projects.entries()) {
     const data = {
@@ -133,7 +136,7 @@ async function seedStudio() {
     addressFull: s.address.full,
     mapsEmbedUrl: 'https://maps.google.com/maps?q=203A%20New%20Roshanpura%20Najafgarh%20New%20Delhi&output=embed',
     heroVideoUrl: null,
-    heroImageUrl: '/images/arche/hero-dusk-residence.jpg',
+    heroImageUrl: '/images/apn/residential-building-elevation.jpg',
     hours: s.hours,
     stats: s.stats,
     socials: s.socials,
@@ -208,13 +211,24 @@ async function seedSiteContent() {
     data: { approved: false },
   })
 
-  // Films (Session table): hide legacy clinic videos.
-  const films = await prisma.session.updateMany({ where: { published: true }, data: { published: false } })
+  // Films (Session table): APN's own site and interiors videos; hide anything else.
+  const filmData: { title: string; video: string; poster: string; duration: string; type: string }[] = site.films ?? []
+  const films = await prisma.session.updateMany({
+    where: { title: { notIn: filmData.map((f) => f.title) }, published: true },
+    data: { published: false },
+  })
+  for (const [i, f] of filmData.entries()) {
+    const data = { videoUrl: f.video, image: f.poster, duration: f.duration, sessionType: f.type, published: true, displayOrder: i }
+    const hit = await prisma.session.findFirst({ where: { title: f.title } })
+    if (hit) await prisma.session.update({ where: { id: hit.id }, data })
+    else await prisma.session.create({ data: { title: f.title, ...data } })
+  }
 
   // Project archive (GalleryItem): show only imagery from published projects.
   const projects: RawProject[] = readJson('data/projects.json')
   const live = projects.filter((p) => p.published)
   const liveImages = [...new Set(live.flatMap((p) => [p.coverImage, ...p.gallery]))]
+  await prisma.galleryItem.deleteMany({ where: { image: { startsWith: '/images/arche/' } } })
   const legacyGallery = await prisma.galleryItem.updateMany({
     where: { image: { notIn: liveImages }, published: true },
     data: { published: false },
