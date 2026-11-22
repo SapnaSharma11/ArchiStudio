@@ -12,7 +12,7 @@ import Breadcrumbs from '@/components/shared/Breadcrumbs'
 import FadeIn from '@/components/shared/FadeIn'
 import SectionHeading from '@/components/shared/SectionHeading'
 import ProjectCard from '@/components/shared/ProjectCard'
-import { isVideo, videoPoster } from '@/lib/clinic'
+import { isVideo, videoPoster } from '@/lib/video'
 import ProjectGallery from '@/components/projects/ProjectGallery'
 import ConsultationCTA from '@/components/home/ConsultationCTA'
 
