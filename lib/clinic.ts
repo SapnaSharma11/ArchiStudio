@@ -51,7 +51,7 @@ export type StudioData = {
 export type ClinicData = StudioData
 
 const j = studioJson
-const DEFAULT_HERO = '/images/apn/residential-building-elevation.jpg'
+const DEFAULT_HERO = '/images/apn/apartment-building-elevation.jpg'
 const DEFAULT_MAP = 'https://maps.google.com/maps?q=203A%20New%20Roshanpura%20Najafgarh%20New%20Delhi&output=embed'
 
 function jsonFallback(): StudioData {

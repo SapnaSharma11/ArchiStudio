@@ -1,5 +1,42 @@
 [
   {
+    "slug": "apartment-building-elevation",
+    "title": "Apartment Building Elevation",
+    "category": "residential",
+    "status": "design",
+    "location": "New Delhi",
+    "year": null,
+    "area": null,
+    "summary": "A four-storey apartment building with stone-grey cladding, timber-tone accents, an arched central bay and warm façade lighting along the stilt parking level.",
+    "concept": null,
+    "description": null,
+    "coverImage": "/images/apn/apartment-building-elevation.jpg",
+    "gallery": [
+      "/images/apn/apartment-building-elevation.jpg"
+    ],
+    "materials": [
+      "Stone-grey cladding",
+      "Timber-tone panels",
+      "Glass balcony railings",
+      "Façade lighting"
+    ],
+    "specs": [],
+    "services": [
+      "architectural-design",
+      "building-design",
+      "3d-visualization"
+    ],
+    "clientName": null,
+    "clientEmail": null,
+    "clientPhone": "",
+    "budget": null,
+    "startDate": null,
+    "deadline": null,
+    "progress": 50,
+    "featured": true,
+    "published": true
+  },
+  {
     "slug": "modern-residential-building",
     "title": "Modern Residential Building",
     "category": "residential",
@@ -82,6 +119,43 @@
     "published": true
   },
   {
+    "slug": "corner-residence-elevation",
+    "title": "Corner Residence Elevation",
+    "category": "residential",
+    "status": "design",
+    "location": "New Delhi",
+    "year": null,
+    "area": null,
+    "summary": "A corner residence with framed balconies, a deep timber-toned frame and layered grey and brick-tone cladding, finished with a planted roof terrace.",
+    "concept": null,
+    "description": null,
+    "coverImage": "/images/apn/corner-residence-elevation.jpg",
+    "gallery": [
+      "/images/apn/corner-residence-elevation.jpg"
+    ],
+    "materials": [
+      "Brick-tone cladding",
+      "Grey façade panels",
+      "Framed balconies",
+      "Roof-top pergola"
+    ],
+    "specs": [],
+    "services": [
+      "architectural-design",
+      "building-design",
+      "3d-visualization"
+    ],
+    "clientName": null,
+    "clientEmail": null,
+    "clientPhone": "",
+    "budget": null,
+    "startDate": null,
+    "deadline": null,
+    "progress": 50,
+    "featured": true,
+    "published": true
+  },
+  {
     "slug": "bedroom-interiors",
     "title": "Bedroom Interiors",
     "category": "interior",
@@ -94,6 +168,7 @@
     "description": null,
     "coverImage": "/images/apn/bedroom-panelled-headboard.jpg",
     "gallery": [
+      "/images/apn/bedroom-cove-ceiling.jpg",
       "/images/apn/bedroom-wardrobe.jpg",
       "/images/apn/wardrobe-panelling-progress.jpg"
     ],
@@ -118,41 +193,6 @@
     "published": true
   },
   {
-    "slug": "feature-staircase-wall",
-    "title": "Feature Staircase Wall",
-    "category": "interior",
-    "status": "completed",
-    "location": "New Delhi",
-    "year": null,
-    "area": null,
-    "summary": "A double-height staircase wall finished with textured circular panels and backlighting, with a matching false-ceiling detail.",
-    "concept": null,
-    "description": null,
-    "coverImage": "/images/apn/staircase-feature-wall.jpg",
-    "gallery": [
-      "/images/apn/ceiling-work-progress.jpg"
-    ],
-    "materials": [
-      "Textured wall panels",
-      "Backlit circular features",
-      "Cove-lit false ceiling"
-    ],
-    "specs": [],
-    "services": [
-      "interior-design",
-      "renovation-remodeling"
-    ],
-    "clientName": null,
-    "clientEmail": null,
-    "clientPhone": "",
-    "budget": null,
-    "startDate": null,
-    "deadline": null,
-    "progress": 100,
-    "featured": true,
-    "published": true
-  },
-  {
     "slug": "living-room-feature-walls",
     "title": "Living Room Feature Walls",
     "category": "interior",
@@ -165,6 +205,8 @@
     "description": null,
     "coverImage": "/images/apn/hexagon-panel-wall.jpg",
     "gallery": [
+      "/images/apn/mandala-tv-wall.jpg",
+      "/images/apn/carved-wall-panel.jpg",
       "/images/apn/tv-console-wall.jpg"
     ],
     "materials": [
@@ -188,19 +230,91 @@
     "published": true
   },
   {
+    "slug": "feature-staircase-wall",
+    "title": "Feature Staircase Wall",
+    "category": "interior",
+    "status": "completed",
+    "location": "New Delhi",
+    "year": null,
+    "area": null,
+    "summary": "A double-height staircase wall finished with textured circular panels and backlighting, with a matching false-ceiling detail.",
+    "concept": null,
+    "description": null,
+    "coverImage": "/images/apn/staircase-feature-wall.jpg",
+    "gallery": [
+      "/images/apn/staircase-wall-work.jpg",
+      "/images/apn/ceiling-work-progress.jpg"
+    ],
+    "materials": [
+      "Textured wall panels",
+      "Backlit circular features",
+      "Cove-lit false ceiling"
+    ],
+    "specs": [],
+    "services": [
+      "interior-design",
+      "renovation-remodeling"
+    ],
+    "clientName": null,
+    "clientEmail": null,
+    "clientPhone": "",
+    "budget": null,
+    "startDate": null,
+    "deadline": null,
+    "progress": 100,
+    "featured": true,
+    "published": true
+  },
+  {
+    "slug": "narrow-plot-house-facade",
+    "title": "Narrow-plot House Façade",
+    "category": "residential",
+    "status": "design",
+    "location": "New Delhi",
+    "year": null,
+    "area": null,
+    "summary": "A slim urban house façade that makes the most of a narrow plot — stacked balconies, vertical timber screens and a calm, neutral palette.",
+    "concept": null,
+    "description": null,
+    "coverImage": "/images/apn/narrow-plot-house-facade.jpg",
+    "gallery": [
+      "/images/apn/narrow-plot-house-facade.jpg"
+    ],
+    "materials": [
+      "Vertical timber screens",
+      "Neutral render",
+      "Stacked balconies"
+    ],
+    "specs": [],
+    "services": [
+      "architectural-design",
+      "building-design"
+    ],
+    "clientName": null,
+    "clientEmail": null,
+    "clientPhone": "",
+    "budget": null,
+    "startDate": null,
+    "deadline": null,
+    "progress": 50,
+    "featured": true,
+    "published": true
+  },
+  {
     "slug": "structural-work-on-site",
-    "title": "Structural Work on Site",
+    "title": "Site Work: Excavation to Structure",
     "category": "residential",
     "status": "construction",
     "location": "New Delhi",
     "year": null,
     "area": null,
-    "summary": "Slab reinforcement in progress on a residential site — structural design carried through to careful checks on site with the construction team.",
+    "summary": "A residential building taken from excavation to its reinforced slabs and frame — structural design followed through with regular checks on site alongside the construction team.",
     "concept": null,
     "description": null,
-    "coverImage": "/images/apn/site-slab-reinforcement.jpg",
+    "coverImage": "/images/apn/building-under-construction.jpg",
     "gallery": [
-      "/images/apn/site-slab-reinforcement.jpg"
+      "/images/apn/site-slab-reinforcement.jpg",
+      "/images/apn/site-excavation.jpg"
     ],
     "materials": [
       "RCC slab",

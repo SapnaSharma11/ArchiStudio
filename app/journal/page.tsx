@@ -5,6 +5,7 @@ import { pageMeta, SEO } from '@/lib/seo'
 import PageHero from '@/components/shared/PageHero'
 import FadeIn from '@/components/shared/FadeIn'
 import SectionHeading from '@/components/shared/SectionHeading'
+import FilmGrid from '@/components/shared/FilmGrid'
 
 export const metadata: Metadata = pageMeta({ title: SEO.journal.title, description: SEO.journal.description, path: '/journal' })
 
@@ -100,22 +101,10 @@ export default async function JournalPage() {
       {films.length > 0 && (
         <section id="films" className="scroll-mt-24 py-24">
           <div className="container-x">
-            <SectionHeading label="Films" title="Walkthroughs &" accent="fly-throughs." />
-            <ul className="mt-12 grid gap-8 sm:grid-cols-2">
-              {films.map((f) => (
-                <li key={f.id}>
-                  <div className="relative aspect-video bg-ink overflow-hidden">
-                    {f.videoUrl ? (
-                      <video src={f.videoUrl} poster={f.image ?? undefined} controls preload="none" className="absolute inset-0 w-full h-full object-cover" />
-                    ) : f.image ? (
-                      <Image src={f.image} alt={f.title} fill sizes="50vw" className="object-cover" />
-                    ) : null}
-                  </div>
-                  <h3 className="display text-2xl text-ink mt-4">{f.title}</h3>
-                  {f.description && <p className="text-sm text-muted mt-1">{f.description}</p>}
-                </li>
-              ))}
-            </ul>
+            <SectionHeading label="Films" title="Our work," accent="on video." />
+            <div className="mt-12">
+              <FilmGrid films={films} />
+            </div>
           </div>
         </section>
       )}

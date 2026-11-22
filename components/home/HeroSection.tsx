@@ -46,13 +46,13 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
           ) : (
             <Image
               src={studio.heroImageUrl}
-              alt="Residential building designed by APN Enterprises, with brick-tone and grey cladding lit at dusk"
+              alt="Apartment building designed by APN Enterprises, with grey cladding, timber accents and warm façade lighting"
               fill
               preload
               fetchPriority="high"
               sizes="100vw"
               quality={85}
-              className="object-cover object-[center_35%]"
+              className="object-cover object-[center_40%]"
             />
           )}
         </motion.div>

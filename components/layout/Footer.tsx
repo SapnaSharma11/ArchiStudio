@@ -10,7 +10,7 @@ const navigation = [
   { label: 'Projects', href: '/projects' },
   { label: 'Our process', href: '/#process' },
   { label: 'Journal', href: '/journal' },
-  { label: 'Project archive', href: '/gallery' },
+  { label: 'Photos & films', href: '/gallery' },
   { label: 'Client stories', href: '/testimonials' },
   { label: 'Contact', href: '/contact' },
 ]

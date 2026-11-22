@@ -118,30 +118,86 @@
   "films": [
     {
       "title": "Bedroom with arched wardrobe shutters",
-      "video": "/videos/apn/bedroom-wardrobe-walkthrough.mp4",
-      "poster": "/images/apn/bedroom-wardrobe.jpg",
-      "duration": "0:13",
+      "video": "/videos/apn/bedroom-arched-wardrobe.mp4",
+      "poster": "/images/apn/films/bedroom-arched-wardrobe.jpg",
+      "duration": "",
       "type": "Interiors"
     },
     {
-      "title": "Wardrobe panelling in progress",
-      "video": "/videos/apn/wardrobe-panelling-progress.mp4",
-      "poster": "/images/apn/wardrobe-panelling-progress.jpg",
-      "duration": "0:14",
-      "type": "On site"
+      "title": "Bedroom with wave-pattern headboard wall",
+      "video": "/videos/apn/wave-headboard-bedroom.mp4",
+      "poster": "/images/apn/films/wave-headboard-bedroom.jpg",
+      "duration": "",
+      "type": "Interiors"
     },
     {
       "title": "Sculpted TV and console wall",
       "video": "/videos/apn/tv-console-wall.mp4",
-      "poster": "/images/apn/tv-console-wall.jpg",
-      "duration": "0:16",
+      "poster": "/images/apn/films/tv-console-wall.jpg",
+      "duration": "",
       "type": "Interiors"
+    },
+    {
+      "title": "Arched doorway with back-lit panel",
+      "video": "/videos/apn/arched-backlit-doorway.mp4",
+      "poster": "/images/apn/films/arched-backlit-doorway.jpg",
+      "duration": "",
+      "type": "Interiors"
+    },
+    {
+      "title": "Arched wall panel with LED outline",
+      "video": "/videos/apn/arched-wall-panel.mp4",
+      "poster": "/images/apn/films/arched-wall-panel.jpg",
+      "duration": "",
+      "type": "Interiors"
+    },
+    {
+      "title": "Modular kitchen",
+      "video": "/videos/apn/modular-kitchen.mp4",
+      "poster": "/images/apn/films/modular-kitchen.jpg",
+      "duration": "",
+      "type": "Interiors"
+    },
+    {
+      "title": "Wardrobe with study niche",
+      "video": "/videos/apn/wardrobe-study-niche.mp4",
+      "poster": "/images/apn/films/wardrobe-study-niche.jpg",
+      "duration": "",
+      "type": "Interiors"
+    },
+    {
+      "title": "Room finishing with panelled door",
+      "video": "/videos/apn/panelled-door-finishing.mp4",
+      "poster": "/images/apn/films/panelled-door-finishing.jpg",
+      "duration": "",
+      "type": "On site"
+    },
+    {
+      "title": "Wardrobe panelling in progress",
+      "video": "/videos/apn/wardrobe-panelling-progress.mp4",
+      "poster": "/images/apn/films/wardrobe-panelling-progress.jpg",
+      "duration": "",
+      "type": "On site"
     },
     {
       "title": "Ceiling and staircase wall work",
       "video": "/videos/apn/ceiling-staircase-work.mp4",
-      "poster": "/images/apn/ceiling-work-progress.jpg",
-      "duration": "0:03",
+      "poster": "/images/apn/films/ceiling-staircase-work.jpg",
+      "duration": "",
+      "type": "On site"
+    },
+    {
+      "title": "Curing the reinforced slab",
+      "video": "/videos/apn/slab-curing.mp4",
+      "poster": "/images/apn/films/slab-curing.jpg",
+      "duration": "",
+      "type": "On site"
+    },
+    {
+      "title": "Excavation for foundations",
+      "video": "/videos/apn/foundation-excavation.mp4",
+      "poster": "/images/apn/films/foundation-excavation.jpg",
+      "duration": "",
       "type": "On site"
     }
   ]
