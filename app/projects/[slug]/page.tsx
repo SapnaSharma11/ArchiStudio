@@ -169,6 +169,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     src={src}
                     poster={videoPoster(src) || undefined}
                     controls
+                    muted
                     playsInline
                     preload="none"
                     aria-label={`${project.title} — film ${i + 1}`}

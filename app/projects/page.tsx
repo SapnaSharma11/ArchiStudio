@@ -55,6 +55,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
                       src={f.src}
                       poster={videoPoster(f.src) || undefined}
                       controls
+                      muted
                       playsInline
                       preload="none"
                       aria-label={`${f.title} — film ${i + 1}`}

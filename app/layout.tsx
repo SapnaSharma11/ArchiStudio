@@ -6,6 +6,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
+import VideoCoordinator from '@/components/shared/VideoCoordinator'
 import MotionProvider from '@/components/site/MotionProvider'
 import { BRAND } from '@/lib/brand'
 import { SEO } from '@/lib/seo'
@@ -105,6 +106,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en-IN" data-scroll-behavior="smooth" className={`${display.variable} ${sans.variable}`}>
       <body>
+        <VideoCoordinator />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <MotionProvider>
           {!isChromeless && <Navbar studio={studio} />}

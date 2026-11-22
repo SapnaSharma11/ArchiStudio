@@ -12,6 +12,7 @@ export default function FilmGrid({ films }: { films: Film[] }) {
                 src={f.videoUrl}
                 poster={f.image ?? undefined}
                 controls
+                muted
                 playsInline
                 preload="none"
                 className="absolute inset-0 w-full h-full object-cover"
