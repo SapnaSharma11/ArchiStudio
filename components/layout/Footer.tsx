@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import type { StudioData } from '@/lib/clinic'
 import { BRAND } from '@/lib/brand'
 import { Wordmark } from '@/components/layout/Navbar'
+import BackgroundVideo from '@/components/shared/BackgroundVideo'
 
 const navigation = [
   { label: 'About Akash Sharma', href: '/about' },
@@ -50,8 +51,10 @@ export default function Footer({
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-ink text-ivory/75">
-      <div className="container-x pt-20 pb-10">
+    <footer className="relative overflow-hidden bg-ink text-ivory/75">
+      <BackgroundVideo src="/videos/apn/modular-kitchen.mp4" poster="/images/apn/films/modular-kitchen.jpg" className="opacity-[0.3]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/55 to-ink/90" aria-hidden />
+      <div className="relative container-x pt-20 pb-10">
         <div className="grid gap-12 lg:grid-cols-12 pb-16 border-b border-white/10">
           <div className="lg:col-span-4">
             <Wordmark light />

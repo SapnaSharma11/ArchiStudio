@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import BackgroundVideo from '@/components/shared/BackgroundVideo'
 import SectionHeading from '@/components/shared/SectionHeading'
 import FadeIn from '@/components/shared/FadeIn'
 import site from '@/data/site.json'
@@ -6,13 +6,10 @@ import site from '@/data/site.json'
 export default function Philosophy({ index = '04' }: { index?: string | null }) {
   return (
     <section className="relative bg-ink text-ivory py-24 sm:py-32 lg:py-40 overflow-hidden">
-      <Image
-        src="/images/apn/staircase-feature-wall.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover opacity-[0.12]"
-        aria-hidden
+      <BackgroundVideo
+        src="/videos/apn/ceiling-staircase-work.mp4"
+        poster="/images/apn/films/ceiling-staircase-work.jpg"
+        className="opacity-[0.16]"
       />
       <div className="relative container-x grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">

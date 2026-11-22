@@ -32,6 +32,8 @@ export type StudioData = {
   hours: HoursEntry[]
   mapsEmbedUrl: string
   heroVideoUrl: string
+  /** Poster frame for the hero video (first frame of the clip). */
+  heroVideoPoster: string
   heroImageUrl: string
   principal: {
     name: string
@@ -51,6 +53,12 @@ export type StudioData = {
 export type ClinicData = StudioData
 
 const j = studioJson
+/** Poster for a bundled /videos/apn/<name>.mp4 clip; uploaded videos fall back to the hero image. */
+export function videoPoster(url: string): string {
+  const m = url.match(/^\/videos\/apn\/([a-z0-9-]+)\.mp4$/)
+  return m ? `/images/apn/films/${m[1]}.jpg` : ''
+}
+
 const DEFAULT_HERO = '/images/apn/apartment-building-elevation.jpg'
 const DEFAULT_MAP = 'https://maps.google.com/maps?q=203A%20New%20Roshanpura%20Najafgarh%20New%20Delhi&output=embed'
 
@@ -66,7 +74,8 @@ function jsonFallback(): StudioData {
     stats: j.stats,
     hours: j.hours,
     mapsEmbedUrl: process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL || DEFAULT_MAP,
-    heroVideoUrl: '',
+    heroVideoUrl: '/videos/apn/arched-wall-panel.mp4',
+    heroVideoPoster: videoPoster('/videos/apn/arched-wall-panel.mp4'),
     heroImageUrl: DEFAULT_HERO,
     principal: { ...j.principal },
     awards: [],
@@ -105,6 +114,7 @@ export const getStudio = cache(async (): Promise<StudioData> => {
       hours: ((s?.hours as HoursEntry[] | null) ?? fb.hours) || [],
       mapsEmbedUrl: s?.mapsEmbedUrl || fb.mapsEmbedUrl,
       heroVideoUrl: s?.heroVideoUrl ?? '',
+      heroVideoPoster: videoPoster(s?.heroVideoUrl ?? ''),
       heroImageUrl: s?.heroImageUrl || fb.heroImageUrl,
       principal: profile
         ? {

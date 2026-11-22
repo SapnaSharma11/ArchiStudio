@@ -135,7 +135,7 @@ async function seedStudio() {
     pincode: s.address.pincode,
     addressFull: s.address.full,
     mapsEmbedUrl: 'https://maps.google.com/maps?q=203A%20New%20Roshanpura%20Najafgarh%20New%20Delhi&output=embed',
-    heroVideoUrl: null,
+    heroVideoUrl: '/videos/apn/arched-wall-panel.mp4',
     heroImageUrl: '/images/apn/apartment-building-elevation.jpg',
     hours: s.hours,
     stats: s.stats,

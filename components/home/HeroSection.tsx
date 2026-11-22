@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react'
 import type { StudioData } from '@/lib/clinic'
 import { BRAND } from '@/lib/brand'
+import BackgroundVideo from '@/components/shared/BackgroundVideo'
 
 type Featured = { slug: string; title: string; location: string | null; year: number | null } | null
 
@@ -33,16 +34,7 @@ export default function HeroSection({ studio, featured }: { studio: StudioData; 
           transition={{ duration: 2.4, ease }}
         >
           {studio.heroVideoUrl ? (
-            <video
-              className="absolute inset-0 w-full h-full object-cover"
-              src={studio.heroVideoUrl}
-              poster={studio.heroImageUrl}
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden
-            />
+            <BackgroundVideo src={studio.heroVideoUrl} poster={studio.heroVideoPoster || studio.heroImageUrl} eager />
           ) : (
             <Image
               src={studio.heroImageUrl}

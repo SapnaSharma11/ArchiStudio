@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import BackgroundVideo from '@/components/shared/BackgroundVideo'
 import ConsultationForm from '@/components/shared/ConsultationForm'
 import FadeIn from '@/components/shared/FadeIn'
 import type { StudioData } from '@/lib/clinic'
@@ -8,12 +8,9 @@ export default function ConsultationCTA({ studio }: { studio: StudioData }) {
     <section id="consultation" className="bg-ink text-ivory scroll-mt-20">
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[360px] lg:min-h-full">
-          <Image
-            src="/images/apn/bedroom-panelled-headboard.jpg"
-            alt="Bedroom with a sculpted panel headboard wall designed by APN Enterprises"
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
+          <BackgroundVideo
+            src="/videos/apn/bedroom-arched-wardrobe.mp4"
+            poster="/images/apn/films/bedroom-arched-wardrobe.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-ink/40" aria-hidden />
           <div className="absolute bottom-0 left-0 p-6 sm:p-10 lg:hidden">
