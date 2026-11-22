@@ -54,6 +54,8 @@ export type ClinicData = StudioData
 
 const j = studioJson
 /** Poster for a bundled /videos/apn/<name>.mp4 clip; uploaded videos fall back to the hero image. */
+export const isVideo = (url: string) => /\.(mp4|webm|mov)(\?|$)/i.test(url)
+
 export function videoPoster(url: string): string {
   const m = url.match(/^\/videos\/apn\/([a-z0-9-]+)\.mp4$/)
   return m ? `/images/apn/films/${m[1]}.jpg` : ''

@@ -30,7 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-      images: [p.coverImage, ...p.gallery].filter((x): x is string => Boolean(x)).map((src) => `${base}${src}`),
+      images: [p.coverImage, ...p.gallery].filter((x): x is string => Boolean(x) && !/\.(mp4|webm|mov)$/i.test(x as string)).map((src) => `${base}${src}`),
     })),
   ]
 }

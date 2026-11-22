@@ -12,6 +12,7 @@ import Breadcrumbs from '@/components/shared/Breadcrumbs'
 import FadeIn from '@/components/shared/FadeIn'
 import SectionHeading from '@/components/shared/SectionHeading'
 import ProjectCard from '@/components/shared/ProjectCard'
+import { isVideo, videoPoster } from '@/lib/clinic'
 import ProjectGallery from '@/components/projects/ProjectGallery'
 import ConsultationCTA from '@/components/home/ConsultationCTA'
 
@@ -46,6 +47,8 @@ export default async function ProjectDetailPage({ params }: Props) {
     getStudio(),
   ])
   if (!project) notFound()
+  const photos = project.gallery.filter((x) => !isVideo(x))
+  const films = project.gallery.filter(isVideo)
 
   const sameCategory = all.filter((p) => p.slug !== project.slug && p.category === project.category)
   const related = [...sameCategory, ...all.filter((p) => p.slug !== project.slug && p.category !== project.category)].slice(0, 3)
@@ -71,7 +74,7 @@ export default async function ProjectDetailPage({ params }: Props) {
     genre: labelOf(PROJECT_CATEGORIES, project.category),
     dateCreated: project.year ? String(project.year) : undefined,
     locationCreated: project.location ? { '@type': 'Place', name: project.location } : undefined,
-    image: [project.coverImage, ...project.gallery].filter(Boolean).map((src) => `${BRAND.siteUrl}${src}`),
+    image: [project.coverImage, ...project.gallery].filter((x) => x && !isVideo(x)).map((src) => `${BRAND.siteUrl}${src}`),
     creator: { '@id': `${BRAND.siteUrl}/#studio` },
     url: `${BRAND.siteUrl}/projects/${project.slug}`,
   }
@@ -146,10 +149,34 @@ export default async function ProjectDetailPage({ params }: Props) {
       )}
 
       {/* Gallery */}
-      {project.gallery.length > 0 && (
+      {photos.length > 0 && (
         <section className="py-20 sm:py-28" aria-label="Project gallery">
           <div className="container-x">
-            <ProjectGallery images={project.gallery} title={project.title} />
+            <ProjectGallery images={photos} title={project.title} />
+          </div>
+        </section>
+      )}
+
+      {/* Films from this project */}
+      {films.length > 0 && (
+        <section className={photos.length ? 'pb-20 sm:pb-28' : 'py-20 sm:py-28'} aria-label="Project films">
+          <div className="container-x">
+            <p className="eyebrow">On video</p>
+            <ul className="mt-8 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+              {films.map((src, i) => (
+                <li key={src} className="relative aspect-[9/16] overflow-hidden rounded-media bg-ink">
+                  <video
+                    src={src}
+                    poster={videoPoster(src) || undefined}
+                    controls
+                    playsInline
+                    preload="none"
+                    aria-label={`${project.title} — film ${i + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}

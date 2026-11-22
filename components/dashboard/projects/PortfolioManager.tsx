@@ -20,7 +20,7 @@ const config: ResourceConfig = {
     <>
       <Badge tone="bronze">{categoryLabel(it)}</Badge>
       {Boolean(it.featured) && <Badge tone="ink"><Star size={10} /> Featured</Badge>}
-      {Array.isArray(it.gallery) && <Badge tone="outline">{(it.gallery as unknown[]).length} images</Badge>}
+      {Array.isArray(it.gallery) && <Badge tone="outline">{(it.gallery as unknown[]).length} mediages</Badge>}
     </>
   ),
   subtitle: (it) => [it.location, it.year].filter(Boolean).join(' · '),

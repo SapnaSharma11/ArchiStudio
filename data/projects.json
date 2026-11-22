@@ -170,7 +170,11 @@
     "gallery": [
       "/images/apn/bedroom-cove-ceiling.jpg",
       "/images/apn/bedroom-wardrobe.jpg",
-      "/images/apn/wardrobe-panelling-progress.jpg"
+      "/images/apn/wardrobe-panelling-progress.jpg",
+      "/videos/apn/bedroom-arched-wardrobe.mp4",
+      "/videos/apn/wave-headboard-bedroom.mp4",
+      "/videos/apn/wardrobe-study-niche.mp4",
+      "/videos/apn/wardrobe-panelling-progress.mp4"
     ],
     "materials": [
       "Panelled wardrobe shutters",
@@ -207,7 +211,9 @@
     "gallery": [
       "/images/apn/mandala-tv-wall.jpg",
       "/images/apn/carved-wall-panel.jpg",
-      "/images/apn/tv-console-wall.jpg"
+      "/images/apn/tv-console-wall.jpg",
+      "/videos/apn/tv-console-wall.mp4",
+      "/videos/apn/arched-backlit-doorway.mp4"
     ],
     "materials": [
       "Hexagonal wood panels",
@@ -218,6 +224,44 @@
     "services": [
       "interior-design",
       "3d-visualization"
+    ],
+    "clientName": null,
+    "clientEmail": null,
+    "clientPhone": "",
+    "budget": null,
+    "startDate": null,
+    "deadline": null,
+    "progress": 100,
+    "featured": true,
+    "published": true
+  },
+  {
+    "slug": "kitchen-and-room-finishing",
+    "title": "Modular Kitchen & Room Finishing",
+    "category": "interior",
+    "status": "construction",
+    "location": "New Delhi",
+    "year": null,
+    "area": null,
+    "summary": "A handle-less modular kitchen with tall storage and an integrated oven unit, alongside panelled doors, false ceilings and cove lighting being finished room by room.",
+    "concept": null,
+    "description": null,
+    "coverImage": "/images/apn/films/modular-kitchen.jpg",
+    "gallery": [
+      "/videos/apn/modular-kitchen.mp4",
+      "/videos/apn/panelled-door-finishing.mp4"
+    ],
+    "materials": [
+      "Gloss and matte laminate shutters",
+      "Quartz counter",
+      "Gypsum false ceiling",
+      "LED cove lighting"
+    ],
+    "specs": [],
+    "services": [
+      "interior-design",
+      "construction-documentation",
+      "project-supervision"
     ],
     "clientName": null,
     "clientEmail": null,
@@ -243,7 +287,9 @@
     "coverImage": "/images/apn/staircase-feature-wall.jpg",
     "gallery": [
       "/images/apn/staircase-wall-work.jpg",
-      "/images/apn/ceiling-work-progress.jpg"
+      "/images/apn/ceiling-work-progress.jpg",
+      "/videos/apn/arched-wall-panel.mp4",
+      "/videos/apn/ceiling-staircase-work.mp4"
     ],
     "materials": [
       "Textured wall panels",
@@ -314,7 +360,9 @@
     "coverImage": "/images/apn/building-under-construction.jpg",
     "gallery": [
       "/images/apn/site-slab-reinforcement.jpg",
-      "/images/apn/site-excavation.jpg"
+      "/images/apn/site-excavation.jpg",
+      "/videos/apn/foundation-excavation.mp4",
+      "/videos/apn/slab-curing.mp4"
     ],
     "materials": [
       "RCC slab",

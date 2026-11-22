@@ -227,7 +227,8 @@ async function seedSiteContent() {
   // Project archive (GalleryItem): show only imagery from published projects.
   const projects: RawProject[] = readJson('data/projects.json')
   const live = projects.filter((p) => p.published)
-  const liveImages = [...new Set(live.flatMap((p) => [p.coverImage, ...p.gallery]))]
+  const isVideo = (u: string) => /\.(mp4|webm|mov)$/i.test(u)
+  const liveImages = [...new Set(live.flatMap((p) => [p.coverImage, ...p.gallery]))].filter((u) => !isVideo(u))
   await prisma.galleryItem.deleteMany({ where: { image: { startsWith: '/images/arche/' } } })
   const legacyGallery = await prisma.galleryItem.updateMany({
     where: { image: { notIn: liveImages }, published: true },
@@ -235,7 +236,7 @@ async function seedSiteContent() {
   })
   let order = 0
   for (const p of live) {
-    for (const image of [p.coverImage, ...p.gallery]) {
+    for (const image of [p.coverImage, ...p.gallery].filter((u) => !isVideo(u))) {
       const hit = await prisma.galleryItem.findFirst({ where: { image } })
       if (!hit) {
         await prisma.galleryItem.create({
